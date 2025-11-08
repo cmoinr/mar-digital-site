@@ -99,9 +99,12 @@ const Home = () => {
         }} viewport={{
           once: true
         }} className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold gradient-text mb-8">
+            <h2 className="text-3xl md:text-5xl font-bold gradient-text mb-4">
               Nuestras Divisiones
             </h2>
+            <p className="text-lg md:text-xl text-gray-600">
+              Dos focos, un mismo objetivo: crecimiento
+            </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -180,7 +183,7 @@ const Home = () => {
           once: true
         }} className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold gradient-text mb-8">
-              Beneficios de trabajar con nosotros
+              ¿Por qué trabajar con nosotros?
             </h2>
           </motion.div>
 
@@ -235,9 +238,8 @@ const Home = () => {
           once: true
         }} className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-8">
-              Servicios destacados
+              Lo esencial para impulsar tu marca
             </h2>
-            <p className="text-lg md:text-xl text-white/90">Vista rápida de lo que podemos hacer por ti</p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
