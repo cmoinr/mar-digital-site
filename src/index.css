@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --mar-blue: #075296;
+  --mar-blue-light: #0e88e2;
+  --mar-blue-neon: #1fd0ff;
+  --mar-gray: #666666;
+  --mar-green-light: #8cc63f;
+  --mar-green-dark: #369c08;
+  --mar-black: #000000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  overflow-x: hidden;
+  background-color: #f0f4f8;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, var(--mar-blue) 0%, var(--mar-blue-light) 50%, var(--mar-blue-neon) 100%);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--mar-blue) 0%, var(--mar-blue-neon) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.creative-gradient {
+  background: linear-gradient(135deg, var(--mar-blue) 0%, var(--mar-black) 100%);
+}
+
+.business-gradient {
+  background: linear-gradient(135deg, var(--mar-blue) 0%, var(--mar-green-dark) 100%);
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.section-padding {
+  padding: 100px 0;
+}
+
+.card-glow {
+  transition: box-shadow 0.3s ease;
+}
+
+.card-glow:hover {
+  box-shadow: 0 0 20px rgba(14, 136, 226, 0.5);
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 60px 0;
+  }
+}
