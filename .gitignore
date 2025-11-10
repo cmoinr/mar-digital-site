@@ -3,8 +3,8 @@ node_modules
 package-lock.json
 yarn.lock
 
-# Production build - IMPORTANT: Do NOT exclude for GitHub Pages
-# dist/
+# Production build - handled by deploy.sh script
+dist/
 
 # Environment variables
 .env
