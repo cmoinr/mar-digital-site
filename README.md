@@ -2,6 +2,8 @@
 
 Sitio web moderno y responsivo construido con React, Vite y Tailwind CSS.
 
+> 📚 **Documentación:** Lee la guía completa en [`docs/README.md`](./docs/README.md) para troubleshooting, deployment y más.
+
 ---
 
 ## 📊 Stack Tecnológico
@@ -92,62 +94,36 @@ npm run preview
 
 ```
 mar-digital-site/
+├── docs/                          # 📚 Documentación (README, guías, troubleshooting)
 ├── src/
-│   ├── pages/                      # Páginas principales
-│   │   ├── Home.jsx               # Página de inicio
-│   │   ├── Business.jsx           # Página de negocios
-│   │   ├── Creative.jsx           # Página de creatividad
-│   │   ├── Contact.jsx            # Página de contacto
-│   │   └── Services.jsx           # Página de servicios
-│   │
-│   ├── components/                 # Componentes reutilizables
-│   │   ├── Navbar.jsx             # Barra de navegación
-│   │   ├── HeroImage.jsx          # Sección hero
-│   │   ├── WelcomeMessage.jsx     # Mensaje de bienvenida
-│   │   ├── CallToAction.jsx       # Call to action
-│   │   ├── AnimatedPixelBackground.jsx # Fondo animado
-│   │   │
-│   │   └── ui/                    # Componentes de UI base
-│   │       ├── button.jsx
-│   │       ├── input.jsx
-│   │       ├── label.jsx
-│   │       ├── textarea.jsx
-│   │       ├── toast.jsx
-│   │       ├── toaster.jsx
-│   │       └── use-toast.js
-│   │
+│   ├── pages/                     # Páginas principales
+│   │   ├── Home.jsx
+│   │   ├── Business.jsx
+│   │   ├── Creative.jsx
+│   │   ├── Contact.jsx
+│   │   └── Services.jsx
+│   ├── components/                # Componentes reutilizables
+│   │   ├── Navbar.jsx
+│   │   ├── HeroImage.jsx
+│   │   ├── ui/                   # Componentes de UI base
+│   │   │   ├── button.jsx
+│   │   │   ├── input.jsx
+│   │   │   └── ...
 │   ├── lib/
-│   │   └── utils.js               # Funciones utilitarias
-│   │
-│   ├── App.jsx                    # Componente raíz
-│   ├── main.jsx                   # Punto de entrada
-│   └── index.css                  # Estilos globales
+│   │   └── utils.js
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
 │
-├── plugins/                        # Plugins personalizados de Vite
-│   ├── vite-plugin-iframe-route-restoration.js
-│   ├── selection-mode/
-│   │   ├── vite-plugin-selection-mode.js
-│   │   └── selection-mode-script.js
-│   ├── visual-editor/
-│   │   ├── vite-plugin-edit-mode.js
-│   │   ├── vite-plugin-react-inline-editor.js
-│   │   ├── edit-mode-script.js
-│   │   └── visual-editor-config.js
-│   └── utils/
-│       └── ast-utils.js
-│
-├── tools/
-│   └── generate-llms.js           # Generador de archivos LLM
-│
-├── public/
-│   └── llms.txt                   # Configuración para LLMs
-│
-├── index.html                     # Archivo HTML principal
+├── dist/                          # Build compilado para GitHub Pages
+├── public/                        # Archivos estáticos
+├── plugins/                       # Plugins personalizados de Vite
+├── tools/                         # Herramientas de build
+├── index.html                     # HTML principal
 ├── vite.config.js                 # Configuración de Vite
-├── tailwind.config.js             # Configuración de Tailwind CSS
+├── tailwind.config.js             # Configuración de Tailwind
 ├── postcss.config.js              # Configuración de PostCSS
-├── package.json                   # Dependencias del proyecto
-├── package-lock.json              # Lock file de npm
+├── package.json                   # Dependencias
 └── README.md                      # Este archivo
 ```
 
