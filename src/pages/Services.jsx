@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
-import { ArrowRight, Palette, TrendingUp, Globe, BarChart3, Briefcase, Lightbulb } from 'lucide-react';
+import { ArrowRight, Palette, TrendingUp, Globe, BarChart3, Briefcase, Lightbulb, Target } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
 
@@ -62,10 +62,54 @@ const Services = () => {
                 Creamos soluciones digitales que elevan la identidad de tu marca y generan confianza en tus clientes.
               </p>
               <div className="space-y-4">
-                <div className="flex items-start space-x-3"><Globe className="h-6 w-6 text-[#075296] mt-1 shrink-0" /><div><h4 className="font-bold">Diseño y Desarrollo Web</h4><p className="text-gray-600">Landing Pages, Websites Corporativos y E-commerce optimizados para conversión.</p></div></div>
-                <div className="flex items-start space-x-3"><Palette className="h-6 w-6 text-[#1fd0ff] mt-1 shrink-0" /><div><h4 className="font-bold">Branding & Diseño Gráfico</h4><p className="text-gray-600">Logos, identidades visuales y packs de contenido para una marca sólida y profesional.</p></div></div>
-                <div className="flex items-start space-x-3"><BarChart3 className="h-6 w-6 text-[#8cc63f] mt-1 shrink-0" /><div><h4 className="font-bold">Social Media & Copywriting</h4><p className="text-gray-600">Contenido gráfico + textos estratégicos para redes sociales que conectan y venden.</p></div></div>
-                <div className="flex items-start space-x-3"><TrendingUp className="h-6 w-6 text-[#369c08] mt-1 shrink-0" /><div><h4 className="font-bold">Marketing Digital & Ads</h4><p className="text-gray-600">Configuración de plataformas, gestión de Google Ads y Meta Ads para atraer más clientes.</p></div></div>
+                <div className="flex items-start space-x-3">
+                  <Globe className="h-6 w-6 text-[#075296] mt-1 shrink-0" />
+                  <div>
+                    <h4 className="font-bold">Diseño y Desarrollo Web</h4>
+                    <p className="text-gray-600">Landing Pages, Websites Corporativos y E-commerce optimizados para conversión.</p>
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      <span className="px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-medium">Responsive Design</span>
+                      <span className="px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-medium">SEO Optimizado</span>
+                      <span className="px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-medium">Performance</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <Palette className="h-6 w-6 text-[#1fd0ff] mt-1 shrink-0" />
+                  <div>
+                    <h4 className="font-bold">Branding & Diseño Gráfico</h4>
+                    <p className="text-gray-600">Logos, identidades visuales y packs de contenido para una marca sólida y profesional.</p>
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      <span className="px-3 py-1 rounded-full bg-cyan-100 text-cyan-700 text-xs font-medium">Identidad Visual</span>
+                      <span className="px-3 py-1 rounded-full bg-cyan-100 text-cyan-700 text-xs font-medium">Manual de Marca</span>
+                      <span className="px-3 py-1 rounded-full bg-cyan-100 text-cyan-700 text-xs font-medium">Assets Digitales</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <BarChart3 className="h-6 w-6 text-[#8cc63f] mt-1 shrink-0" />
+                  <div>
+                    <h4 className="font-bold">Social Media & Copywriting</h4>
+                    <p className="text-gray-600">Contenido gráfico + textos estratégicos para redes sociales que conectan y venden.</p>
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      <span className="px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-medium">Content Strategy</span>
+                      <span className="px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-medium">Diseño de Posts</span>
+                      <span className="px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-medium">Copy Persuasivo</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <TrendingUp className="h-6 w-6 text-[#369c08] mt-1 shrink-0" />
+                  <div>
+                    <h4 className="font-bold">Marketing Digital & Ads</h4>
+                    <p className="text-gray-600">Configuración de plataformas, gestión de Google Ads y Meta Ads para atraer más clientes.</p>
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      <span className="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-medium">Google Ads</span>
+                      <span className="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-medium">Meta Ads</span>
+                      <span className="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-medium">Analytics</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </motion.div>
             <motion.div
@@ -111,10 +155,41 @@ const Services = () => {
                 Acompañamos a empresas y startups con consultoría estratégica para crecer con bases sólidas y visión a futuro.
               </p>
               <div className="space-y-4">
-                <div className="flex items-start space-x-3"><Briefcase className="h-6 w-6 text-[#075296] mt-1 shrink-0" /><div><h4 className="font-bold">Consultoría en Modelos de Negocio</h4><p className="text-gray-600">Diagnóstico y rediseño estratégico.</p></div></div>
-                <div className="flex items-start space-x-3"><TrendingUp className="h-6 w-6 text-[#369c08] mt-1 shrink-0" /><div><h4 className="font-bold">Transformación Digital</h4><p className="text-gray-600">Procesos, herramientas y KPIs para evolucionar tu empresa.</p></div></div>
-                <div className="flex items-start space-x-3"><BarChart3 className="h-6 w-6 text-[#8cc63f] mt-1 shrink-0" /><div><h4 className="font-bold">Análisis y Proyección Financiera</h4><p className="text-gray-600">Modelos dinámicos, escenarios y planificación de capital.</p></div></div>
-                <div className="flex items-start space-x-3"><Lightbulb className="h-6 w-6 text-[#1fd0ff] mt-1 shrink-0" /><div><h4 className="font-bold">Estructuración de Capital</h4><p className="text-gray-600">Estrategias para optimizar financiamiento y atraer inversionistas.</p></div></div>
+                <div className="flex items-start space-x-3">
+                  <Briefcase className="h-6 w-6 text-[#075296] mt-1 shrink-0" />
+                  <div>
+                    <h4 className="font-bold">Consultoría en Modelos de Negocio</h4>
+                    <p className="text-gray-600">Diagnóstico y rediseño estratégico para maximizar el valor de tu empresa.</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <TrendingUp className="h-6 w-6 text-[#369c08] mt-1 shrink-0" />
+                  <div>
+                    <h4 className="font-bold">Transformación Digital</h4>
+                    <p className="text-gray-600">Procesos, herramientas y KPIs para evolucionar tu empresa hacia el futuro digital.</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <BarChart3 className="h-6 w-6 text-[#8cc63f] mt-1 shrink-0" />
+                  <div>
+                    <h4 className="font-bold">Valoración de Empresas</h4>
+                    <p className="text-gray-600">Métodos financieros avanzados para conocer el valor real de tu compañía.</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <Lightbulb className="h-6 w-6 text-[#1fd0ff] mt-1 shrink-0" />
+                  <div>
+                    <h4 className="font-bold">Análisis y Proyección Financiera</h4>
+                    <p className="text-gray-600">Modelos dinámicos, escenarios y planificación de capital inteligente.</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <Target className="h-6 w-6 text-[#075296] mt-1 shrink-0" />
+                  <div>
+                    <h4 className="font-bold">Estructuración de Capital</h4>
+                    <p className="text-gray-600">Estrategias para optimizar financiamiento y atraer inversionistas estratégicos.</p>
+                  </div>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -136,7 +211,7 @@ const Services = () => {
             </h2>
             <p className="text-lg md:text-xl text-white/90 max-w-4xl mx-auto">
               Ya sea que necesites creatividad para tu marca o consultoría estratégica para tu empresa, 
-              en Mar Digital tenemos el servicio perfecto para ti.
+              en Mar Digital tenemos el servicio perfecto para ti. Conectemos y construyamos algo extraordinario juntos.
             </p>
             <Button 
               onClick={handleCTA}

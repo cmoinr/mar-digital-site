@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Calendar, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -18,6 +18,29 @@ const Contact = () => {
       description: "El formulario de contacto no envía mensajes por ahora."
     });
   };
+
+  // Servicios disponibles
+  const services = [
+    'Diseño y Desarrollo Web',
+    'Branding & Diseño Gráfico',
+    'Social Media & Copywriting',
+    'Marketing Digital & Ads',
+    'Consultoría en Modelos de Negocio',
+    'Transformación Digital',
+    'Optimización & Performance',
+    'Otro / No estoy seguro'
+  ];
+
+  // Rangos de presupuesto
+  const budgetRanges = [
+    'Menos de $500 USD',
+    '$500 - $1,000 USD',
+    '$1,000 - $2,500 USD',
+    '$2,500 - $5,000 USD',
+    '$5,000 - $10,000 USD',
+    'Más de $10,000 USD',
+    'Prefiero no decir / A definir'
+  ];
 
   return (
     <>
@@ -36,10 +59,10 @@ const Contact = () => {
             className="space-y-6"
           >
             <h1 className="text-4xl md:text-6xl font-bold">
-              Hablemos de tu próximo proyecto.
+              Conversemos de tu Proyecto
             </h1>
             <p className="text-lg md:text-xl text-white/90 max-w-4xl mx-auto">
-              Estamos listos para escuchar tus ideas y ayudarte a transformarlas en resultados digitales impactantes.
+              Cuéntanos tu visión y te responderemos con una <strong>propuesta personalizada</strong> en menos de 24 horas.
             </p>
           </motion.div>
         </div>
@@ -47,76 +70,245 @@ const Contact = () => {
 
       {/* Contact Form and Info */}
       <section className="section-padding bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12">
-          {/* Contact Information */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="space-y-8 p-8 bg-white rounded-2xl shadow-lg"
-          >
-            <h2 className="text-3xl font-bold text-gray-800 mb-6">
-              Información de Contacto
-            </h2>
-            <div className="flex items-center space-x-4">
-              <Mail className="h-8 w-8 text-[#075296]" />
-              <div>
-                <h3 className="text-xl font-semibold text-gray-700">Email</h3>
-                <p className="text-gray-600">info@mardigital.com</p>
-              </div>
-            </div>
-            <div className="flex items-center space-x-4">
-              <Phone className="h-8 w-8 text-[#075296]" />
-              <div>
-                <h3 className="text-xl font-semibold text-gray-700">Teléfono</h3>
-                <p className="text-gray-600">+1 (555) 123-4567</p>
-              </div>
-            </div>
-            <div className="flex items-center space-x-4">
-              <MapPin className="h-8 w-8 text-[#075296]" />
-              <div>
-                <h3 className="text-xl font-semibold text-gray-700">Oficina</h3>
-                <p className="text-gray-600">123 Calle Digital, Ciudad Creativa, País</p>
-              </div>
-            </div>
-            <img alt="A modern office building with a sleek design" className="w-full h-48 object-cover rounded-lg mt-8" src="https://images.unsplash.com/photo-1520004434532-cd6680350777" />
-          </motion.div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-5 gap-12">
+          {/* Left Column: Contact Info & Alternatives */}
+          <div className="lg:col-span-2 space-y-8">
+            {/* Contact Methods */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-2xl font-bold text-gray-800 mb-6">Formas de Contacto</h2>
+              <div className="space-y-4">
+                <a href="mailto:hola@mardigital.com" className="group block p-6 rounded-2xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                  <div className="flex items-center gap-4">
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+                      <Mail className="h-6 w-6 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="text-sm font-semibold text-gray-600 uppercase tracking-wide">Email</div>
+                      <div className="text-lg font-bold text-gray-800 group-hover:text-cyan-600 transition-colors">hola@mardigital.com</div>
+                    </div>
+                  </div>
+                </a>
+                
+                <a href="https://wa.me/15551234567" target="_blank" rel="noopener noreferrer" className="group block p-6 rounded-2xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                  <div className="flex items-center gap-4">
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-green-500 to-emerald-400 flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+                      <Phone className="h-6 w-6 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="text-sm font-semibold text-gray-600 uppercase tracking-wide">WhatsApp</div>
+                      <div className="text-lg font-bold text-gray-800 group-hover:text-green-600 transition-colors">+1 (555) 123-4567</div>
+                    </div>
+                  </div>
+                </a>
 
-          {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="p-8 bg-white rounded-2xl shadow-lg"
-          >
-            <h2 className="text-3xl font-bold text-gray-800 mb-6">
-              Envíanos un Mensaje
-            </h2>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <Label htmlFor="name" className="text-lg font-medium text-gray-700">Nombre Completo</Label>
-                <Input id="name" type="text" placeholder="Tu nombre" className="mt-2 p-3 rounded-full border-gray-300 focus:border-[#0e88e2] focus:ring focus:ring-[#0e88e2]/20" />
+                <div className="block p-6 rounded-2xl bg-white shadow-lg">
+                  <div className="flex items-center gap-4">
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500 to-pink-400 flex items-center justify-center shadow-md">
+                      <MapPin className="h-6 w-6 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="text-sm font-semibold text-gray-600 uppercase tracking-wide">Ubicación</div>
+                      <div className="text-lg font-bold text-gray-800">Remote / Global</div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div>
-                <Label htmlFor="email" className="text-lg font-medium text-gray-700">Email</Label>
-                <Input id="email" type="email" placeholder="tu@email.com" className="mt-2 p-3 rounded-full border-gray-300 focus:border-[#0e88e2] focus:ring focus:ring-[#0e88e2]/20" />
+            </motion.div>
+
+            {/* Calendly Alternative */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <div className="p-8 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 text-white shadow-xl">
+                <Calendar className="h-10 w-10 mb-4" />
+                <h3 className="text-xl font-bold mb-3">¿Prefieres agendar una videollamada?</h3>
+                <p className="text-blue-50 mb-6 leading-relaxed">
+                  Reserva un espacio en nuestro calendario para una consulta inicial de 30 minutos completamente gratis.
+                </p>
+                <a 
+                  href="https://calendly.com/mardigital" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center justify-center gap-2 w-full px-6 py-4 rounded-xl bg-white text-blue-700 font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+                >
+                  <span>Agendar Reunión</span>
+                  <Calendar className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </a>
               </div>
-              <div>
-                <Label htmlFor="subject" className="text-lg font-medium text-gray-700">Asunto</Label>
-                <Input id="subject" type="text" placeholder="Asunto del mensaje" className="mt-2 p-3 rounded-full border-gray-300 focus:border-[#0e88e2] focus:ring focus:ring-[#0e88e2]/20" />
+            </motion.div>
+
+            {/* What to Expect */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              <div className="p-6 rounded-2xl bg-white shadow-lg">
+                <h3 className="text-lg font-bold text-gray-800 mb-4">¿Qué puedes esperar?</h3>
+                <ul className="space-y-3">
+                  {[
+                    'Respuesta inicial en menos de 24 horas',
+                    'Propuesta personalizada a tu proyecto',
+                    'Timeline y presupuesto transparente',
+                    'Sin compromiso ni costos ocultos'
+                  ].map((item, index) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <CheckCircle className="w-6 h-6 text-green-500 shrink-0 mt-0.5" />
+                      <span className="text-gray-700">{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <div>
-                <Label htmlFor="message" className="text-lg font-medium text-gray-700">Mensaje</Label>
-                <Textarea id="message" placeholder="Escribe tu mensaje aquí..." rows="5" className="mt-2 p-3 rounded-2xl border-gray-300 focus:border-[#0e88e2] focus:ring focus:ring-[#0e88e2]/20" />
-              </div>
-              <Button type="submit" size="lg" className="w-full bg-[#075296] hover:bg-[#0e88e2] text-white font-bold py-3 text-lg rounded-full">
-                Enviar Mensaje
-                <Send className="ml-2 h-5 w-5" />
-              </Button>
-            </form>
-          </motion.div>
+            </motion.div>
+          </div>
+
+          {/* Right Column: Contact Form */}
+          <div className="lg:col-span-3">
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="sticky top-24 p-8 lg:p-10 bg-white rounded-2xl shadow-2xl"
+            >
+              <h2 className="text-3xl font-bold text-gray-800 mb-2">Cuéntanos tu Proyecto</h2>
+              <p className="text-gray-600 mb-8">Completa el formulario y te contactaremos pronto</p>
+              
+              <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Nombre y Email */}
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <Label htmlFor="name" className="text-sm font-semibold text-gray-700">Nombre completo *</Label>
+                    <Input 
+                      id="name" 
+                      type="text" 
+                      placeholder="Juan Pérez" 
+                      required
+                      className="mt-2 p-3 rounded-xl border-2 border-gray-200 focus:border-blue-400 transition-all" 
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="email" className="text-sm font-semibold text-gray-700">Email *</Label>
+                    <Input 
+                      id="email" 
+                      type="email" 
+                      placeholder="juan@empresa.com" 
+                      required
+                      className="mt-2 p-3 rounded-xl border-2 border-gray-200 focus:border-blue-400 transition-all" 
+                    />
+                  </div>
+                </div>
+
+                {/* WhatsApp y Empresa */}
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <Label htmlFor="whatsapp" className="text-sm font-semibold text-gray-700">
+                      WhatsApp <span className="text-gray-400 font-normal">(opcional)</span>
+                    </Label>
+                    <Input 
+                      id="whatsapp" 
+                      type="tel" 
+                      placeholder="+1 555 123 4567" 
+                      className="mt-2 p-3 rounded-xl border-2 border-gray-200 focus:border-blue-400 transition-all" 
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="company" className="text-sm font-semibold text-gray-700">Empresa *</Label>
+                    <Input 
+                      id="company" 
+                      type="text" 
+                      placeholder="Mi Empresa S.A." 
+                      required
+                      className="mt-2 p-3 rounded-xl border-2 border-gray-200 focus:border-blue-400 transition-all" 
+                    />
+                  </div>
+                </div>
+
+                {/* Servicio de Interés */}
+                <div>
+                  <Label htmlFor="service" className="text-sm font-semibold text-gray-700">Servicio de interés *</Label>
+                  <select 
+                    id="service" 
+                    name="service" 
+                    required
+                    className="mt-2 w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/30 transition-all outline-none bg-white text-gray-800"
+                  >
+                    <option value="">Selecciona un servicio...</option>
+                    {services.map((service) => (
+                      <option key={service} value={service}>{service}</option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Presupuesto Estimado */}
+                <div>
+                  <Label htmlFor="budget" className="text-sm font-semibold text-gray-700">Presupuesto estimado *</Label>
+                  <select 
+                    id="budget" 
+                    name="budget" 
+                    required
+                    className="mt-2 w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/30 transition-all outline-none bg-white text-gray-800"
+                  >
+                    <option value="">Selecciona un rango...</option>
+                    {budgetRanges.map((range) => (
+                      <option key={range} value={range}>{range}</option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Mensaje */}
+                <div>
+                  <Label htmlFor="message" className="text-sm font-semibold text-gray-700">Cuéntanos sobre tu proyecto *</Label>
+                  <Textarea 
+                    id="message" 
+                    placeholder="Describe tu proyecto, objetivos, desafíos actuales y cualquier información relevante que quieras compartir..." 
+                    rows="5"
+                    required
+                    className="mt-2 p-3 rounded-xl border-2 border-gray-200 focus:border-blue-400 resize-none transition-all" 
+                  />
+                </div>
+
+                {/* Privacy Policy */}
+                <div className="flex items-start gap-3">
+                  <input 
+                    type="checkbox" 
+                    id="privacy" 
+                    name="privacy" 
+                    required
+                    className="mt-1 w-5 h-5 rounded border-2 border-gray-300 text-blue-500 focus:ring-2 focus:ring-blue-400/30"
+                  />
+                  <label htmlFor="privacy" className="text-sm text-gray-700 leading-relaxed">
+                    Acepto la <a href="/privacidad" className="text-cyan-600 hover:text-blue-600 font-semibold underline">política de privacidad</a> y autorizo el uso de mis datos para que Mar Digital me contacte sobre mi consulta. *
+                  </label>
+                </div>
+
+                {/* Submit Button */}
+                <Button 
+                  type="submit" 
+                  size="lg" 
+                  className="w-full bg-gradient-to-r from-blue-500 via-cyan-500 to-blue-600 hover:opacity-90 text-white font-bold py-5 text-lg rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300"
+                >
+                  📨 Enviar Mensaje
+                  <Send className="ml-2 h-5 w-5" />
+                </Button>
+
+                {/* Privacy Note */}
+                <p className="text-center text-xs text-gray-500 leading-relaxed">
+                  Protegemos tu privacidad. Nunca compartiremos tu información con terceros.
+                  <br />Solo la usaremos para responder a tu consulta y enviarte propuestas relevantes.
+                </p>
+              </form>
+            </motion.div>
+          </div>
         </div>
       </section>
     </>
