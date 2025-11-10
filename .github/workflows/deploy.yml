@@ -30,25 +30,25 @@ jobs:
 
     - name: Deploy to gh-pages
       run: |
+        # Verificar que dist existe
+        ls -la dist/
+        
         # Configurar git
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git config --global user.name "github-actions[bot]"
-        
-        # Crear carpeta temporal para los archivos compilados
-        mkdir -p temp-build
-        cp -r dist/* temp-build/
         
         # Cambiar a rama gh-pages
         git fetch origin gh-pages
         git checkout gh-pages
         
-        # Limpiar archivos viejos (excepto .git y archivos especiales)
-        find . -maxdepth 1 -type f ! -name '.nojekyll' ! -name '.gitignore' -delete
-        find . -maxdepth 1 -type d ! -name '.' ! -name '..' ! -name '.git' -exec rm -rf {} + 2>/dev/null || true
+        # Limpiar archivos compilados viejos
+        rm -rf assets/ *.html *.txt 2>/dev/null || true
         
-        # Copiar nuevos archivos
-        cp -r temp-build/* .
-        rm -rf temp-build
+        # Copiar archivos compilados desde dist (mantener .nojekyll y .gitignore)
+        cp dist/index.html .
+        cp dist/404.html .
+        cp -r dist/assets .
+        cp dist/llms.txt . 2>/dev/null || true
         
         # Commit y push
         git add -A
