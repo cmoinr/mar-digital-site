@@ -234,7 +234,7 @@ logger.error = (msg, options) => {
 }
 
 export default defineConfig({
-	base: '/mar-digital-site/',
+	base: process.env.VITE_BASE_URL || '/',
 	customLogger: logger,
 	plugins: [
 		...(isDev ? [inlineEditPlugin(), editModeDevPlugin(), iframeRouteRestorationPlugin(), selectionModePlugin()] : []),

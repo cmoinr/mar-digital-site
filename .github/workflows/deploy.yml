@@ -1,8 +1,9 @@
-name: Deploy to GitHub Pages
+name: Deploy to GitHub Pages (opcional)
 
 on:
   push:
     branches: [ main ]
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -25,8 +26,10 @@ jobs:
     - name: Install dependencies
       run: npm ci
 
-    - name: Build
+    - name: Build with GitHub Pages base URL
       run: npm run build
+      env:
+        VITE_BASE_URL: /mar-digital-site/
 
     - name: Deploy to gh-pages
       run: |
