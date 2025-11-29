@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import App from '@/App';
 import '@/index.css';
 
-const basename = process.env.VITE_BASE_URL || '/';
+const basename = import.meta.env.VITE_BASE_URL || '/';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <>

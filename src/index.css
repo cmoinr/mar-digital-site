@@ -2,16 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  --mar-blue: #075296;
-  --mar-blue-light: #0e88e2;
-  --mar-blue-neon: #1fd0ff;
-  --mar-gray: #666666;
-  --mar-green-light: #8cc63f;
-  --mar-green-dark: #369c08;
-  --mar-black: #000000;
+  /* Paleta Minimalista Azul/Cyan */
+  --mar-dark: #0a0a0f;
+  --mar-dark-secondary: #12121a;
+  --mar-blue: #0066ff;
+  --mar-blue-vibrant: #0088ff;
+  --mar-cyan: #00d4ff;
+  --mar-cyan-glow: #00e5ff;
+  --mar-white: #ffffff;
+  --mar-gray-100: #f8f9fa;
+  --mar-gray-200: #e9ecef;
+  --mar-gray-400: #adb5bd;
+  --mar-gray-600: #6c757d;
+  
+  /* Efectos */
+  --glow-cyan: 0 0 40px rgba(0, 212, 255, 0.3);
+  --glow-blue: 0 0 40px rgba(0, 102, 255, 0.3);
+  --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {
@@ -22,63 +32,171 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  line-height: 1.6;
-  color: #333;
+  line-height: 1.7;
+  color: var(--mar-white);
   overflow-x: hidden;
-  background-color: #f0f4f8;
+  background-color: var(--mar-dark);
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+/* Tipografía Futurista */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Gradientes Minimalistas */
 .gradient-bg {
-  background: linear-gradient(135deg, var(--mar-blue) 0%, var(--mar-blue-light) 50%, var(--mar-blue-neon) 100%);
+  background: linear-gradient(135deg, var(--mar-dark) 0%, var(--mar-dark-secondary) 100%);
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, var(--mar-blue) 0%, var(--mar-blue-neon) 100%);
+  background: linear-gradient(90deg, var(--mar-blue-vibrant) 0%, var(--mar-cyan) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.creative-gradient {
-  background: linear-gradient(135deg, var(--mar-blue) 0%, var(--mar-black) 100%);
+.gradient-text-light {
+  background: linear-gradient(90deg, var(--mar-white) 0%, var(--mar-cyan) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.business-gradient {
-  background: linear-gradient(135deg, var(--mar-blue) 0%, var(--mar-green-dark) 100%);
+/* Cards Futuristas */
+.card-futuristic {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: var(--transition-smooth);
 }
 
+.card-futuristic:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(0, 212, 255, 0.2);
+  box-shadow: var(--glow-cyan);
+}
+
+/* Glass Effect Mejorado */
 .glass-effect {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.hover-scale {
-  transition: transform 0.3s ease;
+/* Hover Elegante */
+.hover-glow {
+  transition: var(--transition-smooth);
 }
 
-.hover-scale:hover {
-  transform: scale(1.05);
+.hover-glow:hover {
+  box-shadow: var(--glow-cyan);
+  transform: translateY(-2px);
 }
 
+/* Línea Decorativa Futurista */
+.line-accent {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--mar-cyan) 0%, transparent 100%);
+}
+
+/* Secciones */
 .section-padding {
-  padding: 100px 0;
+  padding: 120px 0;
 }
 
-.card-glow {
-  transition: box-shadow 0.3s ease;
+.section-dark {
+  background-color: var(--mar-dark);
 }
 
-.card-glow:hover {
-  box-shadow: 0 0 20px rgba(14, 136, 226, 0.5);
+.section-darker {
+  background-color: var(--mar-dark-secondary);
 }
 
+/* Botón Futurista */
+.btn-futuristic {
+  background: linear-gradient(90deg, var(--mar-blue) 0%, var(--mar-cyan) 100%);
+  border: none;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+.btn-futuristic::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-futuristic:hover::before {
+  left: 100%;
+}
+
+.btn-futuristic:hover {
+  box-shadow: var(--glow-cyan);
+  transform: translateY(-2px);
+}
+
+/* Outline Button Futurista */
+.btn-outline-futuristic {
+  background: transparent;
+  border: 1px solid rgba(0, 212, 255, 0.5);
+  color: var(--mar-cyan);
+  transition: var(--transition-smooth);
+}
+
+.btn-outline-futuristic:hover {
+  background: rgba(0, 212, 255, 0.1);
+  border-color: var(--mar-cyan);
+  box-shadow: var(--glow-cyan);
+}
+
+/* Grid Pattern Background */
+.grid-pattern {
+  background-image: 
+    linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Animación de entrada suave */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   .section-padding {
-    padding: 60px 0;
+    padding: 80px 0;
+  }
+  
+  h1 {
+    font-size: 2.5rem !important;
+  }
+  
+  h2 {
+    font-size: 2rem !important;
   }
 }

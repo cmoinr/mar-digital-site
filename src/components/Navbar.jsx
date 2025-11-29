@@ -29,7 +29,11 @@ const Navbar = () => {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled 
+          ? 'bg-[#0a0a0f]/40 backdrop-blur-xl border-b border-[#00d4ff]/10 shadow-2xl' 
+          : 'bg-transparent border-b border-transparent'
+      }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
@@ -43,7 +47,13 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className={`text-sm font-medium transition-colors duration-200 ${location.pathname === item.path ? 'text-[#075296]' : scrolled ? 'text-gray-700 hover:text-[#075296]' : 'text-white hover:text-[#1fd0ff]'}`}
+                className={`text-sm font-medium transition-colors duration-200 ${
+                  location.pathname === item.path 
+                    ? 'text-[#00d4ff]' 
+                    : scrolled 
+                      ? 'text-gray-300 hover:text-[#00d4ff]' 
+                      : 'text-white/80 hover:text-[#00d4ff]'
+                }`}
               >
                 {item.name}
               </Link>
@@ -52,7 +62,10 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
-            <button onClick={() => setIsOpen(!isOpen)} className={`p-2 rounded-md ${scrolled ? 'text-gray-700' : 'text-white'}`}>
+            <button 
+              onClick={() => setIsOpen(!isOpen)} 
+              className={`p-2 rounded-md transition-colors ${scrolled ? 'text-gray-300' : 'text-white'}`}
+            >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
@@ -64,14 +77,18 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="md:hidden bg-white shadow-lg rounded-lg mt-2 py-4"
+            className="md:hidden bg-[#12121a]/80 backdrop-blur-xl border border-[#00d4ff]/20 rounded-lg mt-2 py-4 shadow-xl"
           >
             {navItems.map(item => (
               <Link
                 key={item.name}
                 to={item.path}
                 onClick={() => setIsOpen(false)}
-                className={`block px-4 py-2 text-sm font-medium transition-colors duration-200 ${location.pathname === item.path ? 'text-[#075296] bg-blue-50' : 'text-gray-700 hover:text-[#075296] hover:bg-gray-50'}`}
+                className={`block px-4 py-2 text-sm font-medium transition-colors duration-200 ${
+                  location.pathname === item.path 
+                    ? 'text-[#00d4ff] bg-[#00d4ff]/10' 
+                    : 'text-gray-300 hover:text-[#00d4ff] hover:bg-[#00d4ff]/5'
+                }`}
               >
                 {item.name}
               </Link>
