@@ -1,25 +1,67 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
+// Componente de imagen optimizada con lazy loading y placeholder
+const OptimizedImage = ({ src, alt, className }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+  
+  return (
+    <div className="absolute inset-0 bg-[#12121a]">
+      {/* Placeholder blur mientras carga */}
+      {!isLoaded && (
+        <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a2e] to-[#0a0a0f] animate-pulse" />
+      )}
+      <img 
+        src={src}
+        alt={alt}
+        loading="lazy"
+        decoding="async"
+        onLoad={() => setIsLoaded(true)}
+        className={`${className} transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+      />
+    </div>
+  );
+};
+
 const CollageSection = () => {
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Array de colores neon para las imágenes del collage
+  // URLs optimizadas con parámetros de compresión de Pexels
   const images = [
-    { id: 1, gradient: 'from-[#ff006e] to-[#ff4466]', delay: 0, offset: -20 },
-    { id: 2, gradient: 'from-[#00d4ff] to-[#0099ff]', delay: 0.1, offset: 20 },
-    { id: 3, gradient: 'from-[#00ff88] to-[#00cc66]', delay: 0.2, offset: -15 },
-    { id: 4, gradient: 'from-[#ffaa00] to-[#ff8800]', delay: 0.3, offset: 25 },
-    { id: 5, gradient: 'from-[#ff00ff] to-[#aa00ff]', delay: 0.4, offset: -10 },
-    { id: 6, gradient: 'from-[#00ffff] to-[#0088ff]', delay: 0.5, offset: 15 },
+    { 
+      id: 1, 
+      url: 'https://images.pexels.com/photos/2422294/pexels-photo-2422294.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1',
+      delay: 0, 
+      offset: -20 
+    },
+    { 
+      id: 2, 
+      url: 'https://images.pexels.com/photos/4126763/pexels-photo-4126763.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1',
+      delay: 0.1, 
+      offset: 20 
+    },
+    { 
+      id: 3, 
+      url: 'https://images.pexels.com/photos/8297441/pexels-photo-8297441.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1',
+      delay: 0.2, 
+      offset: -15 
+    },
+    { 
+      id: 4, 
+      url: 'https://images.pexels.com/photos/2127969/pexels-photo-2127969.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1',
+      delay: 0.3, 
+      offset: 25 
+    },
+    { 
+      id: 5, 
+      url: 'https://images.pexels.com/photos/26970289/pexels-photo-26970289.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1',
+      delay: 0.4, 
+      offset: -10 
+    },
+    { 
+      id: 6, 
+      url: 'https://images.pexels.com/photos/14225929/pexels-photo-14225929.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1',
+      delay: 0.5, 
+      offset: 15 
+    },
   ];
 
   return (
@@ -29,27 +71,25 @@ const CollageSection = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         {/* Collage Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 auto-rows-max">
-          {images.map((image, index) => {
-            // Alternar alturas para crear un efecto de masonry
-            const heights = ['h-48', 'h-56', 'h-64', 'h-52'];
-            const height = heights[index % heights.length];
-            
-            // Alternar anchos también
-            const cols = index % 3 === 0 ? 'md:col-span-1' : 'md:col-span-1';
-
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+          {images.map((image) => {
             return (
-              <motion.div
+              <div
                 key={image.id}
-                style={{
-                  y: (scrollY - 400) * (image.offset / 100) || 0
-                }}
-                transition={{ type: 'spring', stiffness: 50, damping: 20 }}
-                className={`relative ${height} ${cols} rounded-2xl overflow-hidden group cursor-pointer`}
+                className="relative h-64 rounded-2xl overflow-hidden group cursor-pointer"
               >
-                {/* Image container with gradient */}
+                {/* Background image con lazy loading */}
+                {image.url && (
+                  <OptimizedImage 
+                    src={image.url} 
+                    alt={`Collage ${image.id}`}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                )}
+                
+                {/* Gradient overlay (opcional, reduce la opacidad si quieres ver más la imagen) */}
                 <div
-                  className={`absolute inset-0 bg-gradient-to-br ${image.gradient} opacity-90 group-hover:opacity-100 transition-opacity duration-300`}
+                  className={`absolute inset-0 bg-gradient-to-br ${image.gradient} opacity-30 group-hover:opacity-20 transition-opacity duration-300`}
                 ></div>
 
                 {/* Animated overlay elements */}
@@ -98,7 +138,7 @@ const CollageSection = () => {
                 <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent rounded-2xl"></div>
                 </div>
-              </motion.div>
+              </div>
             );
           })}
         </div>
