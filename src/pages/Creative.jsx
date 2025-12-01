@@ -100,8 +100,15 @@ const Creative = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 creative-gradient">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative pt-32 pb-20 bg-[#0a0a0f] overflow-hidden">
+        {/* Grid Pattern Background */}
+        <div className="absolute inset-0 grid-pattern opacity-20"></div>
+        
+        {/* Gradient Orbs */}
+        <div className="absolute top-20 left-1/4 w-96 h-96 bg-[#0066ff] rounded-full blur-[120px] opacity-20 animate-pulse"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#00d4ff] rounded-full blur-[120px] opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -111,12 +118,12 @@ const Creative = () => {
             <img 
               src="https://horizons-cdn.hostinger.com/a6ca65f8-09dc-4ddf-a714-07c8ebf24d62/logo_rebrand---mar-creative---entrega-01-AWx6o.png" 
               alt="Mar Digital Creative" 
-              className="w-48 h-auto mx-auto mb-8"
+              className="w-48 h-auto mx-auto mb-8 brightness-0 invert"
             />
             <h1 className="text-4xl md:text-6xl font-bold text-white">
               Creatividad que impulsa tu marca.
             </h1>
-            <p className="text-lg md:text-xl text-white/90 max-w-4xl mx-auto">
+            <p className="text-lg md:text-xl text-gray-400 max-w-4xl mx-auto">
               Desde un logo hasta una tienda online completa: en Mar Digital Creative diseñamos 
               experiencias que conectan con tu público y convierten visitas en clientes.
             </p>
@@ -125,7 +132,7 @@ const Creative = () => {
       </section>
 
       {/* Servicios Creative */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-[#12121a]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -134,7 +141,8 @@ const Creative = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-5xl font-bold gradient-text mb-8">
+            <div className="line-accent mx-auto mb-6"></div>
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
               Servicios Creative
             </h2>
           </motion.div>
@@ -147,13 +155,15 @@ const Creative = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-gray-50 rounded-xl p-6 hover-scale card-glow"
+                className="card-futuristic p-6 group"
               >
                 <div className="flex justify-center mb-4">
-                  {service.icon}
+                  <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-[#0066ff] to-[#00d4ff] flex items-center justify-center">
+                    {React.cloneElement(service.icon, { className: 'h-8 w-8 text-white' })}
+                  </div>
                 </div>
-                <h3 className="text-lg font-bold mb-4 text-center">{service.title}</h3>
-                <p className="text-gray-600 text-center text-sm">{service.description}</p>
+                <h3 className="text-lg font-bold mb-4 text-center text-white">{service.title}</h3>
+                <p className="text-gray-400 text-center text-sm leading-relaxed">{service.description}</p>
               </motion.div>
             ))}
           </div>
@@ -161,7 +171,7 @@ const Creative = () => {
       </section>
 
       {/* Creative Packs */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-[#0a0a0f]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -170,14 +180,15 @@ const Creative = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-5xl font-bold gradient-text mb-8">
+            <div className="line-accent mx-auto mb-6"></div>
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
               Creative Packs
             </h2>
-            <p className="text-lg md:text-xl text-gray-700">Paquetes diseñados para cada etapa de tu negocio.</p>
+            <p className="text-lg md:text-xl text-gray-400">Paquetes diseñados para cada etapa de tu negocio.</p>
           </motion.div>
 
-          <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">División Creative (Branding + Diseño + Redes)</h3>
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <h3 className="text-2xl font-bold text-white mb-8 text-center">División Creative (Branding + Diseño + Redes)</h3>
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
             {creativePacks.map((pack, index) => (
               <motion.div
                 key={index}
@@ -185,17 +196,22 @@ const Creative = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="creative-gradient rounded-xl p-6 text-white hover-scale card-glow"
+                className="card-futuristic p-8 group"
               >
-                <h4 className="text-xl font-bold mb-3">{pack.name}</h4>
-                <p className="text-white/90 mb-4">{pack.description}</p>
-                <p className="text-white/70 text-sm">{pack.idealFor}</p>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-2 h-2 rounded-full bg-[#00d4ff]"></div>
+                  <h4 className="text-xl font-bold text-white">{pack.name}</h4>
+                </div>
+                <p className="text-gray-300 mb-4 leading-relaxed">{pack.description}</p>
+                <p className="text-gray-500 text-sm leading-relaxed">{pack.idealFor}</p>
               </motion.div>
             ))}
           </div>
 
-          <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">División Business (Web + SEO + Ads)</h3>
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <div className="w-full h-px bg-gradient-to-r from-transparent via-[#00d4ff]/30 to-transparent mb-16"></div>
+
+          <h3 className="text-2xl font-bold text-white mb-8 text-center">División Business (Web + SEO + Ads)</h3>
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
             {businessPacks.map((pack, index) => (
               <motion.div
                 key={index}
@@ -203,16 +219,21 @@ const Creative = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="business-gradient rounded-xl p-6 text-white hover-scale card-glow"
+                className="card-futuristic p-8 group"
               >
-                <h4 className="text-xl font-bold mb-3">{pack.name}</h4>
-                <p className="text-white/90 mb-4">{pack.description}</p>
-                <p className="text-white/70 text-sm">{pack.idealFor}</p>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-2 h-2 rounded-full bg-[#8cc63f]"></div>
+                  <h4 className="text-xl font-bold text-white">{pack.name}</h4>
+                </div>
+                <p className="text-gray-300 mb-4 leading-relaxed">{pack.description}</p>
+                <p className="text-gray-500 text-sm leading-relaxed">{pack.idealFor}</p>
               </motion.div>
             ))}
           </div>
 
-          <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">División E-Commerce (Tiendas Online)</h3>
+          <div className="w-full h-px bg-gradient-to-r from-transparent via-[#00d4ff]/30 to-transparent mb-16"></div>
+
+          <h3 className="text-2xl font-bold text-white mb-8 text-center">División E-Commerce (Tiendas Online)</h3>
           <div className="grid md:grid-cols-3 gap-8">
             {ecommercePacks.map((pack, index) => (
               <motion.div
@@ -221,11 +242,14 @@ const Creative = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="creative-gradient rounded-xl p-6 text-white hover-scale card-glow"
+                className="card-futuristic p-8 group"
               >
-                <h4 className="text-xl font-bold mb-3">{pack.name}</h4>
-                <p className="text-white/90 mb-4">{pack.description}</p>
-                <p className="text-white/70 text-sm">{pack.idealFor}</p>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-2 h-2 rounded-full bg-[#00d4ff]"></div>
+                  <h4 className="text-xl font-bold text-white">{pack.name}</h4>
+                </div>
+                <p className="text-gray-300 mb-4 leading-relaxed">{pack.description}</p>
+                <p className="text-gray-500 text-sm leading-relaxed">{pack.idealFor}</p>
               </motion.div>
             ))}
           </div>
@@ -233,7 +257,7 @@ const Creative = () => {
       </section>
 
       {/* Beneficios de trabajar con Creative */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-[#12121a]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -242,7 +266,8 @@ const Creative = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-5xl font-bold gradient-text mb-8">
+            <div className="line-accent mx-auto mb-6"></div>
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
               Beneficios de trabajar con Creative
             </h2>
           </motion.div>
@@ -260,10 +285,10 @@ const Creative = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="text-center p-6 rounded-xl bg-gray-50 hover-scale"
+                className="card-futuristic text-center p-6 group"
               >
-                <CheckCircle className="h-8 w-8 text-[#1fd0ff] mx-auto mb-4" />
-                <p className="text-lg font-semibold text-gray-800">
+                <CheckCircle className="h-8 w-8 text-[#00d4ff] mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                <p className="text-lg font-semibold text-white">
                   {benefit}
                 </p>
               </motion.div>
@@ -273,8 +298,12 @@ const Creative = () => {
       </section>
 
       {/* CTA Final */}
-      <section className="section-padding creative-gradient">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative section-padding bg-[#0a0a0f] overflow-hidden">
+        {/* Gradient Orbs */}
+        <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-[#0066ff] rounded-full blur-[120px] opacity-20 -translate-y-1/2"></div>
+        <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-[#00d4ff] rounded-full blur-[120px] opacity-20 -translate-y-1/2"></div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -288,7 +317,7 @@ const Creative = () => {
             <Button 
               onClick={handleCTA}
               size="lg" 
-              className="bg-[#1fd0ff] hover:bg-white text-black font-bold px-12 py-6 text-xl"
+              className="btn-futuristic px-12 py-6 text-xl rounded-full"
             >
               Quiero mi propuesta Creative
               <ArrowRight className="ml-2 h-6 w-6" />

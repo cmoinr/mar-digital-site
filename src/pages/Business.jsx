@@ -61,8 +61,15 @@ const Business = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 business-gradient">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative pt-32 pb-20 bg-[#0a0a0f] overflow-hidden">
+        {/* Grid Pattern Background */}
+        <div className="absolute inset-0 grid-pattern opacity-20"></div>
+        
+        {/* Gradient Orbs */}
+        <div className="absolute top-20 left-1/4 w-96 h-96 bg-[#8cc63f] rounded-full blur-[120px] opacity-20 animate-pulse"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#369c08] rounded-full blur-[120px] opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -72,12 +79,12 @@ const Business = () => {
             <img 
               src="https://horizons-cdn.hostinger.com/a6ca65f8-09dc-4ddf-a714-07c8ebf24d62/logo_rebrand---mar-bussines---entrega-01-F8M0i.png" 
               alt="Mar Digital Business" 
-              className="w-48 h-auto mx-auto mb-8"
+              className="w-48 h-auto mx-auto mb-8 brightness-0 invert"
             />
             <h1 className="text-4xl md:text-6xl font-bold text-white">
               Estrategia y consultoría para hacer crecer tu empresa.
             </h1>
-            <p className="text-lg md:text-xl text-white/90 max-w-4xl mx-auto">
+            <p className="text-lg md:text-xl text-gray-400 max-w-4xl mx-auto">
               En Mar Digital Business te ayudamos a estructurar tu negocio con modelos sólidos, 
               transformación digital y gestión financiera avanzada. No entregamos solo diagnósticos, 
               sino rutas claras de crecimiento.
@@ -87,7 +94,7 @@ const Business = () => {
       </section>
 
       {/* Servicios Business */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-[#12121a]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -96,7 +103,8 @@ const Business = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-5xl font-bold gradient-text mb-8">
+            <div className="line-accent mx-auto mb-6"></div>
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
               Servicios Business
             </h2>
           </motion.div>
@@ -109,13 +117,15 @@ const Business = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-gray-50 rounded-xl p-6 hover-scale card-glow"
+                className="card-futuristic p-6 group"
               >
                 <div className="flex justify-center mb-4">
-                  {service.icon}
+                  <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-[#8cc63f] to-[#369c08] flex items-center justify-center">
+                    {React.cloneElement(service.icon, { className: 'h-8 w-8 text-white' })}
+                  </div>
                 </div>
-                <h3 className="text-lg font-bold mb-4 text-center">{service.title}</h3>
-                <p className="text-gray-600 text-center text-sm">{service.description}</p>
+                <h3 className="text-lg font-bold mb-4 text-center text-white">{service.title}</h3>
+                <p className="text-gray-400 text-center text-sm leading-relaxed">{service.description}</p>
               </motion.div>
             ))}
           </div>
@@ -123,7 +133,7 @@ const Business = () => {
       </section>
 
       {/* Beneficios */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-[#0a0a0f]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -132,10 +142,11 @@ const Business = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-5xl font-bold gradient-text mb-8">
+            <div className="line-accent mx-auto mb-6"></div>
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
               ¿Por qué trabajar con Business?
             </h2>
-            <p className="text-lg md:text-xl text-gray-600">
+            <p className="text-lg md:text-xl text-gray-400">
               Consultoría de alto nivel con entregables concretos
             </p>
           </motion.div>
@@ -153,10 +164,10 @@ const Business = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="text-center p-6 rounded-xl bg-gray-50 hover-scale"
+                className="card-futuristic text-center p-6 group"
               >
-                <CheckCircle className="h-8 w-8 text-[#8cc63f] mx-auto mb-4" />
-                <p className="text-lg font-semibold text-gray-800">
+                <CheckCircle className="h-8 w-8 text-[#8cc63f] mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                <p className="text-lg font-semibold text-white">
                   {benefit}
                 </p>
               </motion.div>
@@ -166,7 +177,7 @@ const Business = () => {
       </section>
 
       {/* Metodologías & Herramientas */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-[#12121a]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -175,7 +186,8 @@ const Business = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-8">
+            <div className="line-accent mx-auto mb-6"></div>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Metodologías y entregables profesionales
             </h2>
           </motion.div>
@@ -186,25 +198,25 @@ const Business = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl p-8 shadow-lg hover-scale card-glow"
+              className="card-futuristic p-8 group"
             >
-              <BarChart3 className="h-12 w-12 text-[#075296] mb-6" />
-              <h3 className="text-2xl font-bold mb-4">Metodologías</h3>
-              <ul className="space-y-3 text-gray-600">
+              <BarChart3 className="h-12 w-12 text-[#8cc63f] mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-2xl font-bold mb-4 text-white">Metodologías</h3>
+              <ul className="space-y-3 text-gray-400">
                 <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#8cc63f]"></span>
                   Canvas de modelo de negocio
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#8cc63f]"></span>
                   DCF y múltiplos de mercado
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#8cc63f]"></span>
                   VAN, TIR, Payback
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#8cc63f]"></span>
                   Análisis de madurez digital
                 </li>
               </ul>
@@ -215,25 +227,25 @@ const Business = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl p-8 shadow-lg hover-scale card-glow"
+              className="card-futuristic p-8 group"
             >
-              <TrendingUp className="h-12 w-12 text-[#8cc63f] mb-6" />
-              <h3 className="text-2xl font-bold mb-4">Herramientas</h3>
-              <ul className="space-y-3 text-gray-600">
+              <TrendingUp className="h-12 w-12 text-[#8cc63f] mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-2xl font-bold mb-4 text-white">Herramientas</h3>
+              <ul className="space-y-3 text-gray-400">
                 <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#8cc63f]"></span>
                   Excel avanzado (modelos dinámicos)
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#8cc63f]"></span>
                   Power BI (dashboards interactivos)
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#8cc63f]"></span>
                   Google Analytics & Data Studio
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#8cc63f]"></span>
                   Plataformas de automatización
                 </li>
               </ul>
@@ -244,25 +256,25 @@ const Business = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl p-8 shadow-lg hover-scale card-glow"
+              className="card-futuristic p-8 group"
             >
-              <FileText className="h-12 w-12 text-[#369c08] mb-6" />
-              <h3 className="text-2xl font-bold mb-4">Entregables</h3>
-              <ul className="space-y-3 text-gray-600">
+              <FileText className="h-12 w-12 text-[#8cc63f] mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-2xl font-bold mb-4 text-white">Entregables</h3>
+              <ul className="space-y-3 text-gray-400">
                 <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#8cc63f]"></span>
                   Informes ejecutivos en PDF
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#8cc63f]"></span>
                   Modelos financieros editables
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#8cc63f]"></span>
                   Planes de acción paso a paso
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#8cc63f]"></span>
                   Presentaciones ejecutivas
                 </li>
               </ul>
@@ -272,8 +284,12 @@ const Business = () => {
       </section>
 
       {/* CTA Final */}
-      <section className="section-padding business-gradient">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative section-padding bg-[#0a0a0f] overflow-hidden">
+        {/* Gradient Orbs */}
+        <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-[#8cc63f] rounded-full blur-[120px] opacity-20 -translate-y-1/2"></div>
+        <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-[#369c08] rounded-full blur-[120px] opacity-20 -translate-y-1/2"></div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -287,7 +303,7 @@ const Business = () => {
             <Button 
               onClick={handleCTA}
               size="lg" 
-              className="bg-[#8cc63f] hover:bg-white text-black font-bold px-12 py-6 text-xl"
+              className="btn-futuristic px-12 py-6 text-xl rounded-full"
             >
               Solicita tu consultoría Business
               <ArrowRight className="ml-2 h-6 w-6" />
