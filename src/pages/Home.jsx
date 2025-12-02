@@ -294,7 +294,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Nuestras Divisiones - Cards Futuristas */}
+      {/* Nuestras Divisiones - Cards con Hover Expandible */}
       <section className="section-padding bg-[#12121a] relative overflow-hidden">
         {/* Subtle gradient */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-[#00d4ff]/20 to-transparent"></div>
@@ -320,24 +320,52 @@ const Home = () => {
               whileInView={{ opacity: 1, x: 0 }} 
               transition={{ duration: 0.8 }} 
               viewport={{ once: true }} 
-              className="card-futuristic rounded-2xl p-10 group"
+              className="group relative h-28 hover:h-80 transition-all duration-500 ease-out rounded-2xl overflow-hidden cursor-pointer"
             >
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#0066ff] to-[#00d4ff] flex items-center justify-center">
-                  <Sparkles className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-2xl font-medium text-white">Mar Digital Creative</h3>
+              {/* Background Image - Solo visible en hover */}
+              <div className="absolute inset-0 z-0">
+                <img 
+                  src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1" 
+                  alt="Creative background"
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] via-[#0a0a0f]/80 to-[#0a0a0f]/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
-              <p className="text-lg text-gray-300 mb-4">
-                Diseño Web, Branding, Social Media y Marketing Digital.
-              </p>
-              <p className="text-gray-500 mb-8">
-                Para emprendedores y empresas que buscan identidad sólida y presencia real en línea.
-              </p>
-              <div className="h-px w-full bg-gradient-to-r from-[#0066ff]/50 to-transparent mb-6"></div>
-              <span className="text-[#00d4ff] text-sm font-medium flex items-center gap-2 group-hover:gap-4 transition-all cursor-pointer">
-                Explorar servicios <ArrowRight className="w-4 h-4" />
-              </span>
+              
+              {/* Card Background por defecto */}
+              <div className="absolute inset-0 z-0 bg-[#12121a] border border-white/10 rounded-2xl group-hover:border-[#00d4ff]/30 transition-all duration-500"></div>
+              
+              {/* Contenido */}
+              <div className="relative z-10 p-8 h-full flex flex-col">
+                {/* Header - Siempre visible */}
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#0066ff] to-[#00d4ff] flex items-center justify-center shrink-0">
+                    <Sparkles className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-medium text-white">Mar Digital Creative</h3>
+                </div>
+                
+                {/* Contenido expandible */}
+                <div className="mt-6 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 translate-y-4 group-hover:translate-y-0">
+                  <p className="text-lg text-gray-200 mb-3">
+                    Diseño Web, Branding, Social Media y Marketing Digital.
+                  </p>
+                  <p className="text-gray-400 mb-6">
+                    Para emprendedores y empresas que buscan identidad sólida y presencia real en línea.
+                  </p>
+                  <div className="h-px w-full bg-gradient-to-r from-[#00d4ff]/50 to-transparent mb-5"></div>
+                  <span 
+                    onClick={() => navigate('/creative')}
+                    className="text-[#00d4ff] text-sm font-medium flex items-center gap-2 hover:gap-4 transition-all"
+                  >
+                    Explorar servicios <ArrowRight className="w-4 h-4" />
+                  </span>
+                </div>
+              </div>
+              
+              {/* Glow effect en hover */}
+              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none shadow-[0_0_60px_-15px_rgba(0,212,255,0.3)]"></div>
             </motion.div>
 
             {/* Mar Digital Business */}
@@ -346,24 +374,52 @@ const Home = () => {
               whileInView={{ opacity: 1, x: 0 }} 
               transition={{ duration: 0.8 }} 
               viewport={{ once: true }} 
-              className="card-futuristic rounded-2xl p-10 group"
+              className="group relative h-28 hover:h-80 transition-all duration-500 ease-out rounded-2xl overflow-hidden cursor-pointer"
             >
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#0066ff] to-[#00d4ff] flex items-center justify-center">
-                  <BarChart3 className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-2xl font-medium text-white">Mar Digital Business</h3>
+              {/* Background Image - Solo visible en hover */}
+              <div className="absolute inset-0 z-0">
+                <img 
+                  src="https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1" 
+                  alt="Business background"
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] via-[#0a0a0f]/80 to-[#0a0a0f]/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
-              <p className="text-lg text-gray-300 mb-4">
-                Consultoría estratégica, modelos de negocio y transformación digital.
-              </p>
-              <p className="text-gray-500 mb-8">
-                Para empresas que necesitan claridad, estructura y rutas de crecimiento.
-              </p>
-              <div className="h-px w-full bg-gradient-to-r from-[#0066ff]/50 to-transparent mb-6"></div>
-              <span className="text-[#00d4ff] text-sm font-medium flex items-center gap-2 group-hover:gap-4 transition-all cursor-pointer">
-                Explorar servicios <ArrowRight className="w-4 h-4" />
-              </span>
+              
+              {/* Card Background por defecto */}
+              <div className="absolute inset-0 z-0 bg-[#12121a] border border-white/10 rounded-2xl group-hover:border-[#00d4ff]/30 transition-all duration-500"></div>
+              
+              {/* Contenido */}
+              <div className="relative z-10 p-8 h-full flex flex-col">
+                {/* Header - Siempre visible */}
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#0066ff] to-[#00d4ff] flex items-center justify-center shrink-0">
+                    <BarChart3 className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-medium text-white">Mar Digital Business</h3>
+                </div>
+                
+                {/* Contenido expandible */}
+                <div className="mt-6 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 translate-y-4 group-hover:translate-y-0">
+                  <p className="text-lg text-gray-200 mb-3">
+                    Consultoría estratégica, modelos de negocio y transformación digital.
+                  </p>
+                  <p className="text-gray-400 mb-6">
+                    Para empresas que necesitan claridad, estructura y rutas de crecimiento.
+                  </p>
+                  <div className="h-px w-full bg-gradient-to-r from-[#00d4ff]/50 to-transparent mb-5"></div>
+                  <span 
+                    onClick={() => navigate('/business')}
+                    className="text-[#00d4ff] text-sm font-medium flex items-center gap-2 hover:gap-4 transition-all"
+                  >
+                    Explorar servicios <ArrowRight className="w-4 h-4" />
+                  </span>
+                </div>
+              </div>
+              
+              {/* Glow effect en hover */}
+              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none shadow-[0_0_60px_-15px_rgba(0,212,255,0.3)]"></div>
             </motion.div>
           </div>
         </div>
