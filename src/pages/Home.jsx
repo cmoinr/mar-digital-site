@@ -196,12 +196,103 @@ const Home = () => {
 
       {/* Hero Section - Minimalista y Futurista */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a0a0f]">
+        {/* Animated Pixelated Waves Background */}
+        <div className="absolute inset-0 opacity-40">
+          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="wave1" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+                <rect width="80" height="80" fill="transparent"/>
+                <rect className="wave-pixel" x="0" y="20" width="20" height="20" fill="#0066ff" opacity="0.15">
+                  <animate attributeName="opacity" values="0.15;0.3;0.15" dur="4s" repeatCount="indefinite"/>
+                </rect>
+                <rect className="wave-pixel" x="20" y="30" width="20" height="20" fill="#0066ff" opacity="0.12">
+                  <animate attributeName="opacity" values="0.12;0.25;0.12" dur="4s" begin="0.2s" repeatCount="indefinite"/>
+                </rect>
+                <rect className="wave-pixel" x="40" y="25" width="20" height="20" fill="#0077ff" opacity="0.18">
+                  <animate attributeName="opacity" values="0.18;0.35;0.18" dur="4s" begin="0.4s" repeatCount="indefinite"/>
+                </rect>
+                <rect className="wave-pixel" x="60" y="15" width="20" height="20" fill="#0088ff" opacity="0.14">
+                  <animate attributeName="opacity" values="0.14;0.28;0.14" dur="4s" begin="0.6s" repeatCount="indefinite"/>
+                </rect>
+              </pattern>
+              
+              <pattern id="wave2" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+                <rect width="100" height="100" fill="transparent"/>
+                <rect x="0" y="40" width="25" height="25" fill="#00d4ff" opacity="0.1">
+                  <animate attributeName="opacity" values="0.1;0.22;0.1" dur="5s" repeatCount="indefinite"/>
+                </rect>
+                <rect x="25" y="50" width="25" height="25" fill="#00d4ff" opacity="0.08">
+                  <animate attributeName="opacity" values="0.08;0.18;0.08" dur="5s" begin="0.3s" repeatCount="indefinite"/>
+                </rect>
+                <rect x="50" y="45" width="25" height="25" fill="#00bbff" opacity="0.12">
+                  <animate attributeName="opacity" values="0.12;0.25;0.12" dur="5s" begin="0.6s" repeatCount="indefinite"/>
+                </rect>
+                <rect x="75" y="35" width="25" height="25" fill="#00aaff" opacity="0.09">
+                  <animate attributeName="opacity" values="0.09;0.2;0.09" dur="5s" begin="0.9s" repeatCount="indefinite"/>
+                </rect>
+              </pattern>
+              
+              <pattern id="wave3" x="0" y="0" width="120" height="120" patternUnits="userSpaceOnUse">
+                <rect width="120" height="120" fill="transparent"/>
+                <rect x="0" y="60" width="30" height="30" fill="#0066ff" opacity="0.06">
+                  <animate attributeName="opacity" values="0.06;0.15;0.06" dur="6s" repeatCount="indefinite"/>
+                </rect>
+                <rect x="30" y="70" width="30" height="30" fill="#0077ff" opacity="0.08">
+                  <animate attributeName="opacity" values="0.08;0.18;0.08" dur="6s" begin="0.4s" repeatCount="indefinite"/>
+                </rect>
+                <rect x="60" y="65" width="30" height="30" fill="#0088ff" opacity="0.07">
+                  <animate attributeName="opacity" values="0.07;0.16;0.07" dur="6s" begin="0.8s" repeatCount="indefinite"/>
+                </rect>
+                <rect x="90" y="55" width="30" height="30" fill="#0099ff" opacity="0.05">
+                  <animate attributeName="opacity" values="0.05;0.14;0.05" dur="6s" begin="1.2s" repeatCount="indefinite"/>
+                </rect>
+              </pattern>
+            </defs>
+            
+            {/* Layer 1 - Moving left to right */}
+            <rect width="100%" height="100%" fill="url(#wave1)">
+              <animateTransform
+                attributeName="transform"
+                type="translate"
+                from="-80 0"
+                to="0 0"
+                dur="8s"
+                repeatCount="indefinite"
+              />
+            </rect>
+            
+            {/* Layer 2 - Moving left to right (slower) */}
+            <rect width="100%" height="100%" fill="url(#wave2)">
+              <animateTransform
+                attributeName="transform"
+                type="translate"
+                from="-100 0"
+                to="0 0"
+                dur="12s"
+                repeatCount="indefinite"
+              />
+            </rect>
+            
+            {/* Layer 3 - Moving left to right (slowest) */}
+            <rect width="100%" height="100%" fill="url(#wave3)">
+              <animateTransform
+                attributeName="transform"
+                type="translate"
+                from="-120 0"
+                to="0 0"
+                dur="16s"
+                repeatCount="indefinite"
+              />
+            </rect>
+          </svg>
+        </div>
+        
         {/* Grid Pattern Background */}
-        <div className="absolute inset-0 grid-pattern opacity-50"></div>
+        <div className="absolute inset-0 grid-pattern opacity-20"></div>
         
         {/* Gradient Orbs */}
-        <div className="absolute top-1/4 -left-32 w-96 h-96 bg-[#0066ff] rounded-full blur-[150px] opacity-20"></div>
-        <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-[#00d4ff] rounded-full blur-[150px] opacity-20"></div>
+        <div className="absolute top-1/4 -left-32 w-96 h-96 bg-[#0066ff] rounded-full blur-[150px] opacity-15"></div>
+        <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-[#00d4ff] rounded-full blur-[150px] opacity-15"></div>
         
         <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 text-center">
           <motion.div 
@@ -232,7 +323,7 @@ const Home = () => {
               </AnimatePresence>
             </motion.div>
 
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-medium text-white leading-relaxed mb-6 tracking-relaxed">
+            <h1 className="text-5xl md:text-8xl lg:text-9xl font-bold text-white leading-relaxed mb-6 tracking-relaxed">
               Impulsa tu marca
               <span className="block gradient-text-light pb-4">en digital</span>
             </h1>
@@ -273,33 +364,51 @@ const Home = () => {
       <CollageSection />
 
       {/* ¿Quiénes somos? - Minimalista */}
-      <section className="section-padding bg-[#0a0a0f] relative">
-        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+      <section className="section-padding relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.pexels.com/photos/29049900/pexels-photo-29049900.jpeg" 
+            alt="Team background"
+            loading="lazy"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0f]/95 via-[#0a0a0f]/50 to-[#0a0a0f]/20"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 40 }} 
             whileInView={{ opacity: 1, y: 0 }} 
             transition={{ duration: 0.8 }} 
-            viewport={{ once: true }} 
-            className="text-center"
+            viewport={{ once: true }}
+            className="flex flex-col"
           >
-            <div className="line-accent mx-auto mb-8"></div>
-            <h2 className="text-4xl md:text-6xl font-medium text-white mb-10">
+            <div className="line-accent mb-8 mx-auto"></div>
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-16 text-center">
               ¿Quiénes <span className="gradient-text">somos</span>?
             </h2>
-            <p className="text-xl md:text-2xl text-gray-400 leading-relaxed max-w-3xl mx-auto">
-              Un equipo que fusiona diseño creativo con consultoría estratégica.
-              Construimos marcas fuertes y negocios listos para escalar en el mundo digital.
-            </p>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
+                Un equipo que fusiona diseño creativo con consultoría estratégica.
+                Construimos marcas fuertes y negocios listos para escalar en el mundo digital.
+              </p>
+              <div></div>
+            </div>
           </motion.div>
         </div>
       </section>
 
       {/* Nuestras Divisiones - Cards con Hover Expandible */}
-      <section className="section-padding bg-[#12121a] relative overflow-hidden">
-        {/* Subtle gradient */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-[#00d4ff]/20 to-transparent"></div>
+      <section className="section-padding bg-[#0a0a0f] relative overflow-hidden">
+        {/* Grid Pattern Background */}
+        <div className="absolute inset-0 grid-pattern opacity-20"></div>
         
-        <div className="max-w-6xl mx-auto px-6 lg:px-8">
+        {/* Gradient Orbs */}
+        <div className="absolute top-20 left-1/4 w-96 h-96 bg-[#0066ff] rounded-full blur-[120px] opacity-20 animate-pulse"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#00d4ff] rounded-full blur-[120px] opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
+        
+        <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 40 }} 
             whileInView={{ opacity: 1, y: 0 }} 
@@ -308,7 +417,7 @@ const Home = () => {
             className="text-center mb-20"
           >
             <div className="line-accent mx-auto mb-8"></div>
-            <h2 className="text-4xl md:text-6xl font-medium text-white">
+            <h2 className="text-4xl md:text-6xl font-bold text-white">
               Nuestras <span className="gradient-text">Divisiones</span>
             </h2>
           </motion.div>
@@ -422,12 +531,34 @@ const Home = () => {
               <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none shadow-[0_0_60px_-15px_rgba(0,212,255,0.3)]"></div>
             </motion.div>
           </div>
+          {/* Botón */}
+          <div className="text-center mt-12">
+            <Button 
+              onClick={() => navigate('/servicios')} 
+              size="lg" 
+              className="btn-outline-futuristic border-[#00d4ff]/40 text-[#00d4ff] hover:bg-[#00d4ff]/10 px-10 py-6 text-lg rounded-full"
+            >
+              Ver todos los servicios
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </div>
         </div>
       </section>
 
       {/* Beneficios - Minimalista */}
-      <section className="section-padding bg-[#0a0a0f] relative">
-        <div className="max-w-6xl mx-auto px-6 lg:px-8">
+      <section className="section-padding relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.pexels.com/photos/19926784/pexels-photo-19926784.jpeg" 
+            alt="Benefits background"
+            loading="lazy"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0f]/95 via-[#0a0a0f]/70 to-[#0a0a0f]/50"></div>
+        </div>
+
+        <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 40 }} 
             whileInView={{ opacity: 1, y: 0 }} 
@@ -436,12 +567,12 @@ const Home = () => {
             className="text-center mb-20"
           >
             <div className="line-accent mx-auto mb-8"></div>
-            <h2 className="text-4xl md:text-6xl font-medium text-white">
+            <h2 className="text-4xl md:text-6xl font-bold text-white">
               ¿Por qué <span className="gradient-text">elegirnos</span>?
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 gap-8">
             {[
               {
                 icon: <Target className="h-6 w-6" />,
@@ -470,7 +601,7 @@ const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }} 
                 transition={{ duration: 0.6, delay: index * 0.1 }} 
                 viewport={{ once: true }} 
-                className="text-center p-8 rounded-2xl card-futuristic"
+                className="text-center p-10 rounded-2xl card-futuristic"
               >
                 <div className="w-14 h-14 mx-auto mb-6 rounded-xl bg-[#00d4ff]/10 flex items-center justify-center text-[#00d4ff]">
                   {benefit.icon}
@@ -500,7 +631,7 @@ const Home = () => {
             className="text-center mb-16"
           >
             <div className="line-accent mx-auto mb-8"></div>
-            <h2 className="text-4xl md:text-6xl font-medium text-white mb-6">
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
               Servicios <span className="gradient-text">destacados</span>
             </h2>
             <p className="text-xl text-gray-400">Lo que podemos hacer por ti</p>
@@ -511,10 +642,21 @@ const Home = () => {
       </section>
 
       {/* CTA Final - Impactante */}
-      <section className="section-padding bg-[#0a0a0f] relative overflow-hidden">
+      <section className="section-padding relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.pexels.com/photos/12768099/pexels-photo-12768099.jpeg" 
+            alt="CTA background"
+            loading="lazy"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0f]/95 via-[#0a0a0f]/70 to-[#0a0a0f]/50"></div>
+        </div>
+
         {/* Gradient Orbs */}
-        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-[#0066ff] rounded-full blur-[200px] opacity-10"></div>
-        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-[#00d4ff] rounded-full blur-[200px] opacity-10"></div>
+        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-[#0066ff] rounded-full blur-[200px] opacity-10 z-0"></div>
+        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-[#00d4ff] rounded-full blur-[200px] opacity-10 z-0"></div>
         
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center relative z-10">
           <motion.div 
@@ -524,7 +666,7 @@ const Home = () => {
             viewport={{ once: true }} 
             className="space-y-10"
           >
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-medium text-white leading-tight">
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
               Haz crecer tu negocio
               <span className="block gradient-text-light">hoy mismo</span>
             </h2>
