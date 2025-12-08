@@ -1,13 +1,15 @@
 
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,7 +25,7 @@ const Navbar = () => {
     { name: 'Briefs', path: '/briefs' },
     { name: 'Creative', path: '/creative' },
     { name: 'Business', path: '/business' },
-    { name: 'Contacto', path: '/contacto' }
+    { name: 'Blog', path: '/blog' }
   ];
 
   return (
@@ -59,6 +61,15 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
+            
+            {/* CTA Button - Contacto */}
+            <Button
+              onClick={() => navigate('/contacto')}
+              className="px-6 py-2.5 bg-gradient-to-r from-[#0066ff] to-[#00d4ff] hover:shadow-lg hover:shadow-[#00d4ff]/40 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-105 flex items-center gap-2 group"
+            >
+              Contacto
+              <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -94,6 +105,20 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
+            
+            {/* Mobile CTA Button - Contacto */}
+            <div className="px-4 pt-4 pb-2">
+              <Button
+                onClick={() => {
+                  navigate('/contacto');
+                  setIsOpen(false);
+                }}
+                className="w-full px-6 py-3 bg-gradient-to-r from-[#0066ff] to-[#00d4ff] hover:shadow-lg hover:shadow-[#00d4ff]/40 text-white font-semibold rounded-xl transition-all duration-300 flex items-center justify-center gap-2 group"
+              >
+                Contacto
+                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+              </Button>
+            </div>
           </motion.div>
         )}
       </div>

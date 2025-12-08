@@ -153,10 +153,22 @@ const Business = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              "Metodologías internacionales adaptadas a tu realidad",
-              "Enfoque premium: diagnóstico + plan de acción",
-              "Entregables claros (informes PDF, modelos en Excel/Power BI)",
-              "Acompañamiento estratégico hasta implementar resultados"
+              {
+                title: "Metodologías internacionales adaptadas a tu realidad",
+                description: "Aplicamos frameworks probados globalmente, ajustados al contexto de tu empresa."
+              },
+              {
+                title: "Enfoque premium: diagnóstico + plan de acción",
+                description: "No solo identificamos problemas, te damos la ruta exacta para solucionarlos."
+              },
+              {
+                title: "Entregables claros (informes PDF, modelos en Excel/Power BI)",
+                description: "Documentación profesional y herramientas prácticas listas para usar."
+              },
+              {
+                title: "Acompañamiento estratégico hasta implementar resultados",
+                description: "Te apoyamos en la ejecución para que las estrategias se conviertan en realidad."
+              }
             ].map((benefit, index) => (
               <motion.div
                 key={index}
@@ -167,8 +179,11 @@ const Business = () => {
                 className="card-futuristic text-center p-6 group"
               >
                 <CheckCircle className="h-8 w-8 text-[#8cc63f] mx-auto mb-4 group-hover:scale-110 transition-transform" />
-                <p className="text-lg font-semibold text-white">
-                  {benefit}
+                <h3 className="text-lg font-semibold text-white mb-3">
+                  {benefit.title}
+                </h3>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  {benefit.description}
                 </p>
               </motion.div>
             ))}

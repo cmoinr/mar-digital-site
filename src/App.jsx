@@ -11,6 +11,7 @@ import Briefs from '@/pages/Briefs';
 import Creative from '@/pages/Creative';
 import Business from '@/pages/Business';
 import Contact from '@/pages/Contact';
+import Blog from '@/pages/Blog';
 import { Toaster } from '@/components/ui/toaster';
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path="/briefs" element={<Briefs />} />
           <Route path="/creative" element={<Creative />} />
           <Route path="/business" element={<Business />} />
+          <Route path="/blog" element={<Blog />} />
           <Route path="/contacto" element={<Contact />} />
         </Routes>
         <Footer />

@@ -274,10 +274,22 @@ const Creative = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              "Diseño profesional con propósito",
-              "Identidad de marca sólida y coherente",
-              "Contenido pensado para atraer y vender",
-              "Soluciones escalables a la medida de tu negocio"
+              {
+                title: "Diseño profesional con propósito",
+                description: "Cada elemento visual está pensado para cumplir objetivos claros de tu negocio."
+              },
+              {
+                title: "Identidad de marca sólida y coherente",
+                description: "Tu marca se verá profesional y consistente en todos los puntos de contacto."
+              },
+              {
+                title: "Contenido pensado para atraer y vender",
+                description: "Creamos mensajes y diseños que conectan emocionalmente y generan conversiones."
+              },
+              {
+                title: "Soluciones escalables a la medida de tu negocio",
+                description: "Servicios que crecen contigo, desde emprendimiento hasta empresa consolidada."
+              }
             ].map((benefit, index) => (
               <motion.div
                 key={index}
@@ -288,8 +300,11 @@ const Creative = () => {
                 className="card-futuristic text-center p-6 group"
               >
                 <CheckCircle className="h-8 w-8 text-[#00d4ff] mx-auto mb-4 group-hover:scale-110 transition-transform" />
-                <p className="text-lg font-semibold text-white">
-                  {benefit}
+                <h3 className="text-lg font-semibold text-white mb-3">
+                  {benefit.title}
+                </h3>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  {benefit.description}
                 </p>
               </motion.div>
             ))}
