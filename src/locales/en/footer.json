@@ -1,0 +1,36 @@
+{
+  "tagline": "Boost your brand with design and digital strategy that delivers real results.",
+  "quickLinks": {
+    "title": "Quick Links",
+    "links": [
+      { "name": "Home", "path": "/" },
+      { "name": "Services", "path": "/servicios" },
+      { "name": "Briefs", "path": "/briefs" },
+      { "name": "Creative", "path": "/creative" },
+      { "name": "Business", "path": "/business" },
+      { "name": "Contact", "path": "/contacto" }
+    ]
+  },
+  "contactInfo": {
+    "title": "Contact Information",
+    "email": "hola@mardigital.com",
+    "phone": "+34 123 456 789",
+    "address": "Madrid, Spain"
+  },
+  "companyLinks": {
+    "title": "Company",
+    "links": [
+      { "name": "Cookie Policy", "path": "#" },
+      { "name": "Privacy Policy", "path": "#" },
+      { "name": "Terms and Conditions", "path": "#" }
+    ]
+  },
+  "social": {
+    "title": "Follow Us",
+    "instagram": "Instagram",
+    "linkedin": "LinkedIn",
+    "facebook": "Facebook",
+    "twitter": "Twitter"
+  },
+  "copyright": "© 2025 Mar Digital. All rights reserved."
+}

@@ -1,0 +1,36 @@
+{
+  "tagline": "Impulsa tu marca con diseño y estrategia digital que genera resultados reales.",
+  "quickLinks": {
+    "title": "Accesos Rápidos",
+    "links": [
+      { "name": "Inicio", "path": "/" },
+      { "name": "Servicios", "path": "/servicios" },
+      { "name": "Briefs", "path": "/briefs" },
+      { "name": "Creative", "path": "/creative" },
+      { "name": "Business", "path": "/business" },
+      { "name": "Contacto", "path": "/contacto" }
+    ]
+  },
+  "contactInfo": {
+    "title": "Datos de Contacto",
+    "email": "hola@mardigital.com",
+    "phone": "+34 123 456 789",
+    "address": "Madrid, España"
+  },
+  "companyLinks": {
+    "title": "Empresa",
+    "links": [
+      { "name": "Política de Cookies", "path": "#" },
+      { "name": "Política de Privacidad", "path": "#" },
+      { "name": "Términos y Condiciones", "path": "#" }
+    ]
+  },
+  "social": {
+    "title": "Síguenos en",
+    "instagram": "Instagram",
+    "linkedin": "LinkedIn",
+    "facebook": "Facebook",
+    "twitter": "Twitter"
+  },
+  "copyright": "© 2025 Mar Digital. Todos los derechos reservados."
+}

@@ -2,34 +2,25 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Instagram, Linkedin, Facebook, Twitter } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
-  const quickLinks = [
-    { name: 'Inicio', path: '/' },
-    { name: 'Servicios', path: '/servicios' },
-    { name: 'Briefs', path: '/briefs' },
-    { name: 'Creative', path: '/creative' },
-    { name: 'Business', path: '/business' },
-    { name: 'Contacto', path: '/contacto' }
-  ];
+  const { t } = useTranslation('footer');
+  const quickLinks = t('quickLinks.links', { returnObjects: true });
 
   const contactInfo = [
-    { icon: Mail, text: 'hola@mardigital.com', href: 'mailto:hola@mardigital.com' },
-    { icon: Phone, text: '+34 123 456 789', href: 'tel:+34123456789' },
-    { icon: MapPin, text: 'Madrid, España', href: null }
+    { icon: Mail, text: t('contactInfo.email'), href: 'mailto:' + t('contactInfo.email') },
+    { icon: Phone, text: t('contactInfo.phone'), href: 'tel:' + t('contactInfo.phone').replace(/\s/g, '') },
+    { icon: MapPin, text: t('contactInfo.address'), href: null }
   ];
 
-  const companyLinks = [
-    { name: 'Política de Cookies', path: '#' },
-    { name: 'Política de Privacidad', path: '#' },
-    { name: 'Términos y Condiciones', path: '#' }
-  ];
+  const companyLinks = t('companyLinks.links', { returnObjects: true });
 
   const socialLinks = [
-    { icon: Instagram, href: 'https://instagram.com', label: 'Instagram' },
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: Facebook, href: 'https://facebook.com', label: 'Facebook' },
-    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' }
+    { icon: Instagram, href: 'https://instagram.com', label: t('social.instagram') },
+    { icon: Linkedin, href: 'https://linkedin.com', label: t('social.linkedin') },
+    { icon: Facebook, href: 'https://facebook.com', label: t('social.facebook') },
+    { icon: Twitter, href: 'https://twitter.com', label: t('social.twitter') }
   ];
 
   return (
@@ -57,8 +48,7 @@ const Footer = () => {
               />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Impulsa tu marca con <span className="text-[#00d4ff] font-semibold">diseño</span> y{' '}
-              <span className="text-[#0066ff] font-semibold">estrategia digital</span> que genera resultados reales.
+              {t('tagline')}
             </p>
             <div className="h-1 w-16 bg-gradient-to-r from-[#0066ff] to-[#00d4ff] rounded-full"></div>
           </motion.div>
@@ -70,7 +60,7 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <h3 className="text-white font-bold text-lg mb-6">Accesos Rápidos</h3>
+            <h3 className="text-white font-bold text-lg mb-6">{t('quickLinks.title')}</h3>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
@@ -93,7 +83,7 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h3 className="text-white font-bold text-lg mb-6">Datos de Contacto</h3>
+            <h3 className="text-white font-bold text-lg mb-6">{t('contactInfo.title')}</h3>
             <ul className="space-y-4">
               {contactInfo.map((item, index) => {
                 const Icon = item.icon;
@@ -131,7 +121,7 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <h3 className="text-white font-bold text-lg mb-6">Empresa</h3>
+            <h3 className="text-white font-bold text-lg mb-6">{t('companyLinks.title')}</h3>
             <ul className="space-y-3">
               {companyLinks.map((link) => (
                 <li key={link.name}>
@@ -161,7 +151,7 @@ const Footer = () => {
         >
           <div className="flex flex-col items-center space-y-6">
             <h4 className="text-white font-semibold text-sm tracking-wider uppercase">
-              Síguenos en
+              {t('social.title')}
             </h4>
             <div className="flex items-center gap-4">
               {socialLinks.map((social, index) => {
@@ -197,7 +187,7 @@ const Footer = () => {
           className="py-6 text-center"
         >
           <p className="text-gray-500 text-sm">
-            © 2025 <span className="text-[#00d4ff] font-semibold">Mar Digital</span>. Todos los derechos reservados.
+            {t('copyright')}
           </p>
         </motion.div>
       </div>

@@ -11,6 +11,7 @@ import blogES from './locales/es/blog.json';
 import creativeES from './locales/es/creative.json';
 import businessES from './locales/es/business.json';
 import homeES from './locales/es/home.json';
+import footerES from './locales/es/footer.json';
 
 import commonEN from './locales/en/common.json';
 import servicesEN from './locales/en/services.json';
@@ -20,6 +21,7 @@ import creativeEN from './locales/en/creative.json';
 import businessEN from './locales/en/business.json';
 import blogEN from './locales/en/blog.json';
 import homeEN from './locales/en/home.json';
+import footerEN from './locales/en/footer.json';
 
 const resources = {
   es: {
@@ -30,7 +32,8 @@ const resources = {
     blog: blogES,
     creative: creativeES,
     business: businessES,
-    home: homeES
+    home: homeES,
+    footer: footerES
   },
   en: {
     common: commonEN,
@@ -40,7 +43,8 @@ const resources = {
     creative: creativeEN,
     business: businessEN,
     blog: blogEN,
-    home: homeEN
+    home: homeEN,
+    footer: footerEN
   }
 };
 
