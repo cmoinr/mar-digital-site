@@ -3,8 +3,10 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 import Home from '@/pages/Home';
 import Services from '@/pages/Services';
+import Briefs from '@/pages/Briefs';
 import Creative from '@/pages/Creative';
 import Business from '@/pages/Business';
 import Contact from '@/pages/Contact';
@@ -22,10 +24,12 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/servicios" element={<Services />} />
+          <Route path="/briefs" element={<Briefs />} />
           <Route path="/creative" element={<Creative />} />
           <Route path="/business" element={<Business />} />
           <Route path="/contacto" element={<Contact />} />
         </Routes>
+        <Footer />
         <Toaster />
       </div>
     </>

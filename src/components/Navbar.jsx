@@ -20,6 +20,7 @@ const Navbar = () => {
   const navItems = [
     { name: 'Inicio', path: '/' },
     { name: 'Servicios', path: '/servicios' },
+    { name: 'Briefs', path: '/briefs' },
     { name: 'Creative', path: '/creative' },
     { name: 'Business', path: '/business' },
     { name: 'Contacto', path: '/contacto' }
