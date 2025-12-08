@@ -138,12 +138,12 @@ const Briefs = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   whileHover={{ y: -10, scale: 1.02 }}
-                  className="group relative bg-gradient-to-br from-[#12121a] to-[#0a0a0f] border border-[#00d4ff]/20 rounded-2xl p-8 hover:border-[#00d4ff]/50 transition-all duration-300"
+                  className="group relative bg-gradient-to-br from-[#12121a] to-[#0a0a0f] border border-[#00d4ff]/20 rounded-2xl p-8 hover:border-[#00d4ff]/50 transition-all duration-300 flex flex-col"
                 >
                   {/* Gradient background on hover */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${brief.color} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`}></div>
                   
-                  <div className="relative z-10">
+                  <div className="relative z-10 flex flex-col h-full">
                     {/* Icon */}
                     <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${brief.color} flex items-center justify-center mb-6`}>
                       <Icon className="w-8 h-8 text-white" />
@@ -155,14 +155,14 @@ const Briefs = () => {
                     </h3>
 
                     {/* Description */}
-                    <p className="text-gray-400 mb-6 leading-relaxed">
+                    <p className="text-gray-400 mb-6 leading-relaxed flex-grow">
                       {brief.description}
                     </p>
 
                     {/* Button */}
                     <Button
                       onClick={() => handleBriefClick(brief.title)}
-                      className={`w-full bg-gradient-to-r ${brief.color} hover:opacity-90 text-white font-semibold py-6 rounded-xl transition-all duration-300 group/btn`}
+                      className={`w-full bg-gradient-to-r ${brief.color} hover:opacity-90 text-white font-semibold py-6 rounded-xl transition-all duration-300 group/btn mt-auto`}
                     >
                       <span>{t('cta.button')}</span>
                       <ArrowRight className="ml-2 w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />

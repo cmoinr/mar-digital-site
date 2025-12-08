@@ -360,17 +360,8 @@ const Home = () => {
       <CollageSection />
 
       {/* ¿Quiénes somos? - Minimalista */}
-      <section className="section-padding relative overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="https://images.pexels.com/photos/29049900/pexels-photo-29049900.jpeg" 
-            alt="Team background"
-            loading="lazy"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0f]/95 via-[#0a0a0f]/50 to-[#0a0a0f]/20"></div>
-        </div>
+      <section className="pt-20 pb-4 px-6 lg:px-8 bg-[#12121a] relative overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-[#00d4ff]/20 to-transparent"></div>
 
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
           <motion.div 
@@ -384,11 +375,18 @@ const Home = () => {
             <h2 className="text-4xl md:text-6xl font-bold text-white mb-16 text-center">
               {t('about.title')} <span className="gradient-text">{t('about.titleHighlight')}</span>?
             </h2>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
                 {t('about.description')}
               </p>
-              <div></div>
+              <div className="flex justify-center lg:justify-end">
+                <img 
+                  src="/src/assets/images/mar-officer-nobg.png"
+                  alt="Mar Digital Team"
+                  loading="lazy"
+                  className="max-w-sm lg:max-w-md w-full h-auto"
+                />
+              </div>
             </div>
           </motion.div>
         </div>
