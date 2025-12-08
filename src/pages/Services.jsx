@@ -161,7 +161,7 @@ const Services = () => {
               className="relative h-96 lg:h-[600px]"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-[#0066ff]/20 to-[#00d4ff]/20 rounded-2xl backdrop-blur-sm border border-white/10"></div>
-              <img alt="A designer sketching ideas on a tablet in a bright, modern studio" className="absolute inset-0 w-full h-full object-cover rounded-2xl opacity-70" src="https://images.pexels.com/photos/31622943/pexels-photo-31622943.jpeg" />
+              <img alt="..." className="absolute inset-0 w-full h-full object-cover rounded-2xl" src="/src/assets/images/mar-digital-draw.jpg" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#12121a] to-transparent rounded-2xl"></div>
             </motion.div>
           </div>
@@ -182,7 +182,7 @@ const Services = () => {
               className="relative h-96 lg:h-[600px] lg:order-first"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-[#0066ff]/20 to-[#00d4ff]/20 rounded-2xl backdrop-blur-sm border border-white/10"></div>
-              <img alt="A team of business professionals collaborating around a table with laptops and documents" className="absolute inset-0 w-full h-full object-cover rounded-2xl mix-blend-luminosity opacity-70" src="https://images.pexels.com/photos/31650385/pexels-photo-31650385.jpeg" />
+              <img alt="..." className="absolute inset-0 w-full h-full object-cover rounded-2xl" src="/src/assets/images/business-mar.png" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] to-transparent rounded-2xl"></div>
             </motion.div>
 

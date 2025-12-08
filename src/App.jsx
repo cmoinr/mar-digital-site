@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
+import FloatingWhatsAppButton from '@/components/FloatingWhatsAppButton';
 import Home from '@/pages/Home';
 import Services from '@/pages/Services';
 import Briefs from '@/pages/Briefs';
@@ -35,6 +36,10 @@ function App() {
         </Routes>
         <Footer />
         <Toaster />
+        <FloatingWhatsAppButton 
+          whatsappLink="https://wa.me/1234567890?text=Hola,%20me%20gustaría%20obtener%20más%20información"
+          showLabel={true}
+        />
       </div>
     </>
   );

@@ -14,7 +14,7 @@ const getServiciosData = (t) => [
     title: t('services.items.0.title'),
     description: t('services.items.0.description'),
     shortDesc: t('services.items.0.shortDesc'),
-    image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&dpr=1"
+    image: "/src/assets/images/mar-art.png"
   },
   {
     title: t('services.items.1.title'),
@@ -623,7 +623,7 @@ const Home = () => {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.pexels.com/photos/12768099/pexels-photo-12768099.jpeg" 
+            src="/src/assets/images/mar-sides.png" 
             alt="CTA background"
             loading="lazy"
             className="absolute inset-0 w-full h-full object-cover"
