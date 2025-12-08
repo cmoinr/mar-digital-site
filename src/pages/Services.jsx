@@ -4,15 +4,14 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Palette, TrendingUp, Globe, BarChart3, Briefcase, Lightbulb, Target } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
+import { useNavigate } from 'react-router-dom';
 
 const Services = () => {
   const { toast } = useToast();
+  const navigate = useNavigate();
 
   const handleCTA = () => {
-    toast({
-      title: "🚧 Esta función no está implementada aún",
-      description: ""
-    });
+    navigate('/contacto');
   };
 
   return (
@@ -140,6 +139,17 @@ const Services = () => {
                   </div>
                 </div>
               </div>
+              
+              <div className="mt-8">
+                <Button 
+                  onClick={handleCTA}
+                  size="lg" 
+                  className="btn-futuristic bg-gradient-to-r from-[#0066ff] to-[#00d4ff] hover:from-[#0077ff] hover:to-[#00e5ff] text-white font-semibold px-10 py-6 text-lg rounded-full w-full"
+                >
+                  Cotizar servicios Creative
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </div>
             </motion.div>
             
             <motion.div
@@ -150,7 +160,7 @@ const Services = () => {
               className="relative h-96 lg:h-[600px]"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-[#0066ff]/20 to-[#00d4ff]/20 rounded-2xl backdrop-blur-sm border border-white/10"></div>
-              <img alt="A designer sketching ideas on a tablet in a bright, modern studio" className="absolute inset-0 w-full h-full object-cover rounded-2xl mix-blend-luminosity opacity-40" src="https://images.unsplash.com/photo-1668337376593-630fbf2980be" />
+              <img alt="A designer sketching ideas on a tablet in a bright, modern studio" className="absolute inset-0 w-full h-full object-cover rounded-2xl opacity-70" src="https://images.pexels.com/photos/31622943/pexels-photo-31622943.jpeg" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#12121a] to-transparent rounded-2xl"></div>
             </motion.div>
           </div>
@@ -171,7 +181,7 @@ const Services = () => {
               className="relative h-96 lg:h-[600px] lg:order-first"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-[#0066ff]/20 to-[#00d4ff]/20 rounded-2xl backdrop-blur-sm border border-white/10"></div>
-              <img alt="A team of business professionals collaborating around a table with laptops and documents" className="absolute inset-0 w-full h-full object-cover rounded-2xl mix-blend-luminosity opacity-40" src="https://images.unsplash.com/photo-1597385196258-b043c8c515d4" />
+              <img alt="A team of business professionals collaborating around a table with laptops and documents" className="absolute inset-0 w-full h-full object-cover rounded-2xl mix-blend-luminosity opacity-70" src="https://images.pexels.com/photos/31650385/pexels-photo-31650385.jpeg" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] to-transparent rounded-2xl"></div>
             </motion.div>
 
@@ -254,15 +264,38 @@ const Services = () => {
                   </div>
                 </div>
               </div>
+              
+              <div className="mt-8">
+                <Button 
+                  onClick={handleCTA}
+                  size="lg" 
+                  className="btn-futuristic bg-gradient-to-r from-[#0066ff] to-[#00d4ff] hover:from-[#0077ff] hover:to-[#00e5ff] text-white font-semibold px-10 py-6 text-lg rounded-full w-full"
+                >
+                  Cotizar servicios Business
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </div>
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* CTA Final */}
-      <section className="section-padding bg-[#12121a] relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-[#0066ff] rounded-full blur-[200px] opacity-10"></div>
-        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-[#00d4ff] rounded-full blur-[200px] opacity-10"></div>
+      <section className="section-padding relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://images.pexels.com/photos/31687152/pexels-photo-31687152.jpeg"
+            alt="CTA background"
+            loading="lazy"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0f]/95 via-[#0a0a0f]/70 to-[#0a0a0f]/50"></div>
+        </div>
+
+        {/* Gradient Orbs */}
+        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-[#0066ff] rounded-full blur-[200px] opacity-10 z-0"></div>
+        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-[#00d4ff] rounded-full blur-[200px] opacity-10 z-0"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.div

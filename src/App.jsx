@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import ScrollToTop from '@/components/ScrollToTop';
 import Home from '@/pages/Home';
 import Services from '@/pages/Services';
 import Briefs from '@/pages/Briefs';
@@ -21,6 +22,7 @@ function App() {
       </Helmet>
       <div className="min-h-screen">
         <Navbar />
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/servicios" element={<Services />} />
