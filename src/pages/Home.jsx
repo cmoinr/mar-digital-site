@@ -7,6 +7,9 @@ import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
 import { useTranslation } from 'react-i18next';
 import CollageSection from '@/components/CollageSection';
+import marArtImage from '@/assets/images/mar-art.png';
+import marOfficerImage from '@/assets/images/mar-officer-nobg.png';
+import marSidesImage from '@/assets/images/mar-sides.png';
 
 // Datos de servicios - URLs optimizadas con compresión
 const getServiciosData = (t) => [
@@ -14,7 +17,7 @@ const getServiciosData = (t) => [
     title: t('services.items.0.title'),
     description: t('services.items.0.description'),
     shortDesc: t('services.items.0.shortDesc'),
-    image: "/src/assets/images/mar-art.png"
+    image: marArtImage
   },
   {
     title: t('services.items.1.title'),
@@ -381,7 +384,7 @@ const Home = () => {
               </p>
               <div className="flex justify-center lg:justify-end">
                 <img 
-                  src="/src/assets/images/mar-officer-nobg.png"
+                  src={marOfficerImage}
                   alt="Mar Digital Team"
                   loading="lazy"
                   className="max-w-sm lg:max-w-md w-full h-auto"
@@ -621,7 +624,7 @@ const Home = () => {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="/src/assets/images/mar-sides.png" 
+            src={marSidesImage}
             alt="CTA background"
             loading="lazy"
             className="absolute inset-0 w-full h-full object-cover"
