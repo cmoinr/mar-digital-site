@@ -5,32 +5,33 @@ import { ArrowRight, Sparkles, Target, Rocket, BarChart3 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
+import { useTranslation } from 'react-i18next';
 import CollageSection from '@/components/CollageSection';
 
 // Datos de servicios - URLs optimizadas con compresión
-const serviciosData = [
+const getServiciosData = (t) => [
   {
-    title: "Diseño Web",
-    description: "Páginas y tiendas online que convierten visitas en clientes. Desde landing pages hasta e-commerce completos.",
-    shortDesc: "Páginas y tiendas online que convierten.",
+    title: t('services.items.0.title'),
+    description: t('services.items.0.description'),
+    shortDesc: t('services.items.0.shortDesc'),
     image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&dpr=1"
   },
   {
-    title: "Branding",
-    description: "Identidades visuales que transmiten confianza y reflejan la esencia de tu negocio. Logos, paletas y manuales de marca.",
-    shortDesc: "Identidades visuales que transmiten confianza.",
+    title: t('services.items.1.title'),
+    description: t('services.items.1.description'),
+    shortDesc: t('services.items.1.shortDesc'),
     image: "https://images.pexels.com/photos/6444/pencil-typography-black-design.jpg?auto=compress&cs=tinysrgb&w=800&h=500&dpr=1"
   },
   {
-    title: "Marketing Digital",
-    description: "Contenido y campañas que generan crecimiento real. Gestión de redes, ads en Meta y Google, SEO y más.",
-    shortDesc: "Contenido y campañas que generan crecimiento.",
+    title: t('services.items.2.title'),
+    description: t('services.items.2.description'),
+    shortDesc: t('services.items.2.shortDesc'),
     image: "https://images.pexels.com/photos/905163/pexels-photo-905163.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&dpr=1"
   },
   {
-    title: "Consultoría",
-    description: "Estrategia, finanzas y transformación digital. Modelos de negocio sólidos y rutas claras de crecimiento.",
-    shortDesc: "Estrategia, finanzas y transformación digital.",
+    title: t('services.items.3.title'),
+    description: t('services.items.3.description'),
+    shortDesc: t('services.items.3.shortDesc'),
     image: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&dpr=1"
   }
 ];
@@ -61,7 +62,7 @@ const OptimizedServiceImage = ({ src, alt, className, isActive }) => {
 };
 
 // Componente ServiciosScroll
-const ServiciosScroll = ({ navigate }) => {
+const ServiciosScroll = ({ navigate, serviciosData, t }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
@@ -153,7 +154,7 @@ const ServiciosScroll = ({ navigate }) => {
           size="lg" 
           className="btn-outline-futuristic border-[#00d4ff]/40 text-[#00d4ff] hover:bg-[#00d4ff]/10 px-10 py-6 text-lg rounded-full"
         >
-          Ver todos los servicios
+          {t('divisions.viewAll')}
           <ArrowRight className="ml-2 h-5 w-5" />
         </Button>
       </div>
@@ -164,14 +165,10 @@ const ServiciosScroll = ({ navigate }) => {
 const Home = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
+  const { t } = useTranslation('home');
   const [badgeIndex, setBadgeIndex] = useState(0);
-
-  const badgeTexts = [
-    'Creatividad + Estrategia',
-    'Hacemos que tu idea impacte',
-    'Diseño que convierte',
-    'Tu marca merece brillar'
-  ];
+  const badgeTexts = t('badge.texts', { returnObjects: true });
+  const serviciosData = getServiciosData(t);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -190,8 +187,8 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Mar Digital - Impulsa tu marca con diseño y estrategia digital</title>
-        <meta name="description" content="En Mar Digital unimos creatividad y estrategia: desde páginas web y branding que hacen brillar tu negocio, hasta consultoría avanzada para que tu empresa crezca con bases sólidas." />
+        <title>{t('meta.title')}</title>
+        <meta name="description" content={t('meta.description')} />
       </Helmet>
 
       {/* Hero Section - Minimalista y Futurista */}
@@ -324,13 +321,12 @@ const Home = () => {
             </motion.div>
 
             <h1 className="text-5xl md:text-8xl lg:text-9xl font-bold text-white leading-relaxed mb-6 tracking-relaxed">
-              Impulsa tu marca
-              <span className="block gradient-text-light pb-4">en digital</span>
+              {t('hero.title')}
+              <span className="block gradient-text-light pb-4">{t('hero.titleHighlight')}</span>
             </h1>
             
             <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-              Diseño web, branding y consultoría estratégica para que tu negocio 
-              destaque y crezca con bases sólidas.
+              {t('hero.subtitle')}
             </p>
 
             <motion.div 
@@ -344,7 +340,7 @@ const Home = () => {
                 size="lg" 
                 className="btn-futuristic bg-gradient-to-r from-[#0066ff] to-[#00d4ff] hover:from-[#0077ff] hover:to-[#00e5ff] text-white font-medium px-8 py-6 text-lg rounded-full"
               >
-                Empieza tu proyecto
+                {t('hero.ctaPrimary')}
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <Button 
@@ -353,7 +349,7 @@ const Home = () => {
                 size="lg" 
                 className="btn-outline-futuristic border-[#00d4ff]/40 text-[#00d4ff] hover:bg-[#00d4ff]/10 px-8 py-6 text-lg rounded-full"
               >
-                Ver servicios
+                {t('hero.ctaSecondary')}
               </Button>
             </motion.div>
           </motion.div>
@@ -386,12 +382,11 @@ const Home = () => {
           >
             <div className="line-accent mb-8 mx-auto"></div>
             <h2 className="text-4xl md:text-6xl font-bold text-white mb-16 text-center">
-              ¿Quiénes <span className="gradient-text">somos</span>?
+              {t('about.title')} <span className="gradient-text">{t('about.titleHighlight')}</span>?
             </h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
-                Un equipo que fusiona diseño creativo con consultoría estratégica.
-                Construimos marcas fuertes y negocios listos para escalar en el mundo digital.
+                {t('about.description')}
               </p>
               <div></div>
             </div>
@@ -418,7 +413,7 @@ const Home = () => {
           >
             <div className="line-accent mx-auto mb-8"></div>
             <h2 className="text-4xl md:text-6xl font-bold text-white">
-              Nuestras <span className="gradient-text">Divisiones</span>
+              {t('divisions.title')} <span className="gradient-text">{t('divisions.titleHighlight')}</span>
             </h2>
           </motion.div>
 
@@ -452,23 +447,23 @@ const Home = () => {
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#0066ff] to-[#00d4ff] flex items-center justify-center shrink-0">
                     <Sparkles className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-2xl font-medium text-white">Mar Digital Creative</h3>
+                  <h3 className="text-2xl font-medium text-white">{t('divisions.creative.title')}</h3>
                 </div>
                 
                 {/* Contenido expandible */}
                 <div className="mt-6 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 translate-y-4 group-hover:translate-y-0">
                   <p className="text-lg text-gray-200 mb-3">
-                    Diseño Web, Branding, Social Media y Marketing Digital.
+                    {t('divisions.creative.description')}
                   </p>
                   <p className="text-gray-400 mb-6">
-                    Para emprendedores y empresas que buscan identidad sólida y presencia real en línea.
+                    {t('divisions.creative.subtitle')}
                   </p>
                   <div className="h-px w-full bg-gradient-to-r from-[#00d4ff]/50 to-transparent mb-5"></div>
                   <span 
                     onClick={() => navigate('/creative')}
                     className="text-[#00d4ff] text-sm font-medium flex items-center gap-2 hover:gap-4 transition-all"
                   >
-                    Explorar servicios <ArrowRight className="w-4 h-4" />
+                    {t('divisions.creative.cta')} <ArrowRight className="w-4 h-4" />
                   </span>
                 </div>
               </div>
@@ -506,23 +501,23 @@ const Home = () => {
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#0066ff] to-[#00d4ff] flex items-center justify-center shrink-0">
                     <BarChart3 className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-2xl font-medium text-white">Mar Digital Business</h3>
+                  <h3 className="text-2xl font-medium text-white">{t('divisions.business.title')}</h3>
                 </div>
                 
                 {/* Contenido expandible */}
                 <div className="mt-6 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 translate-y-4 group-hover:translate-y-0">
                   <p className="text-lg text-gray-200 mb-3">
-                    Consultoría estratégica, modelos de negocio y transformación digital.
+                    {t('divisions.business.description')}
                   </p>
                   <p className="text-gray-400 mb-6">
-                    Para empresas que necesitan claridad, estructura y rutas de crecimiento.
+                    {t('divisions.business.subtitle')}
                   </p>
                   <div className="h-px w-full bg-gradient-to-r from-[#00d4ff]/50 to-transparent mb-5"></div>
                   <span 
                     onClick={() => navigate('/business')}
                     className="text-[#00d4ff] text-sm font-medium flex items-center gap-2 hover:gap-4 transition-all"
                   >
-                    Explorar servicios <ArrowRight className="w-4 h-4" />
+                    {t('divisions.business.cta')} <ArrowRight className="w-4 h-4" />
                   </span>
                 </div>
               </div>
@@ -538,7 +533,7 @@ const Home = () => {
               size="lg" 
               className="btn-outline-futuristic border-[#00d4ff]/40 text-[#00d4ff] hover:bg-[#00d4ff]/10 px-10 py-6 text-lg rounded-full"
             >
-              Ver todos los servicios
+              {t('divisions.viewAll')}
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>
@@ -568,33 +563,12 @@ const Home = () => {
           >
             <div className="line-accent mx-auto mb-8"></div>
             <h2 className="text-4xl md:text-6xl font-bold text-white">
-              ¿Por qué <span className="gradient-text">elegirnos</span>?
+              {t('benefits.title')} <span className="gradient-text">{t('benefits.titleHighlight')}</span>?
             </h2>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {[
-              {
-                icon: <Target className="h-6 w-6" />,
-                title: "Enfoque estratégico",
-                description: "Cada diseño tiene un propósito claro"
-              },
-              {
-                icon: <Sparkles className="h-6 w-6" />,
-                title: "Acompañamiento",
-                description: "Procesos claros y soporte constante"
-              },
-              {
-                icon: <Rocket className="h-6 w-6" />,
-                title: "Soluciones a medida",
-                description: "Adaptadas a cada etapa de tu negocio"
-              },
-              {
-                icon: <BarChart3 className="h-6 w-6" />,
-                title: "Resultados reales",
-                description: "Métricas medibles y sostenibles"
-              }
-            ].map((benefit, index) => (
+            {t('benefits.items', { returnObjects: true }).map((benefit, index) => (
               <motion.div 
                 key={index} 
                 initial={{ opacity: 0, y: 30 }} 
@@ -604,7 +578,10 @@ const Home = () => {
                 className="text-center p-10 rounded-2xl card-futuristic"
               >
                 <div className="w-14 h-14 mx-auto mb-6 rounded-xl bg-[#00d4ff]/10 flex items-center justify-center text-[#00d4ff]">
-                  {benefit.icon}
+                  {index === 0 && <Target className="h-6 w-6" />}
+                  {index === 1 && <Sparkles className="h-6 w-6" />}
+                  {index === 2 && <Rocket className="h-6 w-6" />}
+                  {index === 3 && <BarChart3 className="h-6 w-6" />}
                 </div>
                 <h3 className="text-lg font-medium text-white mb-2">
                   {benefit.title}
@@ -632,12 +609,12 @@ const Home = () => {
           >
             <div className="line-accent mx-auto mb-8"></div>
             <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Servicios <span className="gradient-text">destacados</span>
+              {t('services.title')} <span className="gradient-text">{t('services.titleHighlight')}</span>
             </h2>
-            <p className="text-xl text-gray-400">Lo que podemos hacer por ti</p>
+            <p className="text-xl text-gray-400">{t('services.subtitle')}</p>
           </motion.div>
 
-          <ServiciosScroll navigate={navigate} />
+          <ServiciosScroll navigate={navigate} serviciosData={serviciosData} t={t} />
         </div>
       </section>
 
@@ -667,12 +644,11 @@ const Home = () => {
             className="space-y-10"
           >
             <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
-              Haz crecer tu negocio
-              <span className="block gradient-text-light">hoy mismo</span>
+              {t('finalCta.title')}
+              <span className="block gradient-text-light">{t('finalCta.titleHighlight')}</span>
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Creatividad y estrategia para que tu marca brille en digital.
-              Sin importar si apenas empiezas o ya lideras una empresa.
+              {t('finalCta.subtitle')}
             </p>
             <Button 
               asChild 
@@ -680,7 +656,7 @@ const Home = () => {
               className="btn-futuristic bg-gradient-to-r from-[#0066ff] to-[#00d4ff] hover:from-[#0077ff] hover:to-[#00e5ff] text-white font-medium px-12 py-7 text-xl rounded-full"
             >
               <a href="tel:+573183183093">
-                Solicita tu propuesta
+                {t('finalCta.button')}
                 <ArrowRight className="ml-3 h-6 w-6" />
               </a>
             </Button>

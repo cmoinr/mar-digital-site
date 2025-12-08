@@ -4,12 +4,15 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const { t } = useTranslation('common'); // Usar namespace 'common'
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,12 +23,12 @@ const Navbar = () => {
   }, []);
 
   const navItems = [
-    { name: 'Inicio', path: '/' },
-    { name: 'Servicios', path: '/servicios' },
-    { name: 'Briefs', path: '/briefs' },
-    { name: 'Creative', path: '/creative' },
-    { name: 'Business', path: '/business' },
-    { name: 'Blog', path: '/blog' }
+    { name: t('nav.home'), path: '/' },
+    { name: t('nav.services'), path: '/servicios' },
+    { name: t('nav.briefs'), path: '/briefs' },
+    { name: t('nav.creative'), path: '/creative' },
+    { name: t('nav.business'), path: '/business' },
+    { name: t('nav.blog'), path: '/blog' }
   ];
 
   return (
@@ -62,12 +65,15 @@ const Navbar = () => {
               </Link>
             ))}
             
+            {/* Language Switcher */}
+            <LanguageSwitcher />
+            
             {/* CTA Button - Contacto */}
             <Button
               onClick={() => navigate('/contacto')}
               className="px-6 py-2.5 bg-gradient-to-r from-[#0066ff] to-[#00d4ff] hover:shadow-lg hover:shadow-[#00d4ff]/40 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-105 flex items-center gap-2 group"
             >
-              Contacto
+              {t('nav.contact')}
               <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
             </Button>
           </div>
@@ -106,8 +112,13 @@ const Navbar = () => {
               </Link>
             ))}
             
-            {/* Mobile CTA Button - Contacto */}
+            {/* Mobile Language Switcher */}
             <div className="px-4 pt-4 pb-2">
+              <LanguageSwitcher isMobile={true} />
+            </div>
+            
+            {/* Mobile CTA Button - Contacto */}
+            <div className="px-4 pt-2 pb-2">
               <Button
                 onClick={() => {
                   navigate('/contacto');
@@ -115,7 +126,7 @@ const Navbar = () => {
                 }}
                 className="w-full px-6 py-3 bg-gradient-to-r from-[#0066ff] to-[#00d4ff] hover:shadow-lg hover:shadow-[#00d4ff]/40 text-white font-semibold rounded-xl transition-all duration-300 flex items-center justify-center gap-2 group"
               >
-                Contacto
+                {t('nav.contact')}
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
               </Button>
             </div>

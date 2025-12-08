@@ -1,0 +1,100 @@
+{
+  "meta": {
+    "title": "Blog - Learn and grow your brand | Mar Digital",
+    "description": "Tips, guides and trends about design, branding, digital marketing and business strategy. Practical content to boost your company."
+  },
+  "hero": {
+    "title": "Learn and grow",
+    "titleHighlight": "your brand",
+    "subtitle": "At Mar Digital we share tips, guides and trends about design, branding, digital marketing and business strategy. Practical content you can apply today to boost your business."
+  },
+  "categories": {
+    "all": "All",
+    "webUx": "Web Design & UX",
+    "branding": "Branding & Creativity",
+    "socialMedia": "Social Media & Advertising",
+    "business": "Strategy & Business",
+    "successCases": "Success Cases"
+  },
+  "types": {
+    "vlog": "Vlog",
+    "blog": "Blog"
+  },
+  "actions": {
+    "watchVideo": "Watch video",
+    "readMore": "Read more"
+  },
+  "cta": {
+    "title": "Subscribe to receive",
+    "titleHighlight": "our free guides",
+    "description": "Join our community and receive exclusive content, downloadable resources and the latest trends straight to your inbox.",
+    "placeholder": "your@email.com",
+    "button": "Subscribe",
+    "disclaimer": "No spam. Only valuable content. Cancel anytime."
+  },
+  "closing": {
+    "badge": "Our commitment",
+    "title": "Our goal is for you to not only have services, but also",
+    "titleHighlight": "knowledge that empowers your brand",
+    "description": "At Mar Digital we believe knowledge is power. That's why we share everything we know so you can make better decisions, understand the process and grow your business strategically and sustainably.",
+    "ctaServices": "View our services",
+    "ctaContact": "Let's talk about your project"
+  },
+  "posts": {
+    "post1": {
+      "title": "How to create a landing page that converts",
+      "excerpt": "Discover the key elements every landing page needs to transform visits into real customers.",
+      "readTime": "5 min"
+    },
+    "post2": {
+      "title": "3 keys to grow on Instagram with Ads",
+      "excerpt": "Video tutorial: learn how to set up effective campaigns on Meta Ads to increase your reach.",
+      "duration": "2:30 min"
+    },
+    "post3": {
+      "title": "Brand identity: more than just a pretty logo",
+      "excerpt": "Why strategic branding is the key to differentiate yourself in a saturated market.",
+      "readTime": "7 min"
+    },
+    "post4": {
+      "title": "From idea to profitable business model",
+      "excerpt": "Practical guide to transform your business idea into a company with strategy and clear numbers.",
+      "readTime": "10 min"
+    },
+    "post5": {
+      "title": "UX: the secret of websites that sell",
+      "excerpt": "Video: discover how user-centered design improves your website conversions.",
+      "duration": "3:00 min"
+    },
+    "post6": {
+      "title": "Success case: From 0 to 10K followers in 3 months",
+      "excerpt": "How we helped a local brand multiply its digital presence with strategy and valuable content.",
+      "readTime": "6 min"
+    },
+    "post7": {
+      "title": "How to choose the perfect colors for your brand",
+      "excerpt": "Quick tutorial on color psychology and how to apply it to your visual identity.",
+      "duration": "2:15 min"
+    },
+    "post8": {
+      "title": "Copywriting that sells: proven formulas",
+      "excerpt": "The persuasive writing techniques we use to turn text into sales.",
+      "readTime": "8 min"
+    },
+    "post9": {
+      "title": "Local SEO: get found on Google",
+      "excerpt": "Practical strategies to position your business in local searches.",
+      "readTime": "9 min"
+    }
+  },
+  "noResults": "No content available in this category yet.",
+  "toasts": {
+    "subscribe": {
+      "title": "Thanks for your interest! ���",
+      "description": "The subscription feature will be available soon."
+    },
+    "vlog": "��� Video coming soon",
+    "blogPost": "��� Article coming soon",
+    "comingSoon": "will be available very soon."
+  }
+}

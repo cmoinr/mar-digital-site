@@ -4,55 +4,57 @@ import { motion } from 'framer-motion';
 import { ArrowRight, FileText, Palette, Share2, Target, Briefcase } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
+import { useTranslation } from 'react-i18next';
 
 const Briefs = () => {
+  const { t } = useTranslation('briefs'); // Usar namespace 'briefs'
   const { toast } = useToast();
 
   const handleBriefClick = (briefName) => {
     toast({
-      title: "🚧 Formulario en desarrollo",
-      description: `El brief de ${briefName} estará disponible próximamente.`
+      title: t('cta.toastTitle'),
+      description: `${briefName} ${t('cta.toastDescription')}`
     });
   };
 
   const briefsData = [
     {
       id: 1,
-      title: "Brief Diseño Web",
+      title: t('cards.webDesign.title'),
       icon: FileText,
-      description: "Preguntas sobre tipo de web (landing, corporativa, e-commerce), secciones necesarias, estilo visual, funcionalidades.",
+      description: t('cards.webDesign.description'),
       color: "from-[#0066ff] to-[#0052cc]",
       iconColor: "text-[#0066ff]"
     },
     {
       id: 2,
-      title: "Brief Branding & Diseño Gráfico",
+      title: t('cards.branding.title'),
       icon: Palette,
-      description: "Preguntas sobre identidad actual, colores preferidos, referentes de estilo, público objetivo.",
+      description: t('cards.branding.description'),
       color: "from-[#00d4ff] to-[#00a8cc]",
       iconColor: "text-[#00d4ff]"
     },
     {
       id: 3,
-      title: "Brief Social Media & Copywriting",
+      title: t('cards.socialMedia.title'),
       icon: Share2,
-      description: "Preguntas sobre tono de comunicación, plataformas principales, frecuencia de publicación, ejemplos de marcas que admira.",
+      description: t('cards.socialMedia.description'),
       color: "from-[#6366f1] to-[#4f46e5]",
       iconColor: "text-[#6366f1]"
     },
     {
       id: 4,
-      title: "Brief Marketing Digital (Ads & Configuración)",
+      title: t('cards.marketing.title'),
       icon: Target,
-      description: "Preguntas sobre objetivo de campaña (ventas, leads, visibilidad), público objetivo, presupuesto aproximado.",
+      description: t('cards.marketing.description'),
       color: "from-[#ec4899] to-[#db2777]",
       iconColor: "text-[#ec4899]"
     },
     {
       id: 5,
-      title: "Brief Consultoría Business",
+      title: t('cards.consulting.title'),
       icon: Briefcase,
-      description: "Preguntas sobre sector, tamaño de empresa, principales retos (financieros, estratégicos, digitales).",
+      description: t('cards.consulting.description'),
       color: "from-[#10b981] to-[#059669]",
       iconColor: "text-[#10b981]"
     }
@@ -61,8 +63,8 @@ const Briefs = () => {
   return (
     <>
       <Helmet>
-        <title>Briefs - Mar Digital</title>
-        <meta name="description" content="Completa un brief rápido según el servicio que buscas y recibe una propuesta personalizada hecha para tu negocio." />
+        <title>{t('meta.title')}</title>
+        <meta name="description" content={t('meta.description')} />
       </Helmet>
 
       {/* Hero Section */}
@@ -81,11 +83,10 @@ const Briefs = () => {
           >
             <div className="line-accent mx-auto mb-8"></div>
             <h1 className="text-5xl md:text-7xl font-bold text-white">
-              Cuéntanos lo que <span className="gradient-text">necesitas</span> en 5 minutos
+              {t('hero.title')} <span className="gradient-text">{t('hero.titleHighlight')}</span> {t('hero.titleEnd')}
             </h1>
             <p className="text-lg md:text-xl text-gray-400 max-w-4xl mx-auto">
-              Completa un brief rápido según el servicio que buscas y recibe una propuesta 
-              personalizada hecha para tu negocio.
+              {t('hero.subtitle')}
             </p>
           </motion.div>
         </div>
@@ -102,10 +103,7 @@ const Briefs = () => {
             className="bg-gradient-to-br from-[#12121a] to-[#0a0a0f] border border-[#00d4ff]/20 rounded-2xl p-8 md:p-12"
           >
             <p className="text-gray-300 text-lg leading-relaxed">
-              En <span className="text-[#00d4ff] font-semibold">Mar Digital</span> creemos en procesos claros. 
-              Por eso, cada servicio tiene un <span className="text-white font-semibold">brief</span> (formulario) 
-              que nos ayuda a entender tus objetivos, gustos y necesidades antes de comenzar. 
-              Así podemos diseñar <span className="text-[#0066ff] font-semibold">soluciones a tu medida</span> desde el primer día.
+              {t('intro.description')}
             </p>
           </motion.div>
         </div>
@@ -122,10 +120,10 @@ const Briefs = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Elige tu <span className="gradient-text">Brief</span>
+              {t('briefsGrid.title')} <span className="gradient-text">{t('briefsGrid.titleHighlight')}</span>
             </h2>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              Selecciona el tipo de servicio que necesitas y completa el formulario correspondiente.
+              {t('briefsGrid.subtitle')}
             </p>
           </motion.div>
 
@@ -166,7 +164,7 @@ const Briefs = () => {
                       onClick={() => handleBriefClick(brief.title)}
                       className={`w-full bg-gradient-to-r ${brief.color} hover:opacity-90 text-white font-semibold py-6 rounded-xl transition-all duration-300 group/btn`}
                     >
-                      <span>Completar Brief</span>
+                      <span>{t('cta.button')}</span>
                       <ArrowRight className="ml-2 w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
                     </Button>
                   </div>
@@ -190,16 +188,16 @@ const Briefs = () => {
             className="space-y-6"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white">
-              ¿No sabes cuál elegir?
+              {t('finalCta.title')}
             </h2>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              No te preocupes, contáctanos y te ayudamos a identificar el mejor servicio para tu proyecto.
+              {t('finalCta.description')}
             </p>
             <Button
               onClick={() => handleBriefClick("Contacto")}
               className="bg-gradient-to-r from-[#00d4ff] to-[#0066ff] hover:opacity-90 text-white font-semibold px-8 py-6 rounded-xl text-lg transition-all duration-300"
             >
-              Hablar con el equipo
+              {t('finalCta.button')}
             </Button>
           </motion.div>
         </div>

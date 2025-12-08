@@ -1,0 +1,53 @@
+{
+  "meta": {
+    "title": "Briefs - Mar Digital",
+    "description": "Completa un brief rápido según el servicio que buscas y recibe una propuesta personalizada hecha para tu negocio."
+  },
+  "hero": {
+    "title": "Cuéntanos lo que",
+    "titleHighlight": "necesitas",
+    "titleEnd": "en 5 minutos",
+    "subtitle": "Completa un brief rápido según el servicio que buscas y recibe una propuesta personalizada hecha para tu negocio."
+  },
+  "intro": {
+    "title": "¿Qué es un Brief?",
+    "description": "Es un cuestionario diseñado para entender tu proyecto a profundidad: objetivo, audiencia, estilo y presupuesto. Con tus respuestas, creamos una propuesta que se ajusta exactamente a lo que necesitas."
+  },
+  "cards": {
+    "webDesign": {
+      "title": "Brief Diseño Web",
+      "description": "Preguntas sobre tipo de web (landing, corporativa, e-commerce), secciones necesarias, estilo visual, funcionalidades."
+    },
+    "branding": {
+      "title": "Brief Branding & Diseño Gráfico",
+      "description": "Preguntas sobre identidad actual, colores preferidos, referentes de estilo, público objetivo."
+    },
+    "socialMedia": {
+      "title": "Brief Social Media & Copywriting",
+      "description": "Preguntas sobre tono de comunicación, plataformas principales, frecuencia de publicación, ejemplos de marcas que admira."
+    },
+    "marketing": {
+      "title": "Brief Marketing Digital (Ads & Configuración)",
+      "description": "Preguntas sobre objetivo de campaña (ventas, leads, visibilidad), público objetivo, presupuesto aproximado."
+    },
+    "consulting": {
+      "title": "Brief Consultoría Business",
+      "description": "Preguntas sobre sector, tamaño de empresa, principales retos (financieros, estratégicos, digitales)."
+    }
+  },
+  "cta": {
+    "button": "Completar Brief",
+    "toastTitle": "🚧 Formulario en desarrollo",
+    "toastDescription": "estará disponible próximamente."
+  },
+  "briefsGrid": {
+    "title": "Elige tu",
+    "titleHighlight": "Brief",
+    "subtitle": "Selecciona el tipo de servicio que necesitas y completa el formulario correspondiente."
+  },
+  "finalCta": {
+    "title": "¿No sabes cuál elegir?",
+    "description": "No te preocupes, contáctanos y te ayudamos a identificar el mejor servicio para tu proyecto.",
+    "button": "Hablar con el equipo"
+  }
+}

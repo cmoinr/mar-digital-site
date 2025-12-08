@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "title": "Nuestros Servicios - Mar Digital",
+    "description": "En Mar Digital integramos creatividad y estrategia para que tu marca tenga presencia, identidad y resultados medibles en digital."
+  },
+  "hero": {
+    "title": "Nuestros",
+    "titleHighlight": "Servicios",
+    "subtitle": "En Mar Digital integramos creatividad y estrategia para que tu marca tenga presencia, identidad y resultados medibles en digital."
+  },
+  "creative": {
+    "title": "Mar Digital Creative",
+    "subtitle": "Creamos soluciones digitales que elevan la identidad de tu marca y generan confianza en tus clientes.",
+    "webDev": {
+      "title": "Diseño y Desarrollo Web",
+      "description": "Landing Pages, Websites Corporativos y E-commerce optimizados para conversión.",
+      "tag1": "Responsive Design",
+      "tag2": "SEO Optimizado",
+      "tag3": "Performance"
+    },
+    "branding": {
+      "title": "Branding & Diseño Gráfico",
+      "description": "Logos, identidades visuales y packs de contenido para una marca sólida y profesional.",
+      "tag1": "Identidad Visual",
+      "tag2": "Manual de Marca",
+      "tag3": "Assets Digitales"
+    },
+    "socialMedia": {
+      "title": "Social Media & Copywriting",
+      "description": "Contenido gráfico + textos estratégicos para redes sociales que conectan y venden.",
+      "tag1": "Content Strategy",
+      "tag2": "Diseño de Posts",
+      "tag3": "Copy Persuasivo"
+    },
+    "marketing": {
+      "title": "Marketing Digital & Ads",
+      "description": "Configuración de plataformas, gestión de Google Ads y Meta Ads para atraer más clientes.",
+      "tag1": "Google Ads",
+      "tag2": "Meta Ads",
+      "tag3": "Analytics"
+    },
+    "cta": "Cotizar servicios Creative"
+  },
+  "business": {
+    "title": "Mar Digital Business",
+    "subtitle": "Consultoría estratégica y gestión financiera para que tu empresa crezca con estructura y visión a largo plazo.",
+    "consulting": {
+      "title": "Consultoría en Modelos de Negocio",
+      "description": "Análisis, rediseño de propuesta de valor y plan estratégico para crecer sosteniblemente."
+    },
+    "digital": {
+      "title": "Transformación Digital",
+      "description": "Diagnóstico digital, procesos clave y plan de implementación con herramientas y KPIs."
+    },
+    "financial": {
+      "title": "Análisis Financiero & Valoración",
+      "description": "Revisión financiera completa y estimación del valor de tu empresa con metodologías avanzadas."
+    },
+    "projects": {
+      "title": "Evaluación de Proyectos",
+      "description": "Análisis de VPN, TIR y viabilidad para tomar decisiones de inversión informadas."
+    },
+    "cta": "Cotizar servicios Business"
+  },
+  "cta": {
+    "title": "¿Listo para impulsar tu marca?",
+    "description": "Contáctanos y recibe una propuesta personalizada en menos de 24 horas.",
+    "button": "Hablar con el equipo"
+  }
+}

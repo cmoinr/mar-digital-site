@@ -1,0 +1,100 @@
+{
+  "meta": {
+    "title": "Blog - Aprende y crece tu marca | Mar Digital",
+    "description": "Tips, guías y tendencias sobre diseño, branding, marketing digital y estrategia de negocios. Contenido práctico para impulsar tu empresa."
+  },
+  "hero": {
+    "title": "Aprende y haz crecer",
+    "titleHighlight": "tu marca",
+    "subtitle": "En Mar Digital compartimos tips, guías y tendencias sobre diseño, branding, marketing digital y estrategia de negocios. Contenido práctico que puedes aplicar hoy para impulsar tu empresa."
+  },
+  "categories": {
+    "all": "Todos",
+    "webUx": "Diseño Web & UX",
+    "branding": "Branding & Creatividad",
+    "socialMedia": "Redes Sociales & Publicidad",
+    "business": "Estrategia & Negocios",
+    "successCases": "Casos de Éxito"
+  },
+  "types": {
+    "vlog": "Vlog",
+    "blog": "Blog"
+  },
+  "actions": {
+    "watchVideo": "Ver video",
+    "readMore": "Leer más"
+  },
+  "cta": {
+    "title": "Suscríbete para recibir",
+    "titleHighlight": "nuestras guías gratis",
+    "description": "Únete a nuestra comunidad y recibe contenido exclusivo, recursos descargables y las últimas tendencias directo en tu inbox.",
+    "placeholder": "tu@email.com",
+    "button": "Suscribirme",
+    "disclaimer": "Sin spam. Solo contenido de valor. Cancela cuando quieras."
+  },
+  "closing": {
+    "badge": "Nuestro compromiso",
+    "title": "Nuestro objetivo es que no solo tengas servicios, sino también",
+    "titleHighlight": "conocimiento que empodera tu marca",
+    "description": "En Mar Digital creemos que el conocimiento es poder. Por eso compartimos todo lo que sabemos para que tomes mejores decisiones, entiendas el proceso y crezcas tu negocio de forma estratégica y sostenible.",
+    "ctaServices": "Ver nuestros servicios",
+    "ctaContact": "Conversemos de tu proyecto"
+  },
+  "posts": {
+    "post1": {
+      "title": "Cómo crear una landing page que convierte",
+      "excerpt": "Descubre los elementos clave que toda landing page necesita para transformar visitas en clientes reales.",
+      "readTime": "5 min"
+    },
+    "post2": {
+      "title": "3 claves para crecer en Instagram con Ads",
+      "excerpt": "Tutorial en video: aprende a configurar campañas efectivas en Meta Ads para aumentar tu alcance.",
+      "duration": "2:30 min"
+    },
+    "post3": {
+      "title": "Identidad de marca: más que un logo bonito",
+      "excerpt": "Por qué el branding estratégico es la clave para diferenciarte en un mercado saturado.",
+      "readTime": "7 min"
+    },
+    "post4": {
+      "title": "De idea a modelo de negocio rentable",
+      "excerpt": "Guía práctica para transformar tu emprendimiento en una empresa con estrategia y números claros.",
+      "readTime": "10 min"
+    },
+    "post5": {
+      "title": "UX: el secreto de las webs que venden",
+      "excerpt": "Video: descubre cómo el diseño centrado en el usuario mejora las conversiones de tu web.",
+      "duration": "3:00 min"
+    },
+    "post6": {
+      "title": "Caso de éxito: De 0 a 10K seguidores en 3 meses",
+      "excerpt": "Cómo ayudamos a una marca local a multiplicar su presencia digital con estrategia y contenido de valor.",
+      "readTime": "6 min"
+    },
+    "post7": {
+      "title": "Cómo elegir los colores perfectos para tu marca",
+      "excerpt": "Tutorial rápido de psicología del color y cómo aplicarla a tu identidad visual.",
+      "duration": "2:15 min"
+    },
+    "post8": {
+      "title": "Copywriting que vende: fórmulas probadas",
+      "excerpt": "Las técnicas de escritura persuasiva que usamos para convertir textos en ventas.",
+      "readTime": "8 min"
+    },
+    "post9": {
+      "title": "SEO local: haz que te encuentren en Google",
+      "excerpt": "Estrategias prácticas para posicionar tu negocio en búsquedas locales.",
+      "readTime": "9 min"
+    }
+  },
+  "noResults": "No hay contenido disponible en esta categoría aún.",
+  "toasts": {
+    "subscribe": {
+      "title": "¡Gracias por tu interés! ���",
+      "description": "La función de suscripción estará disponible próximamente."
+    },
+    "vlog": "��� Video próximamente",
+    "blogPost": "��� Artículo próximamente",
+    "comingSoon": "estará disponible muy pronto."
+  }
+}

@@ -7,46 +7,48 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/components/ui/use-toast';
+import { useTranslation } from 'react-i18next';
 
 const Contact = () => {
+  const { t } = useTranslation('contact'); // Usar namespace 'contact'
   const { toast } = useToast();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     toast({
-      title: "🚧 Esta función no está implementada aún",
-      description: "El formulario de contacto no envía mensajes por ahora."
+      title: t('form.toastTitle'),
+      description: t('form.toastDescription')
     });
   };
 
   // Servicios disponibles
   const services = [
-    'Diseño y Desarrollo Web',
-    'Branding & Diseño Gráfico',
-    'Social Media & Copywriting',
-    'Marketing Digital & Ads',
-    'Consultoría en Modelos de Negocio',
-    'Transformación Digital',
-    'Optimización & Performance',
-    'Otro / No estoy seguro'
+    t('form.service.option1'),
+    t('form.service.option2'),
+    t('form.service.option3'),
+    t('form.service.option4'),
+    t('form.service.option5'),
+    t('form.service.option6'),
+    t('form.service.option7'),
+    t('form.service.option8')
   ];
 
   // Rangos de presupuesto
   const budgetRanges = [
-    'Menos de $500 USD',
-    '$500 - $1,000 USD',
-    '$1,000 - $2,500 USD',
-    '$2,500 - $5,000 USD',
-    '$5,000 - $10,000 USD',
-    'Más de $10,000 USD',
-    'Prefiero no decir / A definir'
+    t('form.budget.option1'),
+    t('form.budget.option2'),
+    t('form.budget.option3'),
+    t('form.budget.option4'),
+    t('form.budget.option5'),
+    t('form.budget.option6'),
+    t('form.budget.option7')
   ];
 
   return (
     <>
       <Helmet>
-        <title>Contacto - Mar Digital</title>
-        <meta name="description" content="Contáctanos para impulsar tu marca con diseño y estrategia digital. Estamos listos para ayudarte a crecer." />
+        <title>{t('meta.title')}</title>
+        <meta name="description" content={t('meta.description')} />
       </Helmet>
 
       {/* Hero Section */}
@@ -66,10 +68,10 @@ const Contact = () => {
             className="space-y-6"
           >
             <h1 className="text-4xl md:text-6xl font-bold text-white">
-              Conversemos de tu Proyecto
+              {t('hero.title')}
             </h1>
             <p className="text-lg md:text-xl text-gray-400 max-w-4xl mx-auto">
-              Cuéntanos tu visión y te responderemos con una <strong className="text-[#00d4ff]">propuesta personalizada</strong> en menos de 24 horas.
+              {t('hero.subtitle')} <strong className="text-[#00d4ff]">{t('hero.subtitleHighlight')}</strong> {t('hero.subtitleEnd')}
             </p>
           </motion.div>
         </div>
@@ -87,7 +89,7 @@ const Contact = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-2xl font-bold text-white mb-6">Formas de Contacto</h2>
+              <h2 className="text-2xl font-bold text-white mb-6">{t('methods.title')}</h2>
               <div className="space-y-4">
                 <a href="mailto:hola@mardigital.com" className="group block p-6 rounded-2xl card-futuristic hover:-translate-y-1 transition-all duration-300">
                   <div className="flex items-center gap-4">
@@ -95,8 +97,8 @@ const Contact = () => {
                       <Mail className="h-6 w-6 text-white" />
                     </div>
                     <div className="flex-1">
-                      <div className="text-sm font-semibold text-gray-400 uppercase tracking-wide">Email</div>
-                      <div className="text-lg font-bold text-white group-hover:text-[#00d4ff] transition-colors">hola@mardigital.com</div>
+                      <div className="text-sm font-semibold text-gray-400 uppercase tracking-wide">{t('methods.email.label')}</div>
+                      <div className="text-lg font-bold text-white group-hover:text-[#00d4ff] transition-colors">{t('methods.email.value')}</div>
                     </div>
                   </div>
                 </a>
@@ -107,8 +109,8 @@ const Contact = () => {
                       <Phone className="h-6 w-6 text-white" />
                     </div>
                     <div className="flex-1">
-                      <div className="text-sm font-semibold text-gray-400 uppercase tracking-wide">WhatsApp</div>
-                      <div className="text-lg font-bold text-white group-hover:text-green-400 transition-colors">+1 (555) 123-4567</div>
+                      <div className="text-sm font-semibold text-gray-400 uppercase tracking-wide">{t('methods.phone.label')}</div>
+                      <div className="text-lg font-bold text-white group-hover:text-green-400 transition-colors">{t('methods.phone.value')}</div>
                     </div>
                   </div>
                 </a>
@@ -119,8 +121,8 @@ const Contact = () => {
                       <MapPin className="h-6 w-6 text-white" />
                     </div>
                     <div className="flex-1">
-                      <div className="text-sm font-semibold text-gray-400 uppercase tracking-wide">Ubicación</div>
-                      <div className="text-lg font-bold text-white">Remote / Global</div>
+                      <div className="text-sm font-semibold text-gray-400 uppercase tracking-wide">{t('methods.address.label')}</div>
+                      <div className="text-lg font-bold text-white">{t('methods.address.value')}</div>
                     </div>
                   </div>
                 </div>
@@ -136,9 +138,9 @@ const Contact = () => {
             >
               <div className="p-8 rounded-2xl bg-gradient-to-br from-[#0066ff] to-[#00d4ff] text-white shadow-xl">
                 <Calendar className="h-10 w-10 mb-4" />
-                <h3 className="text-xl font-bold mb-3">¿Prefieres agendar una videollamada?</h3>
+                <h3 className="text-xl font-bold mb-3">{t('schedule.title')}</h3>
                 <p className="text-blue-50 mb-6 leading-relaxed">
-                  Reserva un espacio en nuestro calendario para una consulta inicial de 30 minutos completamente gratis.
+                  {t('schedule.description')}
                 </p>
                 <a 
                   href="https://calendly.com/mardigital" 
@@ -146,7 +148,7 @@ const Contact = () => {
                   rel="noopener noreferrer"
                   className="group inline-flex items-center justify-center gap-2 w-full px-6 py-4 rounded-xl bg-white text-[#0066ff] font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
                 >
-                  <span>Agendar Reunión</span>
+                  <span>{t('schedule.button')}</span>
                   <Calendar className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>
@@ -187,28 +189,28 @@ const Contact = () => {
               viewport={{ once: true }}
               className="sticky top-24 p-8 lg:p-10 card-futuristic"
             >
-              <h2 className="text-3xl font-bold text-white mb-2">Cuéntanos tu Proyecto</h2>
-              <p className="text-gray-400 mb-8">Completa el formulario y te contactaremos pronto</p>
+              <h2 className="text-3xl font-bold text-white mb-2">{t('form.title')}</h2>
+              <p className="text-gray-400 mb-8">{t('form.subtitle')}</p>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Nombre y Email */}
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <Label htmlFor="name" className="text-sm font-semibold text-gray-300">Nombre completo *</Label>
+                    <Label htmlFor="name" className="text-sm font-semibold text-gray-300">{t('form.name.label')} *</Label>
                     <Input 
                       id="name" 
                       type="text" 
-                      placeholder="Juan Pérez" 
+                      placeholder={t('form.name.placeholder')}
                       required
                       className="mt-2 p-3 rounded-xl border-2 border-[#00d4ff]/20 bg-[#0a0a0f] text-white placeholder:text-gray-500 focus:border-[#00d4ff] focus:ring-2 focus:ring-[#00d4ff]/20 transition-all" 
                     />
                   </div>
                   <div>
-                    <Label htmlFor="email" className="text-sm font-semibold text-gray-300">Email *</Label>
+                    <Label htmlFor="email" className="text-sm font-semibold text-gray-300">{t('form.email.label')} *</Label>
                     <Input 
                       id="email" 
                       type="email" 
-                      placeholder="juan@empresa.com" 
+                      placeholder={t('form.email.placeholder')}
                       required
                       className="mt-2 p-3 rounded-xl border-2 border-[#00d4ff]/20 bg-[#0a0a0f] text-white placeholder:text-gray-500 focus:border-[#00d4ff] focus:ring-2 focus:ring-[#00d4ff]/20 transition-all" 
                     />
@@ -219,21 +221,21 @@ const Contact = () => {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <Label htmlFor="whatsapp" className="text-sm font-semibold text-gray-300">
-                      WhatsApp <span className="text-gray-500 font-normal">(opcional)</span>
+                      {t('form.phone.label')}
                     </Label>
                     <Input 
                       id="whatsapp" 
                       type="tel" 
-                      placeholder="+1 555 123 4567" 
+                      placeholder={t('form.phone.placeholder')}
                       className="mt-2 p-3 rounded-xl border-2 border-[#00d4ff]/20 bg-[#0a0a0f] text-white placeholder:text-gray-500 focus:border-[#00d4ff] focus:ring-2 focus:ring-[#00d4ff]/20 transition-all" 
                     />
                   </div>
                   <div>
-                    <Label htmlFor="company" className="text-sm font-semibold text-gray-300">Empresa *</Label>
+                    <Label htmlFor="company" className="text-sm font-semibold text-gray-300">{t('form.company.label')} *</Label>
                     <Input 
                       id="company" 
                       type="text" 
-                      placeholder="Mi Empresa S.A." 
+                      placeholder={t('form.company.placeholder')}
                       required
                       className="mt-2 p-3 rounded-xl border-2 border-[#00d4ff]/20 bg-[#0a0a0f] text-white placeholder:text-gray-500 focus:border-[#00d4ff] focus:ring-2 focus:ring-[#00d4ff]/20 transition-all" 
                     />
@@ -242,7 +244,7 @@ const Contact = () => {
 
                 {/* Servicio de Interés */}
                 <div>
-                  <Label htmlFor="service" className="text-sm font-semibold text-gray-300">Servicio de interés *</Label>
+                  <Label htmlFor="service" className="text-sm font-semibold text-gray-300">{t('form.service.label')} *</Label>
                   <select 
                     id="service" 
                     name="service" 
@@ -258,7 +260,7 @@ const Contact = () => {
 
                 {/* Presupuesto Estimado */}
                 <div>
-                  <Label htmlFor="budget" className="text-sm font-semibold text-gray-300">Presupuesto estimado *</Label>
+                  <Label htmlFor="budget" className="text-sm font-semibold text-gray-300">{t('form.budget.label')} *</Label>
                   <select 
                     id="budget" 
                     name="budget" 
@@ -274,10 +276,10 @@ const Contact = () => {
 
                 {/* Mensaje */}
                 <div>
-                  <Label htmlFor="message" className="text-sm font-semibold text-gray-300">Cuéntanos sobre tu proyecto *</Label>
+                  <Label htmlFor="message" className="text-sm font-semibold text-gray-300">{t('form.message.label')} *</Label>
                   <Textarea 
                     id="message" 
-                    placeholder="Describe tu proyecto, objetivos, desafíos actuales y cualquier información relevante que quieras compartir..." 
+                    placeholder={t('form.message.placeholder')}
                     rows="5"
                     required
                     className="mt-2 p-3 rounded-xl border-2 border-[#00d4ff]/20 bg-[#0a0a0f] text-white placeholder:text-gray-500 focus:border-[#00d4ff] focus:ring-2 focus:ring-[#00d4ff]/20 resize-none transition-all" 
@@ -304,7 +306,7 @@ const Contact = () => {
                   size="lg" 
                   className="w-full btn-futuristic py-5 text-lg rounded-2xl"
                 >
-                  📨 Enviar Mensaje
+                  📨 {t('form.submit')}
                   <Send className="ml-2 h-5 w-5" />
                 </Button>
 

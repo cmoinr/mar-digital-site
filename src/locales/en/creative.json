@@ -1,0 +1,119 @@
+{
+  "meta": {
+    "title": "Creative - Digital Agency | Mar Digital",
+    "description": "Creative solutions for your business. Branding, design, social media, and websites. We make your brand shine in the digital world."
+  },
+  "hero": {
+    "title": "Creative Digital Marketing",
+    "subtitle": "We transform your brand with visual design, content, and strategy. From branding to social media and websites. Everything your brand needs to stand out in digital."
+  },
+  "services": {
+    "title": "What we do in Creative",
+    "webDev": {
+      "title": "Web Development & Design",
+      "description": "We create websites that attract, convert, and reflect your brand's essence."
+    },
+    "branding": {
+      "title": "Branding & Visual Identity",
+      "description": "We build solid and memorable brands. From logo to complete brand manuals."
+    },
+    "socialMedia": {
+      "title": "Social Media Management",
+      "description": "We manage your social networks with strategy: content, design, and community management."
+    },
+    "marketing": {
+      "title": "Content & Digital Marketing",
+      "description": "We create campaigns, reels, stories, and content that sells and connects with your audience."
+    }
+  },
+  "packs": {
+    "creative": {
+      "starter": {
+        "name": "Starter Creative Pack",
+        "description": "Social Media Content (20 posts/month) + Basic Community Management.",
+        "idealFor": "Perfect for starting your brand's presence on social media with consistent and quality content."
+      },
+      "growth": {
+        "name": "Growth Creative Pack",
+        "description": "Social Media Content (30 posts/month) + Community Management + Complete Branding.",
+        "idealFor": "Build a solid visual identity and grow your community with a complete strategy."
+      },
+      "premium": {
+        "name": "Premium Creative Pack",
+        "description": "Professional Content + Advanced Community Management + Complete Branding + Website.",
+        "idealFor": "Complete solution: brand, content, web, and community. Everything to position yourself professionally."
+      }
+    },
+    "business": {
+      "starter": {
+        "name": "Starter Business Pack",
+        "description": "WordPress Website + Google Business Profile Setup.",
+        "idealFor": "Your web presence with SEO foundation and visibility on Google Maps at an affordable cost."
+      },
+      "growth": {
+        "name": "Growth Business Pack",
+        "description": "Pro Website (code) + SEO + Google Ads.",
+        "idealFor": "Robust website optimized to attract organic and paid traffic sustainably."
+      },
+      "premium": {
+        "name": "Premium Business Pack",
+        "description": "Pro Website (code) + Google Ads + Meta Ads Management.",
+        "idealFor": "Complete advertising strategy on Google and social media to scale your business."
+      }
+    },
+    "ecommerce": {
+      "starter": {
+        "name": "Starter E-Commerce Pack",
+        "description": "Basic WordPress Store + Google Business Setup.",
+        "idealFor": "The fastest and most accessible way to start selling online."
+      },
+      "growth": {
+        "name": "Growth E-Commerce Pack",
+        "description": "Pro E-commerce (code), SEO and Meta Pixel.",
+        "idealFor": "Robust store with traffic optimization and metrics to grow sustainably."
+      },
+      "premium": {
+        "name": "Premium E-Commerce Pack",
+        "description": "Pro E-commerce (code), Google Ads and Meta Ads management.",
+        "idealFor": "Advanced store with complete advertising strategy to scale sales."
+      }
+    },
+    "idealFor": "Ideal for:"
+  },
+  "packsSection": {
+    "title": "Creative Packs",
+    "subtitle": "Packages designed for each stage of your business.",
+    "creativeDivision": "Creative Division (Branding + Design + Social Media)",
+    "businessDivision": "Business Division (Web + SEO + Ads)",
+    "ecommerceDivision": "E-Commerce Division (Online Stores)"
+  },
+  "benefits": {
+    "title": "Benefits of working with Creative",
+    "professional": {
+      "title": "Professional design with purpose",
+      "description": "Every visual element is designed to meet clear business objectives."
+    },
+    "identity": {
+      "title": "Solid and consistent brand identity",
+      "description": "Your brand will look professional and consistent at all touchpoints."
+    },
+    "content": {
+      "title": "Content designed to attract and sell",
+      "description": "We create messages and designs that emotionally connect and generate conversions."
+    },
+    "scalable": {
+      "title": "Scalable solutions tailored to your business",
+      "description": "Services that grow with you, from startup to established company."
+    }
+  },
+  "finalCta": {
+    "title": "Make your brand shine digitally with creativity and strategy.",
+    "button": "I want my Creative proposal"
+  },
+  "cta": {
+    "title": "Can't find what you're looking for?",
+    "description": "Every business is unique. If no package fits perfectly, let's talk and create a custom solution.",
+    "button": "Get custom service quote",
+    "toastTitle": "Great! Redirecting to Contact..."
+  }
+}

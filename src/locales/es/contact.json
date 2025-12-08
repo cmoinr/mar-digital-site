@@ -1,0 +1,86 @@
+{
+  "meta": {
+    "title": "Contacto - Mar Digital",
+    "description": "Contáctanos para impulsar tu marca con diseño y estrategia digital. Estamos listos para ayudarte a crecer."
+  },
+  "hero": {
+    "title": "Conversemos de tu Proyecto",
+    "subtitle": "Cuéntanos tu visión y te responderemos con una",
+    "subtitleHighlight": "propuesta personalizada",
+    "subtitleEnd": "en menos de 24 horas."
+  },
+  "methods": {
+    "title": "Formas de Contacto",
+    "email": {
+      "label": "Email",
+      "value": "hola@mardigital.com"
+    },
+    "phone": {
+      "label": "WhatsApp",
+      "value": "+52 1 442 123 4567"
+    },
+    "address": {
+      "label": "Ubicación",
+      "value": "Querétaro, México"
+    }
+  },
+  "form": {
+    "title": "Cuéntanos tu Proyecto",
+    "subtitle": "Completa el formulario y te contactaremos pronto",
+    "name": {
+      "label": "Nombre completo",
+      "placeholder": "Ej: Juan Pérez"
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "tu@email.com"
+    },
+    "phone": {
+      "label": "WhatsApp (opcional)",
+      "placeholder": "+52 123 456 7890"
+    },
+    "company": {
+      "label": "Empresa",
+      "placeholder": "Nombre de tu empresa"
+    },
+    "service": {
+      "label": "Servicio de interés",
+      "option1": "Diseño y Desarrollo Web",
+      "option2": "Branding & Diseño Gráfico",
+      "option3": "Social Media & Copywriting",
+      "option4": "Marketing Digital & Ads",
+      "option5": "Consultoría en Modelos de Negocio",
+      "option6": "Transformación Digital",
+      "option7": "Optimización & Performance",
+      "option8": "Otro / No estoy seguro"
+    },
+    "budget": {
+      "label": "Presupuesto estimado",
+      "option1": "Menos de $500 USD",
+      "option2": "$500 - $1,000 USD",
+      "option3": "$1,000 - $2,500 USD",
+      "option4": "$2,500 - $5,000 USD",
+      "option5": "$5,000 - $10,000 USD",
+      "option6": "Más de $10,000 USD",
+      "option7": "Prefiero no decir / A definir"
+    },
+    "message": {
+      "label": "Cuéntanos sobre tu proyecto",
+      "placeholder": "Describe brevemente lo que necesitas..."
+    },
+    "submit": "Enviar Mensaje",
+    "toastTitle": "��� Esta función no está implementada aún",
+    "toastDescription": "El formulario de contacto no envía mensajes por ahora."
+  },
+  "schedule": {
+    "title": "¿Prefieres agendar una videollamada?",
+    "description": "Reserva un espacio en nuestro calendario para una consulta inicial de 30 minutos completamente gratis.",
+    "button": "Agendar Reunión"
+  },
+  "alternatives": {
+    "title": "Otras formas de contacto",
+    "whatsapp": "Escríbenos por WhatsApp",
+    "email": "Envíanos un email directo",
+    "linkedin": "Conéctate en LinkedIn"
+  }
+}

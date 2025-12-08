@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "title": "Our Services - Mar Digital",
+    "description": "At Mar Digital we integrate creativity and strategy so your brand has presence, identity and measurable results in digital."
+  },
+  "hero": {
+    "title": "Our",
+    "titleHighlight": "Services",
+    "subtitle": "At Mar Digital we integrate creativity and strategy so your brand has presence, identity and measurable results in digital."
+  },
+  "creative": {
+    "title": "Mar Digital Creative",
+    "subtitle": "We create digital solutions that elevate your brand's identity and generate trust in your customers.",
+    "webDev": {
+      "title": "Web Design & Development",
+      "description": "Landing Pages, Corporate Websites and E-commerce optimized for conversion.",
+      "tag1": "Responsive Design",
+      "tag2": "SEO Optimized",
+      "tag3": "Performance"
+    },
+    "branding": {
+      "title": "Branding & Graphic Design",
+      "description": "Logos, visual identities and content packs for a solid and professional brand.",
+      "tag1": "Visual Identity",
+      "tag2": "Brand Manual",
+      "tag3": "Digital Assets"
+    },
+    "socialMedia": {
+      "title": "Social Media & Copywriting",
+      "description": "Graphic content + strategic texts for social media that connect and sell.",
+      "tag1": "Content Strategy",
+      "tag2": "Post Design",
+      "tag3": "Persuasive Copy"
+    },
+    "marketing": {
+      "title": "Digital Marketing & Ads",
+      "description": "Platform setup, Google Ads and Meta Ads management to attract more customers.",
+      "tag1": "Google Ads",
+      "tag2": "Meta Ads",
+      "tag3": "Analytics"
+    },
+    "cta": "Quote Creative services"
+  },
+  "business": {
+    "title": "Mar Digital Business",
+    "subtitle": "Strategic consulting and financial management so your company grows with structure and long-term vision.",
+    "consulting": {
+      "title": "Business Model Consulting",
+      "description": "Analysis, value proposition redesign and strategic plan to grow sustainably."
+    },
+    "digital": {
+      "title": "Digital Transformation",
+      "description": "Digital diagnosis, key processes and implementation plan with tools and KPIs."
+    },
+    "financial": {
+      "title": "Financial Analysis & Valuation",
+      "description": "Complete financial review and estimation of your company's value with advanced methodologies."
+    },
+    "projects": {
+      "title": "Project Evaluation",
+      "description": "NPV, IRR and feasibility analysis for informed investment decisions."
+    },
+    "cta": "Quote Business services"
+  },
+  "cta": {
+    "title": "Ready to grow your brand?",
+    "description": "Contact us and receive a personalized proposal in less than 24 hours.",
+    "button": "Talk to the team"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "meta": {
+    "title": "Briefs - Mar Digital",
+    "description": "Complete a quick brief according to the service you're looking for and receive a personalized proposal made for your business."
+  },
+  "hero": {
+    "title": "Tell us what you",
+    "titleHighlight": "need",
+    "titleEnd": "in 5 minutes",
+    "subtitle": "Complete a quick brief according to the service you're looking for and receive a personalized proposal made for your business."
+  },
+  "intro": {
+    "title": "What is a Brief?",
+    "description": "It's a questionnaire designed to understand your project in depth: objective, audience, style and budget. With your answers, we create a proposal that fits exactly what you need."
+  },
+  "cards": {
+    "webDesign": {
+      "title": "Web Design Brief",
+      "description": "Questions about type of website (landing, corporate, e-commerce), necessary sections, visual style, functionalities."
+    },
+    "branding": {
+      "title": "Branding & Graphic Design Brief",
+      "description": "Questions about current identity, preferred colors, style references, target audience."
+    },
+    "socialMedia": {
+      "title": "Social Media & Copywriting Brief",
+      "description": "Questions about communication tone, main platforms, posting frequency, examples of brands you admire."
+    },
+    "marketing": {
+      "title": "Digital Marketing Brief (Ads & Setup)",
+      "description": "Questions about campaign objective (sales, leads, visibility), target audience, approximate budget."
+    },
+    "consulting": {
+      "title": "Business Consulting Brief",
+      "description": "Questions about sector, company size, main challenges (financial, strategic, digital)."
+    }
+  },
+  "cta": {
+    "button": "Select this brief",
+    "toastTitle": "🚧 Form in development",
+    "toastDescription": "will be available soon."
+  },
+  "briefsGrid": {
+    "title": "Choose your",
+    "titleHighlight": "Brief",
+    "subtitle": "Select the type of service you need and complete the corresponding form."
+  },
+  "finalCta": {
+    "title": "Can't decide which one?",
+    "description": "Don't worry, contact us and we'll help you identify the best service for your project.",
+    "button": "Talk to the team"
+  }
+}

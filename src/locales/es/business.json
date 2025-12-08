@@ -1,0 +1,94 @@
+{
+  "meta": {
+    "title": "Mar Digital Business - Estrategia y consultoría para hacer crecer tu empresa",
+    "description": "En Mar Digital Business te ayudamos a estructurar tu negocio con modelos sólidos, transformación digital y gestión financiera avanzada."
+  },
+  "hero": {
+    "title": "Estrategia y consultoría para hacer crecer tu empresa.",
+    "subtitle": "En Mar Digital Business te ayudamos a estructurar tu negocio con modelos sólidos, transformación digital y gestión financiera avanzada. No entregamos solo diagnósticos, sino rutas claras de crecimiento."
+  },
+  "services": {
+    "title": "Servicios Business",
+    "consulting": {
+      "title": "Consultoría en Modelos de Negocio",
+      "description": "Análisis 360° de tu empresa, rediseño de propuesta de valor y plan estratégico para crecer de manera sostenible."
+    },
+    "digital": {
+      "title": "Transformación Digital",
+      "description": "Diagnóstico de madurez digital, identificación de procesos clave y plan de implementación con herramientas y KPIs."
+    },
+    "valuation": {
+      "title": "Valoración de Empresas",
+      "description": "Estimación objetiva del valor real de tu compañía con metodologías como DCF, múltiplos de mercado y análisis de activos."
+    },
+    "financial": {
+      "title": "Análisis Financiero Avanzado",
+      "description": "Revisión de liquidez, rentabilidad, deuda y eficiencia. Incluye escenarios financieros y recomendaciones estratégicas."
+    },
+    "modeling": {
+      "title": "Modelación y Proyección Financiera",
+      "description": "Modelos dinámicos en Excel o Power BI para anticipar necesidades de capital y planear el crecimiento."
+    },
+    "projects": {
+      "title": "Formulación y Evaluación de Proyectos",
+      "description": "Estudios completos con VAN, TIR y análisis de viabilidad para tomar decisiones informadas."
+    },
+    "capital": {
+      "title": "Estructuración de Capital y Apalancamiento Financiero",
+      "description": "Definición del mix óptimo entre capital propio y externo, con estrategias para optimizar tu financiamiento y atraer inversionistas."
+    }
+  },
+  "benefits": {
+    "title": "¿Por qué trabajar con Business?",
+    "subtitle": "Consultoría de alto nivel con entregables concretos",
+    "item1": {
+      "title": "Metodologías internacionales adaptadas a tu realidad",
+      "description": "Aplicamos frameworks probados globalmente, ajustados al contexto de tu empresa."
+    },
+    "item2": {
+      "title": "Enfoque premium: diagnóstico + plan de acción",
+      "description": "No solo identificamos problemas, te damos la ruta exacta para solucionarlos."
+    },
+    "item3": {
+      "title": "Entregables claros (informes PDF, modelos en Excel/Power BI)",
+      "description": "Documentación profesional y herramientas prácticas listas para usar."
+    },
+    "item4": {
+      "title": "Acompañamiento estratégico hasta implementar resultados",
+      "description": "Te apoyamos en la ejecución para que las estrategias se conviertan en realidad."
+    }
+  },
+  "methodologies": {
+    "title": "Metodologías y entregables profesionales",
+    "methodologiesTitle": "Metodologías",
+    "toolsTitle": "Herramientas",
+    "deliverablesTitle": "Entregables",
+    "items": [
+      "Canvas de modelo de negocio",
+      "DCF y múltiplos de mercado",
+      "VAN, TIR, Payback",
+      "Análisis de madurez digital"
+    ],
+    "tools": [
+      "Excel avanzado (modelos dinámicos)",
+      "Power BI (dashboards interactivos)",
+      "Google Analytics & Data Studio",
+      "Plataformas de automatización"
+    ],
+    "deliverables": [
+      "Informes ejecutivos en PDF",
+      "Modelos financieros editables",
+      "Planes de acción paso a paso",
+      "Presentaciones ejecutivas"
+    ]
+  },
+  "finalCta": {
+    "title": "Tu empresa merece crecer con visión estratégica y bases financieras sólidas.",
+    "button": "Solicita tu consultoría Business"
+  },
+  "cta": {
+    "title": "¿Listo para profesionalizar tu empresa?",
+    "button": "Agendar diagnóstico inicial",
+    "toastTitle": "🚧 Esta función no está implementada aún"
+  }
+}

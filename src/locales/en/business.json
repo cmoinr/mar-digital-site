@@ -1,0 +1,94 @@
+{
+  "meta": {
+    "title": "Mar Digital Business - Strategy and consulting to grow your company",
+    "description": "At Mar Digital Business we help you structure your business with solid models, digital transformation and advanced financial management."
+  },
+  "hero": {
+    "title": "Strategy and consulting to grow your company.",
+    "subtitle": "At Mar Digital Business we help you structure your business with solid models, digital transformation and advanced financial management. We don't just deliver diagnostics, but clear growth paths."
+  },
+  "services": {
+    "title": "Business Services",
+    "consulting": {
+      "title": "Business Model Consulting",
+      "description": "360° analysis of your company, value proposition redesign and strategic plan to grow sustainably."
+    },
+    "digital": {
+      "title": "Digital Transformation",
+      "description": "Digital maturity diagnosis, key process identification and implementation plan with tools and KPIs."
+    },
+    "valuation": {
+      "title": "Company Valuation",
+      "description": "Objective estimation of your company's real value with methodologies like DCF, market multiples and asset analysis."
+    },
+    "financial": {
+      "title": "Advanced Financial Analysis",
+      "description": "Review of liquidity, profitability, debt and efficiency. Includes financial scenarios and strategic recommendations."
+    },
+    "modeling": {
+      "title": "Financial Modeling and Projection",
+      "description": "Dynamic models in Excel or Power BI to anticipate capital needs and plan growth."
+    },
+    "projects": {
+      "title": "Project Formulation and Evaluation",
+      "description": "Complete studies with NPV, IRR and feasibility analysis to make informed decisions."
+    },
+    "capital": {
+      "title": "Capital Structure and Financial Leverage",
+      "description": "Definition of optimal mix between equity and external capital, with strategies to optimize your financing and attract investors."
+    }
+  },
+  "benefits": {
+    "title": "Why work with Business?",
+    "subtitle": "High-level consulting with concrete deliverables",
+    "item1": {
+      "title": "International methodologies adapted to your reality",
+      "description": "We apply globally proven frameworks, adjusted to your company's context."
+    },
+    "item2": {
+      "title": "Premium approach: diagnosis + action plan",
+      "description": "We don't just identify problems, we give you the exact roadmap to solve them."
+    },
+    "item3": {
+      "title": "Clear deliverables (PDF reports, Excel/Power BI models)",
+      "description": "Professional documentation and practical tools ready to use."
+    },
+    "item4": {
+      "title": "Strategic support until implementing results",
+      "description": "We support you in execution so strategies become reality."
+    }
+  },
+  "methodologies": {
+    "title": "Professional methodologies and deliverables",
+    "methodologiesTitle": "Methodologies",
+    "toolsTitle": "Tools",
+    "deliverablesTitle": "Deliverables",
+    "items": [
+      "Business Model Canvas",
+      "DCF and market multiples",
+      "NPV, IRR, Payback",
+      "Digital maturity analysis"
+    ],
+    "tools": [
+      "Advanced Excel (dynamic models)",
+      "Power BI (interactive dashboards)",
+      "Google Analytics & Data Studio",
+      "Automation platforms"
+    ],
+    "deliverables": [
+      "Executive reports in PDF",
+      "Editable financial models",
+      "Step-by-step action plans",
+      "Executive presentations"
+    ]
+  },
+  "finalCta": {
+    "title": "Your company deserves to grow with strategic vision and solid financial foundations.",
+    "button": "Request your Business consulting"
+  },
+  "cta": {
+    "title": "Ready to professionalize your company?",
+    "button": "Schedule initial diagnosis",
+    "toastTitle": "��� This feature is not implemented yet"
+  }
+}

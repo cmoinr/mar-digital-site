@@ -1,0 +1,15 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "briefs": "Briefs",
+    "creative": "Creative",
+    "business": "Business",
+    "blog": "Blog",
+    "contact": "Contacto"
+  },
+  "language": {
+    "spanish": "Español",
+    "english": "English"
+  }
+}

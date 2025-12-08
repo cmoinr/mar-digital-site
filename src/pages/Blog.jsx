@@ -5,19 +5,21 @@ import { ArrowRight, Globe, Palette, TrendingUp, Briefcase, Star, Play, BookOpen
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const Blog = () => {
   const { toast } = useToast();
   const navigate = useNavigate();
+  const { t } = useTranslation('blog'); // Usar namespace 'blog'
   const [activeCategory, setActiveCategory] = useState('all');
 
   const categories = [
-    { id: 'all', name: 'Todos', icon: <Star className="h-5 w-5" /> },
-    { id: 'web-ux', name: 'Diseño Web & UX', icon: <Globe className="h-5 w-5" /> },
-    { id: 'branding', name: 'Branding & Creatividad', icon: <Palette className="h-5 w-5" /> },
-    { id: 'social-media', name: 'Social Media & Publicidad', icon: <TrendingUp className="h-5 w-5" /> },
-    { id: 'business', name: 'Estrategia & Negocios', icon: <Briefcase className="h-5 w-5" /> },
-    { id: 'success-cases', name: 'Casos de Éxito', icon: <Star className="h-5 w-5" /> }
+    { id: 'all', name: t('categories.all'), icon: <Star className="h-5 w-5" /> },
+    { id: 'web-ux', name: t('categories.webUx'), icon: <Globe className="h-5 w-5" /> },
+    { id: 'branding', name: t('categories.branding'), icon: <Palette className="h-5 w-5" /> },
+    { id: 'social-media', name: t('categories.socialMedia'), icon: <TrendingUp className="h-5 w-5" /> },
+    { id: 'business', name: t('categories.business'), icon: <Briefcase className="h-5 w-5" /> },
+    { id: 'success-cases', name: t('categories.successCases'), icon: <Star className="h-5 w-5" /> }
   ];
 
   const blogPosts = [
@@ -25,90 +27,90 @@ const Blog = () => {
       id: 1,
       type: 'blog',
       category: 'web-ux',
-      title: 'Cómo crear una landing que convierta',
-      excerpt: 'Descubre los elementos clave que toda landing page necesita para transformar visitas en clientes reales.',
+      title: t('posts.post1.title'),
+      excerpt: t('posts.post1.excerpt'),
       image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&dpr=1',
-      readTime: '5 min',
+      readTime: t('posts.post1.readTime'),
       hasDownload: true
     },
     {
       id: 2,
       type: 'vlog',
       category: 'social-media',
-      title: '3 claves para crecer en Instagram con Ads',
-      excerpt: 'Video tutorial: aprende a configurar campañas efectivas en Meta Ads para aumentar tu alcance.',
+      title: t('posts.post2.title'),
+      excerpt: t('posts.post2.excerpt'),
       image: 'https://images.pexels.com/photos/905163/pexels-photo-905163.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&dpr=1',
-      duration: '2:30 min',
+      duration: t('posts.post2.duration'),
       hasDownload: false
     },
     {
       id: 3,
       type: 'blog',
       category: 'branding',
-      title: 'Identidad de marca: más que un logo bonito',
-      excerpt: 'Por qué el branding estratégico es la clave para diferenciarte en un mercado saturado.',
+      title: t('posts.post3.title'),
+      excerpt: t('posts.post3.excerpt'),
       image: 'https://images.pexels.com/photos/6444/pencil-typography-black-design.jpg?auto=compress&cs=tinysrgb&w=800&h=500&dpr=1',
-      readTime: '7 min',
+      readTime: t('posts.post3.readTime'),
       hasDownload: true
     },
     {
       id: 4,
       type: 'blog',
       category: 'business',
-      title: 'De la idea al modelo de negocio rentable',
-      excerpt: 'Guía práctica para transformar tu emprendimiento en una empresa con estrategia y números claros.',
+      title: t('posts.post4.title'),
+      excerpt: t('posts.post4.excerpt'),
       image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&dpr=1',
-      readTime: '10 min',
+      readTime: t('posts.post4.readTime'),
       hasDownload: true
     },
     {
       id: 5,
       type: 'vlog',
       category: 'web-ux',
-      title: 'UX: el secreto de las webs que venden',
-      excerpt: 'Video: descubre cómo el diseño centrado en el usuario mejora las conversiones de tu sitio web.',
+      title: t('posts.post5.title'),
+      excerpt: t('posts.post5.excerpt'),
       image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&dpr=1',
-      duration: '3:00 min',
+      duration: t('posts.post5.duration'),
       hasDownload: false
     },
     {
       id: 6,
       type: 'blog',
       category: 'success-cases',
-      title: 'Caso de éxito: De 0 a 10K seguidores en 3 meses',
-      excerpt: 'Cómo ayudamos a una marca local a multiplicar su presencia digital con estrategia y contenido de valor.',
+      title: t('posts.post6.title'),
+      excerpt: t('posts.post6.excerpt'),
       image: 'https://images.pexels.com/photos/905163/pexels-photo-905163.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&dpr=1',
-      readTime: '6 min',
+      readTime: t('posts.post6.readTime'),
       hasDownload: false
     },
     {
       id: 7,
       type: 'vlog',
       category: 'branding',
-      title: 'Cómo elegir los colores perfectos para tu marca',
-      excerpt: 'Tutorial rápido sobre psicología del color y cómo aplicarla en tu identidad visual.',
+      title: t('posts.post7.title'),
+      excerpt: t('posts.post7.excerpt'),
       image: 'https://images.pexels.com/photos/6444/pencil-typography-black-design.jpg?auto=compress&cs=tinysrgb&w=800&h=500&dpr=1',
-      duration: '2:15 min',
+      duration: t('posts.post7.duration'),
       hasDownload: false
     },
     {
       id: 8,
       type: 'blog',
       category: 'social-media',
-      title: 'Copywriting que vende: fórmulas probadas',
-      excerpt: 'Las técnicas de redacción persuasiva que usamos para convertir textos en ventas.',
+      title: t('posts.post8.title'),
+      excerpt: t('posts.post8.excerpt'),
       image: 'https://images.pexels.com/photos/905163/pexels-photo-905163.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&dpr=1',
-      readTime: '8 min',
+      readTime: t('posts.post8.readTime'),
       hasDownload: true
     },
     {
       id: 9,
       type: 'blog',
       category: 'business',
-      title: 'SEO local: haz que te encuentren en Google',
-      excerpt: 'Estrategias prácticas para posicionar tu negocio en las búsquedas locales.',
+      title: t('posts.post9.title'),
+      excerpt: t('posts.post9.excerpt'),
       image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&dpr=1',
-      readTime: '9 min',
+      readTime: t('posts.post9.readTime'),
       hasDownload: true
     }
   ];
@@ -119,23 +121,23 @@ const Blog = () => {
 
   const handleSubscribe = () => {
     toast({
-      title: "¡Gracias por tu interés! 🎉",
-      description: "La función de suscripción estará disponible pronto."
+      title: t('toasts.subscribe.title'),
+      description: t('toasts.subscribe.description')
     });
   };
 
   const handlePostClick = (post) => {
     toast({
-      title: post.type === 'vlog' ? "🎥 Video próximamente" : "📖 Artículo próximamente",
-      description: `"${post.title}" estará disponible muy pronto.`
+      title: post.type === 'vlog' ? t('toasts.vlog') : t('toasts.blogPost'),
+      description: `"${post.title}" ${t('toasts.comingSoon')}`
     });
   };
 
   return (
     <>
       <Helmet>
-        <title>Blog - Aprende y haz crecer tu marca | Mar Digital</title>
-        <meta name="description" content="Tips, guías y tendencias sobre diseño, branding, marketing digital y estrategia de negocios. Contenido práctico para impulsar tu empresa." />
+        <title>{t('meta.title')}</title>
+        <meta name="description" content={t('meta.description')} />
       </Helmet>
 
       {/* Hero Section */}
@@ -154,12 +156,10 @@ const Blog = () => {
           >
             <div className="line-accent mx-auto mb-8"></div>
             <h1 className="text-5xl md:text-7xl font-bold text-white">
-              Aprende y haz crecer <span className="gradient-text">tu marca</span>
+              {t('hero.title')} <span className="gradient-text">{t('hero.titleHighlight')}</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-400 max-w-4xl mx-auto">
-              En Mar Digital compartimos tips, guías y tendencias sobre diseño, branding, 
-              marketing digital y estrategia de negocios. Contenido práctico que puedes 
-              aplicar hoy mismo para impulsar tu empresa.
+              {t('hero.subtitle')}
             </p>
           </motion.div>
         </div>
@@ -224,11 +224,11 @@ const Blog = () => {
                     }`}>
                       {post.type === 'vlog' ? (
                         <span className="flex items-center gap-1">
-                          <Play className="h-3 w-3" /> Vlog
+                          <Play className="h-3 w-3" /> {t('types.vlog')}
                         </span>
                       ) : (
                         <span className="flex items-center gap-1">
-                          <BookOpen className="h-3 w-3" /> Blog
+                          <BookOpen className="h-3 w-3" /> {t('types.blog')}
                         </span>
                       )}
                     </span>
@@ -260,7 +260,7 @@ const Blog = () => {
                     {post.excerpt}
                   </p>
                   <div className="flex items-center text-[#00d4ff] font-medium text-sm group-hover:gap-2 transition-all duration-300">
-                    {post.type === 'vlog' ? 'Ver video' : 'Leer más'}
+                    {post.type === 'vlog' ? t('actions.watchVideo') : t('actions.readMore')}
                     <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </div>
                 </div>
@@ -276,7 +276,7 @@ const Blog = () => {
               className="text-center py-20"
             >
               <p className="text-gray-400 text-lg">
-                No hay contenido disponible en esta categoría aún.
+                {t('noResults')}
               </p>
             </motion.div>
           )}
@@ -301,30 +301,29 @@ const Blog = () => {
             </div>
             
             <h2 className="text-4xl md:text-5xl font-bold text-white">
-              Suscríbete para recibir <span className="gradient-text">nuestras guías gratuitas</span>
+              {t('cta.title')} <span className="gradient-text">{t('cta.titleHighlight')}</span>
             </h2>
             
             <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-              Únete a nuestra comunidad y recibe contenido exclusivo, recursos descargables 
-              y las últimas tendencias directamente en tu correo.
+              {t('cta.description')}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
               <input
                 type="email"
-                placeholder="tu@email.com"
+                placeholder={t('cta.placeholder')}
                 className="flex-1 px-6 py-4 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-gray-500 focus:outline-none focus:border-[#00d4ff]/50 focus:bg-white/10 transition-all duration-300"
               />
               <Button
                 onClick={handleSubscribe}
                 className="px-8 py-4 bg-gradient-to-r from-[#0066ff] to-[#00d4ff] hover:shadow-xl hover:shadow-[#00d4ff]/30 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-105"
               >
-                Suscribirme
+                {t('cta.button')}
               </Button>
             </div>
 
             <p className="text-xs text-gray-500">
-              📧 Sin spam. Solo contenido de valor. Cancela cuando quieras.
+              {t('cta.disclaimer')}
             </p>
           </motion.div>
         </div>
@@ -345,19 +344,16 @@ const Blog = () => {
             <div className="inline-block">
               <div className="flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-[#0066ff]/10 to-[#00d4ff]/10 border border-[#00d4ff]/20">
                 <Briefcase className="h-6 w-6 text-[#00d4ff]" />
-                <span className="text-[#00d4ff] font-semibold">Nuestro compromiso</span>
+                <span className="text-[#00d4ff] font-semibold">{t('closing.badge')}</span>
               </div>
             </div>
 
             <h2 className="text-3xl md:text-4xl font-bold text-white max-w-3xl mx-auto leading-tight">
-              Nuestro objetivo es que no solo tengas servicios, 
-              sino también <span className="gradient-text">conocimiento que potencie tu marca</span>
+              {t('closing.title')} <span className="gradient-text">{t('closing.titleHighlight')}</span>
             </h2>
 
             <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-              En Mar Digital creemos que el conocimiento es poder. Por eso compartimos todo lo que 
-              sabemos para que puedas tomar mejores decisiones, entender el proceso y hacer crecer 
-              tu negocio de manera estratégica y sostenible.
+              {t('closing.description')}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
@@ -365,7 +361,7 @@ const Blog = () => {
                 onClick={() => navigate('/servicios')}
                 className="px-8 py-6 bg-gradient-to-r from-[#0066ff] to-[#00d4ff] hover:shadow-xl hover:shadow-[#00d4ff]/30 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-105 text-lg"
               >
-                Ver nuestros servicios
+                {t('closing.ctaServices')}
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <Button
@@ -373,7 +369,7 @@ const Blog = () => {
                 variant="outline"
                 className="px-8 py-6 border-2 border-[#00d4ff]/30 text-white hover:bg-[#00d4ff]/10 hover:border-[#00d4ff] rounded-xl transition-all duration-300 text-lg"
               >
-                Hablemos de tu proyecto
+                {t('closing.ctaContact')}
               </Button>
             </div>
           </motion.div>

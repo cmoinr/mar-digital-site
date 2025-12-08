@@ -4,13 +4,15 @@ import { motion } from 'framer-motion';
 import { ArrowRight, TrendingUp, BarChart3, DollarSign, Target, CheckCircle, FileText, Briefcase } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
+import { useTranslation } from 'react-i18next';
 
 const Business = () => {
   const { toast } = useToast();
+  const { t } = useTranslation('business');
 
   const handleCTA = () => {
     toast({
-      title: "🚧 Esta función no está implementada aún",
+      title: t('cta.toastTitle'),
       description: ""
     });
   };
@@ -18,46 +20,46 @@ const Business = () => {
   const services = [
     {
       icon: <Briefcase className="h-12 w-12 text-[#075296]" />,
-      title: "Consultoría en Modelos de Negocio",
-      description: "Análisis 360° de tu empresa, rediseño de propuesta de valor y plan estratégico para crecer de manera sostenible."
+      title: t('services.consulting.title'),
+      description: t('services.consulting.description')
     },
     {
       icon: <TrendingUp className="h-12 w-12 text-[#369c08]" />,
-      title: "Transformación Digital",
-      description: "Diagnóstico de madurez digital, identificación de procesos clave y plan de implementación con herramientas y KPIs."
+      title: t('services.digital.title'),
+      description: t('services.digital.description')
     },
     {
       icon: <DollarSign className="h-12 w-12 text-[#8cc63f]" />,
-      title: "Valoración de Empresas",
-      description: "Estimación objetiva del valor real de tu compañía con metodologías como DCF, múltiplos de mercado y análisis de activos."
+      title: t('services.valuation.title'),
+      description: t('services.valuation.description')
     },
     {
       icon: <BarChart3 className="h-12 w-12 text-[#0e88e2]" />,
-      title: "Análisis Financiero Avanzado",
-      description: "Revisión de liquidez, rentabilidad, deuda y eficiencia. Incluye escenarios financieros y recomendaciones estratégicas."
+      title: t('services.financial.title'),
+      description: t('services.financial.description')
     },
     {
       icon: <FileText className="h-12 w-12 text-[#1fd0ff]" />,
-      title: "Modelación y Proyección Financiera",
-      description: "Modelos dinámicos en Excel o Power BI para anticipar necesidades de capital y planear el crecimiento."
+      title: t('services.modeling.title'),
+      description: t('services.modeling.description')
     },
     {
       icon: <Target className="h-12 w-12 text-[#075296]" />,
-      title: "Formulación y Evaluación de Proyectos",
-      description: "Estudios completos con VAN, TIR y análisis de viabilidad para tomar decisiones informadas."
+      title: t('services.projects.title'),
+      description: t('services.projects.description')
     },
     {
       icon: <DollarSign className="h-12 w-12 text-[#8cc63f]" />,
-      title: "Estructuración de Capital y Apalancamiento Financiero",
-      description: "Definición del mix óptimo entre capital propio y externo, con estrategias para optimizar tu financiamiento y atraer inversionistas."
+      title: t('services.capital.title'),
+      description: t('services.capital.description')
     }
   ];
 
   return (
     <>
       <Helmet>
-        <title>Mar Digital Business - Estrategia y consultoría para hacer crecer tu empresa</title>
-        <meta name="description" content="En Mar Digital Business te ayudamos a estructurar tu negocio con modelos sólidos, transformación digital y gestión financiera avanzada." />
+        <title>{t('meta.title')}</title>
+        <meta name="description" content={t('meta.description')} />
       </Helmet>
 
       {/* Hero Section */}
@@ -82,12 +84,10 @@ const Business = () => {
               className="w-48 h-auto mx-auto mb-8 brightness-0 invert"
             />
             <h1 className="text-4xl md:text-6xl font-bold text-white">
-              Estrategia y consultoría para hacer crecer tu empresa.
+              {t('hero.title')}
             </h1>
             <p className="text-lg md:text-xl text-gray-400 max-w-4xl mx-auto">
-              En Mar Digital Business te ayudamos a estructurar tu negocio con modelos sólidos, 
-              transformación digital y gestión financiera avanzada. No entregamos solo diagnósticos, 
-              sino rutas claras de crecimiento.
+              {t('hero.subtitle')}
             </p>
           </motion.div>
         </div>
@@ -105,7 +105,7 @@ const Business = () => {
           >
             <div className="line-accent mx-auto mb-6"></div>
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-              Servicios Business
+              {t('services.title')}
             </h2>
           </motion.div>
 
@@ -144,30 +144,30 @@ const Business = () => {
           >
             <div className="line-accent mx-auto mb-6"></div>
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-              ¿Por qué trabajar con Business?
+              {t('benefits.title')}
             </h2>
             <p className="text-lg md:text-xl text-gray-400">
-              Consultoría de alto nivel con entregables concretos
+              {t('benefits.subtitle')}
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                title: "Metodologías internacionales adaptadas a tu realidad",
-                description: "Aplicamos frameworks probados globalmente, ajustados al contexto de tu empresa."
+                title: t('benefits.item1.title'),
+                description: t('benefits.item1.description')
               },
               {
-                title: "Enfoque premium: diagnóstico + plan de acción",
-                description: "No solo identificamos problemas, te damos la ruta exacta para solucionarlos."
+                title: t('benefits.item2.title'),
+                description: t('benefits.item2.description')
               },
               {
-                title: "Entregables claros (informes PDF, modelos en Excel/Power BI)",
-                description: "Documentación profesional y herramientas prácticas listas para usar."
+                title: t('benefits.item3.title'),
+                description: t('benefits.item3.description')
               },
               {
-                title: "Acompañamiento estratégico hasta implementar resultados",
-                description: "Te apoyamos en la ejecución para que las estrategias se conviertan en realidad."
+                title: t('benefits.item4.title'),
+                description: t('benefits.item4.description')
               }
             ].map((benefit, index) => (
               <motion.div
@@ -203,7 +203,7 @@ const Business = () => {
           >
             <div className="line-accent mx-auto mb-6"></div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Metodologías y entregables profesionales
+              {t('methodologies.title')}
             </h2>
           </motion.div>
 
@@ -216,24 +216,14 @@ const Business = () => {
               className="card-futuristic p-8 group"
             >
               <BarChart3 className="h-12 w-12 text-[#8cc63f] mb-6 group-hover:scale-110 transition-transform" />
-              <h3 className="text-2xl font-bold mb-4 text-white">Metodologías</h3>
+              <h3 className="text-2xl font-bold mb-4 text-white">{t('methodologies.methodologiesTitle')}</h3>
               <ul className="space-y-3 text-gray-400">
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#8cc63f]"></span>
-                  Canvas de modelo de negocio
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#8cc63f]"></span>
-                  DCF y múltiplos de mercado
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#8cc63f]"></span>
-                  VAN, TIR, Payback
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#8cc63f]"></span>
-                  Análisis de madurez digital
-                </li>
+                {t('methodologies.items', { returnObjects: true }).map((item, index) => (
+                  <li key={index} className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#8cc63f]"></span>
+                    {item}
+                  </li>
+                ))}
               </ul>
             </motion.div>
 
@@ -245,24 +235,14 @@ const Business = () => {
               className="card-futuristic p-8 group"
             >
               <TrendingUp className="h-12 w-12 text-[#8cc63f] mb-6 group-hover:scale-110 transition-transform" />
-              <h3 className="text-2xl font-bold mb-4 text-white">Herramientas</h3>
+              <h3 className="text-2xl font-bold mb-4 text-white">{t('methodologies.toolsTitle')}</h3>
               <ul className="space-y-3 text-gray-400">
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#8cc63f]"></span>
-                  Excel avanzado (modelos dinámicos)
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#8cc63f]"></span>
-                  Power BI (dashboards interactivos)
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#8cc63f]"></span>
-                  Google Analytics & Data Studio
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#8cc63f]"></span>
-                  Plataformas de automatización
-                </li>
+                {t('methodologies.tools', { returnObjects: true }).map((tool, index) => (
+                  <li key={index} className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#8cc63f]"></span>
+                    {tool}
+                  </li>
+                ))}
               </ul>
             </motion.div>
 
@@ -274,24 +254,14 @@ const Business = () => {
               className="card-futuristic p-8 group"
             >
               <FileText className="h-12 w-12 text-[#8cc63f] mb-6 group-hover:scale-110 transition-transform" />
-              <h3 className="text-2xl font-bold mb-4 text-white">Entregables</h3>
+              <h3 className="text-2xl font-bold mb-4 text-white">{t('methodologies.deliverablesTitle')}</h3>
               <ul className="space-y-3 text-gray-400">
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#8cc63f]"></span>
-                  Informes ejecutivos en PDF
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#8cc63f]"></span>
-                  Modelos financieros editables
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#8cc63f]"></span>
-                  Planes de acción paso a paso
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#8cc63f]"></span>
-                  Presentaciones ejecutivas
-                </li>
+                {t('methodologies.deliverables', { returnObjects: true }).map((deliverable, index) => (
+                  <li key={index} className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#8cc63f]"></span>
+                    {deliverable}
+                  </li>
+                ))}
               </ul>
             </motion.div>
           </div>
@@ -313,14 +283,14 @@ const Business = () => {
             className="space-y-8"
           >
             <h2 className="text-3xl md:text-5xl font-bold text-white">
-              Tu empresa merece crecer con visión estratégica y bases financieras sólidas.
+              {t('finalCta.title')}
             </h2>
             <Button 
               onClick={handleCTA}
               size="lg" 
               className="btn-futuristic px-12 py-6 text-xl rounded-full"
             >
-              Solicita tu consultoría Business
+              {t('finalCta.button')}
               <ArrowRight className="ml-2 h-6 w-6" />
             </Button>
           </motion.div>

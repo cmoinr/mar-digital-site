@@ -1,0 +1,98 @@
+{
+  "meta": {
+    "title": "Mar Digital - Boost your brand with digital design and strategy",
+    "description": "At Mar Digital we combine creativity and strategy: from websites and branding that make your business shine, to advanced consulting so your company grows with solid foundations."
+  },
+  "badge": {
+    "texts": [
+      "Creativity + Strategy",
+      "We make your idea impact",
+      "Design that converts",
+      "Your brand deserves to shine"
+    ]
+  },
+  "hero": {
+    "title": "Boost your brand",
+    "titleHighlight": "in digital",
+    "subtitle": "Web design, branding and strategic consulting so your business stands out and grows with solid foundations.",
+    "ctaPrimary": "Start your project",
+    "ctaSecondary": "View services"
+  },
+  "about": {
+    "title": "Who",
+    "titleHighlight": "are we",
+    "description": "A team that fuses creative design with strategic consulting. We build strong brands and businesses ready to scale in the digital world."
+  },
+  "divisions": {
+    "title": "Our",
+    "titleHighlight": "Divisions",
+    "creative": {
+      "title": "Mar Digital Creative",
+      "description": "Web Design, Branding, Social Media and Digital Marketing.",
+      "subtitle": "For entrepreneurs and companies seeking solid identity and real online presence.",
+      "cta": "Explore services"
+    },
+    "business": {
+      "title": "Mar Digital Business",
+      "description": "Strategic consulting, business models and digital transformation.",
+      "subtitle": "For companies that need clarity, structure and growth paths.",
+      "cta": "Explore services"
+    },
+    "viewAll": "View all services"
+  },
+  "benefits": {
+    "title": "Why",
+    "titleHighlight": "choose us",
+    "items": [
+      {
+        "title": "Strategic approach",
+        "description": "Every design has a clear purpose"
+      },
+      {
+        "title": "Accompaniment",
+        "description": "Clear processes and constant support"
+      },
+      {
+        "title": "Tailored solutions",
+        "description": "Adapted to each stage of your business"
+      },
+      {
+        "title": "Real results",
+        "description": "Measurable and sustainable metrics"
+      }
+    ]
+  },
+  "services": {
+    "title": "Featured",
+    "titleHighlight": "Services",
+    "subtitle": "What we can do for you",
+    "items": [
+      {
+        "title": "Web Design",
+        "description": "Pages and online stores that convert visits into customers. From landing pages to complete e-commerce solutions.",
+        "shortDesc": "Pages and online stores that convert."
+      },
+      {
+        "title": "Branding",
+        "description": "Visual identities that convey trust and reflect the essence of your business. Logos, palettes and brand guidelines.",
+        "shortDesc": "Visual identities that convey trust."
+      },
+      {
+        "title": "Digital Marketing",
+        "description": "Content and campaigns that generate real growth. Social media management, Meta and Google ads, SEO and more.",
+        "shortDesc": "Content and campaigns that generate growth."
+      },
+      {
+        "title": "Consulting",
+        "description": "Strategy, finance and digital transformation. Solid business models and clear growth paths.",
+        "shortDesc": "Strategy, finance and digital transformation."
+      }
+    ]
+  },
+  "finalCta": {
+    "title": "Grow your business",
+    "titleHighlight": "today",
+    "subtitle": "Creativity and strategy so your brand shines in digital. Whether you're just starting or already leading a company.",
+    "button": "Request your proposal"
+  }
+}

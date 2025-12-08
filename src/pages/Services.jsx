@@ -5,8 +5,10 @@ import { ArrowRight, Palette, TrendingUp, Globe, BarChart3, Briefcase, Lightbulb
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const Services = () => {
+  const { t } = useTranslation('services'); // Usar namespace 'services'
   const { toast } = useToast();
   const navigate = useNavigate();
 
@@ -17,8 +19,8 @@ const Services = () => {
   return (
     <>
       <Helmet>
-        <title>Nuestros Servicios - Mar Digital</title>
-        <meta name="description" content="En Mar Digital integramos creatividad y estrategia para que tu marca tenga presencia, identidad y resultados medibles en digital." />
+        <title>{t('meta.title')}</title>
+        <meta name="description" content={t('meta.description')} />
       </Helmet>
 
       {/* Hero Section */}
@@ -37,11 +39,10 @@ const Services = () => {
           >
             <div className="line-accent mx-auto mb-8"></div>
             <h1 className="text-5xl md:text-7xl font-bold text-white">
-              Nuestros <span className="gradient-text">Servicios</span>
+              {t('hero.title')} <span className="gradient-text">{t('hero.titleHighlight')}</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-400 max-w-4xl mx-auto">
-              En Mar Digital integramos creatividad y estrategia para que tu marca tenga 
-              presencia, identidad y resultados medibles en digital.
+              {t('hero.subtitle')}
             </p>
           </motion.div>
         </div>
@@ -64,11 +65,11 @@ const Services = () => {
                   <Palette className="w-6 h-6 text-white" />
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold text-white">
-                  Mar Digital Creative
+                  {t('creative.title')}
                 </h2>
               </div>
               <p className="text-lg md:text-xl text-gray-400 mb-8">
-                Creamos soluciones digitales que elevan la identidad de tu marca y generan confianza en tus clientes.
+                {t('creative.subtitle')}
               </p>
               <div className="space-y-6">
                 <div className="card-futuristic rounded-xl p-6">
@@ -77,12 +78,12 @@ const Services = () => {
                       <Globe className="h-5 w-5 text-[#00d4ff]" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-white mb-2">Diseño y Desarrollo Web</h4>
-                      <p className="text-gray-400 text-sm mb-3">Landing Pages, Websites Corporativos y E-commerce optimizados para conversión.</p>
+                      <h4 className="font-semibold text-white mb-2">{t('creative.webDev.title')}</h4>
+                      <p className="text-gray-400 text-sm mb-3">{t('creative.webDev.description')}</p>
                       <div className="flex flex-wrap gap-2">
-                        <span className="px-3 py-1 rounded-full bg-[#0066ff]/10 text-[#00d4ff] text-xs font-medium border border-[#0066ff]/20">Responsive Design</span>
-                        <span className="px-3 py-1 rounded-full bg-[#0066ff]/10 text-[#00d4ff] text-xs font-medium border border-[#0066ff]/20">SEO Optimizado</span>
-                        <span className="px-3 py-1 rounded-full bg-[#0066ff]/10 text-[#00d4ff] text-xs font-medium border border-[#0066ff]/20">Performance</span>
+                        <span className="px-3 py-1 rounded-full bg-[#0066ff]/10 text-[#00d4ff] text-xs font-medium border border-[#0066ff]/20">{t('creative.webDev.tag1')}</span>
+                        <span className="px-3 py-1 rounded-full bg-[#0066ff]/10 text-[#00d4ff] text-xs font-medium border border-[#0066ff]/20">{t('creative.webDev.tag2')}</span>
+                        <span className="px-3 py-1 rounded-full bg-[#0066ff]/10 text-[#00d4ff] text-xs font-medium border border-[#0066ff]/20">{t('creative.webDev.tag3')}</span>
                       </div>
                     </div>
                   </div>
@@ -94,12 +95,12 @@ const Services = () => {
                       <Palette className="h-5 w-5 text-[#00d4ff]" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-white mb-2">Branding & Diseño Gráfico</h4>
-                      <p className="text-gray-400 text-sm mb-3">Logos, identidades visuales y packs de contenido para una marca sólida y profesional.</p>
+                      <h4 className="font-semibold text-white mb-2">{t('creative.branding.title')}</h4>
+                      <p className="text-gray-400 text-sm mb-3">{t('creative.branding.description')}</p>
                       <div className="flex flex-wrap gap-2">
-                        <span className="px-3 py-1 rounded-full bg-[#00d4ff]/10 text-[#00d4ff] text-xs font-medium border border-[#00d4ff]/20">Identidad Visual</span>
-                        <span className="px-3 py-1 rounded-full bg-[#00d4ff]/10 text-[#00d4ff] text-xs font-medium border border-[#00d4ff]/20">Manual de Marca</span>
-                        <span className="px-3 py-1 rounded-full bg-[#00d4ff]/10 text-[#00d4ff] text-xs font-medium border border-[#00d4ff]/20">Assets Digitales</span>
+                        <span className="px-3 py-1 rounded-full bg-[#00d4ff]/10 text-[#00d4ff] text-xs font-medium border border-[#00d4ff]/20">{t('creative.branding.tag1')}</span>
+                        <span className="px-3 py-1 rounded-full bg-[#00d4ff]/10 text-[#00d4ff] text-xs font-medium border border-[#00d4ff]/20">{t('creative.branding.tag2')}</span>
+                        <span className="px-3 py-1 rounded-full bg-[#00d4ff]/10 text-[#00d4ff] text-xs font-medium border border-[#00d4ff]/20">{t('creative.branding.tag3')}</span>
                       </div>
                     </div>
                   </div>
@@ -111,12 +112,12 @@ const Services = () => {
                       <BarChart3 className="h-5 w-5 text-[#00d4ff]" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-white mb-2">Social Media & Copywriting</h4>
-                      <p className="text-gray-400 text-sm mb-3">Contenido gráfico + textos estratégicos para redes sociales que conectan y venden.</p>
+                      <h4 className="font-semibold text-white mb-2">{t('creative.socialMedia.title')}</h4>
+                      <p className="text-gray-400 text-sm mb-3">{t('creative.socialMedia.description')}</p>
                       <div className="flex flex-wrap gap-2">
-                        <span className="px-3 py-1 rounded-full bg-[#00d4ff]/10 text-[#00d4ff] text-xs font-medium border border-[#00d4ff]/20">Content Strategy</span>
-                        <span className="px-3 py-1 rounded-full bg-[#00d4ff]/10 text-[#00d4ff] text-xs font-medium border border-[#00d4ff]/20">Diseño de Posts</span>
-                        <span className="px-3 py-1 rounded-full bg-[#00d4ff]/10 text-[#00d4ff] text-xs font-medium border border-[#00d4ff]/20">Copy Persuasivo</span>
+                        <span className="px-3 py-1 rounded-full bg-[#00d4ff]/10 text-[#00d4ff] text-xs font-medium border border-[#00d4ff]/20">{t('creative.socialMedia.tag1')}</span>
+                        <span className="px-3 py-1 rounded-full bg-[#00d4ff]/10 text-[#00d4ff] text-xs font-medium border border-[#00d4ff]/20">{t('creative.socialMedia.tag2')}</span>
+                        <span className="px-3 py-1 rounded-full bg-[#00d4ff]/10 text-[#00d4ff] text-xs font-medium border border-[#00d4ff]/20">{t('creative.socialMedia.tag3')}</span>
                       </div>
                     </div>
                   </div>
@@ -128,12 +129,12 @@ const Services = () => {
                       <TrendingUp className="h-5 w-5 text-[#00d4ff]" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-white mb-2">Marketing Digital & Ads</h4>
-                      <p className="text-gray-400 text-sm mb-3">Configuración de plataformas, gestión de Google Ads y Meta Ads para atraer más clientes.</p>
+                      <h4 className="font-semibold text-white mb-2">{t('creative.marketing.title')}</h4>
+                      <p className="text-gray-400 text-sm mb-3">{t('creative.marketing.description')}</p>
                       <div className="flex flex-wrap gap-2">
-                        <span className="px-3 py-1 rounded-full bg-[#00d4ff]/10 text-[#00d4ff] text-xs font-medium border border-[#00d4ff]/20">Google Ads</span>
-                        <span className="px-3 py-1 rounded-full bg-[#00d4ff]/10 text-[#00d4ff] text-xs font-medium border border-[#00d4ff]/20">Meta Ads</span>
-                        <span className="px-3 py-1 rounded-full bg-[#00d4ff]/10 text-[#00d4ff] text-xs font-medium border border-[#00d4ff]/20">Analytics</span>
+                        <span className="px-3 py-1 rounded-full bg-[#00d4ff]/10 text-[#00d4ff] text-xs font-medium border border-[#00d4ff]/20">{t('creative.marketing.tag1')}</span>
+                        <span className="px-3 py-1 rounded-full bg-[#00d4ff]/10 text-[#00d4ff] text-xs font-medium border border-[#00d4ff]/20">{t('creative.marketing.tag2')}</span>
+                        <span className="px-3 py-1 rounded-full bg-[#00d4ff]/10 text-[#00d4ff] text-xs font-medium border border-[#00d4ff]/20">{t('creative.marketing.tag3')}</span>
                       </div>
                     </div>
                   </div>
@@ -146,7 +147,7 @@ const Services = () => {
                   size="lg" 
                   className="btn-futuristic bg-gradient-to-r from-[#0066ff] to-[#00d4ff] hover:from-[#0077ff] hover:to-[#00e5ff] text-white font-semibold px-10 py-6 text-lg rounded-full w-full"
                 >
-                  Cotizar servicios Creative
+                  {t('creative.cta')}
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </div>
@@ -197,11 +198,11 @@ const Services = () => {
                   <Briefcase className="w-6 h-6 text-white" />
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold text-white">
-                  Mar Digital Business
+                  {t('business.title')}
                 </h2>
               </div>
               <p className="text-lg md:text-xl text-gray-400 mb-8">
-                Acompañamos a empresas y startups con consultoría estratégica para crecer con bases sólidas y visión a futuro.
+                {t('business.subtitle')}
               </p>
               <div className="space-y-6">
                 <div className="card-futuristic rounded-xl p-6">
@@ -210,8 +211,8 @@ const Services = () => {
                       <Briefcase className="h-5 w-5 text-[#00d4ff]" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-white mb-2">Consultoría en Modelos de Negocio</h4>
-                      <p className="text-gray-400 text-sm">Diagnóstico y rediseño estratégico para maximizar el valor de tu empresa.</p>
+                      <h4 className="font-semibold text-white mb-2">{t('business.consulting.title')}</h4>
+                      <p className="text-gray-400 text-sm">{t('business.consulting.description')}</p>
                     </div>
                   </div>
                 </div>
@@ -222,8 +223,8 @@ const Services = () => {
                       <TrendingUp className="h-5 w-5 text-[#00d4ff]" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-white mb-2">Transformación Digital</h4>
-                      <p className="text-gray-400 text-sm">Procesos, herramientas y KPIs para evolucionar tu empresa hacia el futuro digital.</p>
+                      <h4 className="font-semibold text-white mb-2">{t('business.digital.title')}</h4>
+                      <p className="text-gray-400 text-sm">{t('business.digital.description')}</p>
                     </div>
                   </div>
                 </div>
@@ -234,8 +235,8 @@ const Services = () => {
                       <BarChart3 className="h-5 w-5 text-[#00d4ff]" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-white mb-2">Valoración de Empresas</h4>
-                      <p className="text-gray-400 text-sm">Métodos financieros avanzados para conocer el valor real de tu compañía.</p>
+                      <h4 className="font-semibold text-white mb-2">{t('business.financial.title')}</h4>
+                      <p className="text-gray-400 text-sm">{t('business.financial.description')}</p>
                     </div>
                   </div>
                 </div>
@@ -246,8 +247,8 @@ const Services = () => {
                       <Lightbulb className="h-5 w-5 text-[#00d4ff]" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-white mb-2">Análisis y Proyección Financiera</h4>
-                      <p className="text-gray-400 text-sm">Modelos dinámicos, escenarios y planificación de capital inteligente.</p>
+                      <h4 className="font-semibold text-white mb-2">{t('business.projects.title')}</h4>
+                      <p className="text-gray-400 text-sm">{t('business.projects.description')}</p>
                     </div>
                   </div>
                 </div>
@@ -258,8 +259,8 @@ const Services = () => {
                       <Target className="h-5 w-5 text-[#00d4ff]" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-white mb-2">Estructuración de Capital</h4>
-                      <p className="text-gray-400 text-sm">Estrategias para optimizar financiamiento y atraer inversionistas estratégicos.</p>
+                      <h4 className="font-semibold text-white mb-2">{t('business.projects.title')}</h4>
+                      <p className="text-gray-400 text-sm">{t('business.projects.description')}</p>
                     </div>
                   </div>
                 </div>
@@ -271,7 +272,7 @@ const Services = () => {
                   size="lg" 
                   className="btn-futuristic bg-gradient-to-r from-[#0066ff] to-[#00d4ff] hover:from-[#0077ff] hover:to-[#00e5ff] text-white font-semibold px-10 py-6 text-lg rounded-full w-full"
                 >
-                  Cotizar servicios Business
+                  {t('business.cta')}
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </div>
@@ -306,18 +307,17 @@ const Services = () => {
             className="space-y-8"
           >
             <h2 className="text-4xl md:text-6xl font-bold text-white">
-              ¿Listo para <span className="gradient-text">impulsar</span> tu negocio?
+              {t('cta.title')}
             </h2>
             <p className="text-lg md:text-xl text-gray-400 max-w-4xl mx-auto">
-              Ya sea que necesites creatividad para tu marca o consultoría estratégica para tu empresa, 
-              en Mar Digital tenemos el servicio perfecto para ti. Conectemos y construyamos algo extraordinario juntos.
+              {t('cta.description')}
             </p>
             <Button 
               onClick={handleCTA}
               size="lg" 
               className="btn-futuristic bg-gradient-to-r from-[#0066ff] to-[#00d4ff] hover:from-[#0077ff] hover:to-[#00e5ff] text-white font-medium px-12 py-7 text-xl rounded-full"
             >
-              Solicita tu propuesta personalizada
+              {t('cta.button')}
               <ArrowRight className="ml-2 h-6 w-6" />
             </Button>
           </motion.div>

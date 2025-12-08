@@ -1,0 +1,98 @@
+{
+  "meta": {
+    "title": "Mar Digital - Impulsa tu marca con diseño y estrategia digital",
+    "description": "En Mar Digital unimos creatividad y estrategia: desde páginas web y branding que hacen brillar tu negocio, hasta consultoría avanzada para que tu empresa crezca con bases sólidas."
+  },
+  "badge": {
+    "texts": [
+      "Creatividad + Estrategia",
+      "Hacemos que tu idea impacte",
+      "Diseño que convierte",
+      "Tu marca merece brillar"
+    ]
+  },
+  "hero": {
+    "title": "Impulsa tu marca",
+    "titleHighlight": "en digital",
+    "subtitle": "Diseño web, branding y consultoría estratégica para que tu negocio destaque y crezca con bases sólidas.",
+    "ctaPrimary": "Empieza tu proyecto",
+    "ctaSecondary": "Ver servicios"
+  },
+  "about": {
+    "title": "¿Quiénes",
+    "titleHighlight": "somos",
+    "description": "Un equipo que fusiona diseño creativo con consultoría estratégica. Construimos marcas fuertes y negocios listos para escalar en el mundo digital."
+  },
+  "divisions": {
+    "title": "Nuestras",
+    "titleHighlight": "Divisiones",
+    "creative": {
+      "title": "Mar Digital Creative",
+      "description": "Diseño Web, Branding, Social Media y Marketing Digital.",
+      "subtitle": "Para emprendedores y empresas que buscan identidad sólida y presencia real en línea.",
+      "cta": "Explorar servicios"
+    },
+    "business": {
+      "title": "Mar Digital Business",
+      "description": "Consultoría estratégica, modelos de negocio y transformación digital.",
+      "subtitle": "Para empresas que necesitan claridad, estructura y rutas de crecimiento.",
+      "cta": "Explorar servicios"
+    },
+    "viewAll": "Ver todos los servicios"
+  },
+  "benefits": {
+    "title": "¿Por qué",
+    "titleHighlight": "elegirnos",
+    "items": [
+      {
+        "title": "Enfoque estratégico",
+        "description": "Cada diseño tiene un propósito claro"
+      },
+      {
+        "title": "Acompañamiento",
+        "description": "Procesos claros y soporte constante"
+      },
+      {
+        "title": "Soluciones a medida",
+        "description": "Adaptadas a cada etapa de tu negocio"
+      },
+      {
+        "title": "Resultados reales",
+        "description": "Métricas medibles y sostenibles"
+      }
+    ]
+  },
+  "services": {
+    "title": "Servicios",
+    "titleHighlight": "destacados",
+    "subtitle": "Lo que podemos hacer por ti",
+    "items": [
+      {
+        "title": "Diseño Web",
+        "description": "Páginas y tiendas online que convierten visitas en clientes. Desde landing pages hasta e-commerce completos.",
+        "shortDesc": "Páginas y tiendas online que convierten."
+      },
+      {
+        "title": "Branding",
+        "description": "Identidades visuales que transmiten confianza y reflejan la esencia de tu negocio. Logos, paletas y manuales de marca.",
+        "shortDesc": "Identidades visuales que transmiten confianza."
+      },
+      {
+        "title": "Marketing Digital",
+        "description": "Contenido y campañas que generan crecimiento real. Gestión de redes, ads en Meta y Google, SEO y más.",
+        "shortDesc": "Contenido y campañas que generan crecimiento."
+      },
+      {
+        "title": "Consultoría",
+        "description": "Estrategia, finanzas y transformación digital. Modelos de negocio sólidos y rutas claras de crecimiento.",
+        "shortDesc": "Estrategia, finanzas y transformación digital."
+      }
+    ]
+  },
+  "finalCta": {
+    "title": "Haz crecer tu negocio",
+    "titleHighlight": "hoy mismo",
+    "subtitle": "Creatividad y estrategia para que tu marca brille en digital. Sin importar si apenas empiezas o ya lideras una empresa.",
+    "button": "Solicita tu propuesta"
+  }
+}

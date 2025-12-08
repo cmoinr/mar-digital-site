@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "title": "Mar Digital Creative - Creatividad que impulsa tu marca",
+    "description": "En Mar Digital Creative diseñamos experiencias que conectan con tu público y convierten visitas en clientes."
+  },
+  "hero": {
+    "title": "Creatividad que impulsa tu marca.",
+    "subtitle": "Desde un logo hasta una tienda online completa: en Mar Digital Creative diseñamos experiencias que conectan con tu público y convierten visitas en clientes."
+  },
+  "services": {
+    "title": "Servicios Creative",
+    "webDev": {
+      "title": "Diseño y Desarrollo Web",
+      "description": "Creamos sitios web que transmiten confianza y venden. Desde landing pages para captar leads hasta e-commerce robustos con todo lo que necesitas para crecer."
+    },
+    "branding": {
+      "title": "Branding & Diseño Gráfico",
+      "description": "Tu identidad visual es la cara de tu negocio. Diseñamos logos, manuales de marca y piezas gráficas que reflejan la esencia de tu empresa y generan impacto."
+    },
+    "socialMedia": {
+      "title": "Social Media & Copywriting",
+      "description": "No se trata solo de publicar, sino de conectar. Creamos piezas gráficas y textos estratégicos que construyen comunidad y generan ventas en redes sociales."
+    },
+    "marketing": {
+      "title": "Marketing Digital & Ads",
+      "description": "Hacemos que tu marca llegue a más personas. Configuramos y gestionamos Google Ads y Meta Ads, optimizamos tu ficha de Google Business y medimos resultados."
+    }
+  },
+  "packs": {
+    "creative": {
+      "title": "Packs Creative",
+      "starter": {
+        "name": "Starter Creative Pack",
+        "description": "Incluye logo, flyer digital y 10 piezas gráficas para redes.",
+        "idealFor": "Perfecto para emprendedores que quieren arrancar con una identidad clara y profesional."
+      },
+      "growth": {
+        "name": "Growth Creative Pack",
+        "description": "Branding completo, 20 piezas gráficas y 10 captions estratégicos.",
+        "idealFor": "Diseñado para marcas en expansión que buscan consistencia y una imagen sólida en redes."
+      },
+      "premium": {
+        "name": "Premium Creative Pack",
+        "description": "Branding completo, 30 piezas gráficas premium y 30 captions avanzados.",
+        "idealFor": "La solución integral para empresas que quieren destacar con identidad sólida y gestión avanzada de contenidos."
+      }
+    },
+    "business": {
+      "title": "Packs Business",
+      "starter": {
+        "name": "Starter Business Pack",
+        "description": "Landing Page Semi Pro en WordPress + Google Business Setup.",
+        "idealFor": "Ideal para empresas que necesitan una presencia digital básica para captar clientes locales."
+      },
+      "growth": {
+        "name": "Growth Business Pack",
+        "description": "Website corporativo (WordPress), optimización SEO y Pixel de Meta.",
+        "idealFor": "Una web optimizada + métricas claras para hacer crecer tu negocio en digital."
+      },
+      "premium": {
+        "name": "Premium Business Pack",
+        "description": "Website corporativo Pro (código), gestión de Google Ads y Meta Ads.",
+        "idealFor": "Estrategia completa de ventas online con web avanzada y campañas publicitarias profesionales."
+      }
+    },
+    "ecommerce": {
+      "title": "Packs E-Commerce",
+      "starter": {
+        "name": "Starter E-Commerce Pack",
+        "description": "Tienda básica en WordPress + Google Business Setup.",
+        "idealFor": "La forma más rápida y accesible de empezar a vender en línea."
+      },
+      "growth": {
+        "name": "Growth E-Commerce Pack",
+        "description": "E-commerce Pro (código), SEO y Pixel de Meta.",
+        "idealFor": "Tienda robusta con optimización de tráfico y métricas para crecer sostenidamente."
+      },
+      "premium": {
+        "name": "Premium E-Commerce Pack",
+        "description": "E-commerce Pro (código), gestión de Google Ads y Meta Ads.",
+        "idealFor": "Tienda avanzada con estrategia publicitaria completa para escalar ventas."
+      }
+    },
+    "idealFor": "Ideal para:"
+  },
+  "packsSection": {
+    "title": "Creative Packs",
+    "subtitle": "Paquetes diseñados para cada etapa de tu negocio.",
+    "creativeDivision": "División Creative (Branding + Diseño + Redes)",
+    "businessDivision": "División Business (Web + SEO + Ads)",
+    "ecommerceDivision": "División E-Commerce (Tiendas Online)"
+  },
+  "benefits": {
+    "title": "Beneficios de trabajar con Creative",
+    "professional": {
+      "title": "Diseño profesional con propósito",
+      "description": "Cada elemento visual está pensado para cumplir objetivos claros de tu negocio."
+    },
+    "identity": {
+      "title": "Identidad de marca sólida y coherente",
+      "description": "Tu marca se verá profesional y consistente en todos los puntos de contacto."
+    },
+    "content": {
+      "title": "Contenido pensado para atraer y vender",
+      "description": "Creamos mensajes y diseños que conectan emocionalmente y generan conversiones."
+    },
+    "scalable": {
+      "title": "Soluciones escalables a la medida de tu negocio",
+      "description": "Servicios que crecen contigo, desde emprendimiento hasta empresa consolidada."
+    }
+  },
+  "finalCta": {
+    "title": "Haz que tu marca brille en digital con creatividad y estrategia.",
+    "button": "Quiero mi propuesta Creative"
+  },
+  "cta": {
+    "title": "¿No encuentras lo que buscas?",
+    "description": "Cada negocio es único. Si ningún pack se ajusta a la perfección, conversemos y creamos una solución a tu medida.",
+    "button": "Cotizar servicio personalizado",
+    "toastTitle": "¡Genial! Redirigiendo a Contacto..."
+  }
+}

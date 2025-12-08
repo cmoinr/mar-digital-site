@@ -1,0 +1,86 @@
+{
+  "meta": {
+    "title": "Contact - Mar Digital",
+    "description": "Contact us to boost your brand with design and digital strategy. We are ready to help you grow."
+  },
+  "hero": {
+    "title": "Let's Talk About Your Project",
+    "subtitle": "Tell us your vision and we'll respond with a",
+    "subtitleHighlight": "personalized proposal",
+    "subtitleEnd": "in less than 24 hours."
+  },
+  "methods": {
+    "title": "Contact Methods",
+    "email": {
+      "label": "Email",
+      "value": "hello@mardigital.com"
+    },
+    "phone": {
+      "label": "Phone",
+      "value": "+52 1 442 123 4567"
+    },
+    "address": {
+      "label": "Location",
+      "value": "Quer√©taro, Mexico"
+    }
+  },
+  "form": {
+    "title": "Contact Form",
+    "subtitle": "Fill out this form and we'll respond in less than 24 hours.",
+    "name": {
+      "label": "Full name",
+      "placeholder": "Ex: John Doe"
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "your@email.com"
+    },
+    "phone": {
+      "label": "Phone (optional)",
+      "placeholder": "+52 123 456 7890"
+    },
+    "company": {
+      "label": "Company",
+      "placeholder": "Your company name"
+    },
+    "service": {
+      "label": "What service are you interested in?",
+      "option1": "Web Design & Development",
+      "option2": "Branding & Graphic Design",
+      "option3": "Social Media & Copywriting",
+      "option4": "Digital Marketing & Ads",
+      "option5": "Business Model Consulting",
+      "option6": "Digital Transformation",
+      "option7": "Optimization & Performance",
+      "option8": "Other / Not sure"
+    },
+    "budget": {
+      "label": "Approximate budget",
+      "option1": "Less than $500 USD",
+      "option2": "$500 - $1,000 USD",
+      "option3": "$1,000 - $2,500 USD",
+      "option4": "$2,500 - $5,000 USD",
+      "option5": "$5,000 - $10,000 USD",
+      "option6": "More than $10,000 USD",
+      "option7": "Prefer not to say / To define"
+    },
+    "message": {
+      "label": "Tell us about your project",
+      "placeholder": "Briefly describe what you need..."
+    },
+    "submit": "Send message",
+    "toastTitle": "Ì∫ß This feature is not implemented yet",
+    "toastDescription": "The contact form does not send messages for now."
+  },
+  "schedule": {
+    "title": "Schedule a Video Call",
+    "description": "If you prefer, you can schedule a 30-min session to talk live.",
+    "button": "Schedule meeting"
+  },
+  "alternatives": {
+    "title": "Other contact methods",
+    "whatsapp": "Write us on WhatsApp",
+    "email": "Send us a direct email",
+    "linkedin": "Connect on LinkedIn"
+  }
+}
