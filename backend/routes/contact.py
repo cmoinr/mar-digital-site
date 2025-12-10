@@ -20,6 +20,7 @@ async def submit_contact_form(request: ContactFormRequest) -> ContactFormRespons
     - **name**: Nombre del remitente (2-100 caracteres)
     - **email**: Email válido del remitente
     - **phone**: Teléfono del remitente (7-20 caracteres)
+    - **company**: Empresa del remitente (2-100 caracteres)
     - **service**: Servicio de interés
     - **budget**: Rango de presupuesto
     - **message**: Mensaje (10-5000 caracteres)
@@ -27,18 +28,20 @@ async def submit_contact_form(request: ContactFormRequest) -> ContactFormRespons
     """
     
     try:
-        # 1. Validar reCAPTCHA
-        if not RecaptchaService.is_valid(request.recaptcha_token):
-            raise HTTPException(
-                status_code=status.HTTP_400_BAD_REQUEST,
-                detail="Validación de reCAPTCHA fallida. Por favor, intenta de nuevo."
-            )
+        # 1. reCAPTCHA desactivado por ahora para pruebas
+        # TODO: Reactivar cuando esté configurado correctamente
+        # if not RecaptchaService.is_valid(request.recaptcha_token):
+        #     raise HTTPException(
+        #         status_code=status.HTTP_400_BAD_REQUEST,
+        #         detail="Validación de reCAPTCHA fallida. Por favor, intenta de nuevo."
+        #     )
         
         # 2. Enviar email al negocio
         email_sent_to_business = EmailService.send_contact_email(
             name=request.name,
             email=request.email,
             phone=request.phone,
+            company=request.company,
             service=request.service,
             budget=request.budget,
             message=request.message
@@ -80,32 +83,34 @@ async def submit_contact_form(request: ContactFormRequest) -> ContactFormRespons
 )
 async def submit_brief(request: BriefRequest) -> BriefResponse:
     """
-    Endpoint para procesar briefs
+    Endpoint para procesar briefs con campos dinámicos
     
-    - **name**: Nombre del remitente
-    - **email**: Email válido del remitente
-    - **phone**: Teléfono del remitente
-    - **briefType**: Tipo de brief (webDesign, branding, socialMedia, etc.)
-    - **message**: Detalles del brief
+    - **briefType**: Tipo de brief (web-design, branding, social-media, marketing, consulting)
+    - **formData**: Objeto con todos los campos del formulario
     - **recaptchaToken**: Token de reCAPTCHA v3
     """
     
     try:
-        # 1. Validar reCAPTCHA
-        if not RecaptchaService.is_valid(request.recaptcha_token):
+        # 1. reCAPTCHA desactivado por ahora para pruebas
+        # TODO: Reactivar cuando esté configurado correctamente
+        # if not RecaptchaService.is_valid(request.recaptcha_token):
+        #     raise HTTPException(
+        #         status_code=status.HTTP_400_BAD_REQUEST,
+        #         detail="Validación de reCAPTCHA fallida. Por favor, intenta de nuevo."
+        #     )
+        
+        # 2. Validar que existan los campos mínimos requeridos
+        form_data = request.form_data
+        if not form_data.get('fullName') or not form_data.get('email'):
             raise HTTPException(
                 status_code=status.HTTP_400_BAD_REQUEST,
-                detail="Validación de reCAPTCHA fallida. Por favor, intenta de nuevo."
+                detail="Faltan campos requeridos (nombre y email)"
             )
         
-        # 2. Enviar email al negocio
-        email_sent = EmailService.send_contact_email(
-            name=request.name,
-            email=request.email,
-            phone=request.phone,
-            service=f"Brief - {request.brief_type}",
-            budget="No especificado",
-            message=request.message
+        # 3. Enviar email del brief al negocio
+        email_sent = EmailService.send_brief_email(
+            brief_type=request.brief_type,
+            form_data=form_data
         )
         
         if not email_sent:
@@ -114,10 +119,10 @@ async def submit_brief(request: BriefRequest) -> BriefResponse:
                 detail="Error al procesar tu solicitud."
             )
         
-        # 3. Enviar confirmación
+        # 4. Enviar confirmación al cliente
         EmailService.send_confirmation_email(
-            client_email=request.email,
-            client_name=request.name
+            client_email=form_data['email'],
+            client_name=form_data['fullName']
         )
         
         return BriefResponse(

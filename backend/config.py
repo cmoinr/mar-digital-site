@@ -1,5 +1,5 @@
 from pydantic_settings import BaseSettings
-from typing import List
+from typing import List, Optional
 
 
 class Settings(BaseSettings):
@@ -22,12 +22,12 @@ class Settings(BaseSettings):
     recipient_email: str
     recipient_name: str = "Mar Digital Team"
 
-    # reCAPTCHA
-    recaptcha_secret_key: str
-    recaptcha_threshold: float = 0.5
+    # reCAPTCHA (opcional para desarrollo)
+    recaptcha_secret_key: Optional[str] = None
+    recaptcha_threshold: float = 0.3
 
     # Frontend URL
-    frontend_url: str = "http://localhost:3000"
+    frontend_url: str = "http://localhost:5173"
 
     class Config:
         env_file = ".env"

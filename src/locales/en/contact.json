@@ -69,8 +69,9 @@
       "placeholder": "Briefly describe what you need..."
     },
     "submit": "Send message",
-    "toastTitle": "íº§ This feature is not implemented yet",
-    "toastDescription": "The contact form does not send messages for now."
+    "submitting": "Sending...",
+    "toastTitle": "âœ… Message sent",
+    "toastDescription": "We will contact you soon."
   },
   "schedule": {
     "title": "Schedule a Video Call",

@@ -1,5 +1,5 @@
 from pydantic import BaseModel, EmailStr, Field
-from typing import Optional
+from typing import Optional, Dict, Any
 
 
 class ContactFormRequest(BaseModel):
@@ -8,6 +8,7 @@ class ContactFormRequest(BaseModel):
     name: str = Field(..., min_length=2, max_length=100)
     email: EmailStr
     phone: str = Field(..., min_length=7, max_length=20)
+    company: str = Field(..., min_length=2, max_length=100)
     service: str = Field(..., min_length=2)
     budget: str = Field(..., min_length=2)
     message: str = Field(..., min_length=10, max_length=5000)
@@ -26,13 +27,10 @@ class ContactFormResponse(BaseModel):
 
 
 class BriefRequest(BaseModel):
-    """Modelo para validar datos de un brief"""
+    """Modelo para validar datos de un brief con campos dinámicos"""
     
-    name: str = Field(..., min_length=2, max_length=100)
-    email: EmailStr
-    phone: str = Field(..., min_length=7, max_length=20)
     brief_type: str = Field(..., alias="briefType")
-    message: str = Field(..., min_length=10, max_length=5000)
+    form_data: Dict[str, Any] = Field(..., alias="formData")
     recaptcha_token: str = Field(..., alias="recaptchaToken")
     
     class Config:

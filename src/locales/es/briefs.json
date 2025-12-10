@@ -63,6 +63,7 @@
     "next": "Siguiente",
     "previous": "Anterior",
     "submit": "Enviar Brief",
+    "sending": "Enviando...",
     "selectPlaceholder": "Selecciona una opción...",
     "validation": {
       "required": "Este campo es obligatorio",

@@ -69,8 +69,9 @@
       "placeholder": "Describe brevemente lo que necesitas..."
     },
     "submit": "Enviar Mensaje",
-    "toastTitle": "��� Esta función no está implementada aún",
-    "toastDescription": "El formulario de contacto no envía mensajes por ahora."
+    "submitting": "Enviando...",
+    "toastTitle": "✅ Mensaje enviado",
+    "toastDescription": "Nos pondremos en contacto contigo pronto."
   },
   "schedule": {
     "title": "¿Prefieres agendar una videollamada?",

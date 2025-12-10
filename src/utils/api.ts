@@ -7,6 +7,7 @@ export const submitContactForm = async (formData: {
   name: string;
   email: string;
   phone: string;
+  company: string;
   service: string;
   budget: string;
   message: string;
@@ -37,11 +38,8 @@ export const submitContactForm = async (formData: {
 };
 
 export const submitBrief = async (formData: {
-  name: string;
-  email: string;
-  phone: string;
   briefType: string;
-  message: string;
+  formData: Record<string, any>;
   recaptchaToken: string;
 }) => {
   try {
@@ -51,14 +49,15 @@ export const submitBrief = async (formData: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        ...formData,
         briefType: formData.briefType,
+        formData: formData.formData,
         recaptchaToken: formData.recaptchaToken,
       }),
     });
 
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      const errorData = await response.json().catch(() => ({}));
+      throw new Error(errorData.detail || `HTTP error! status: ${response.status}`);
     }
 
     const data = await response.json();

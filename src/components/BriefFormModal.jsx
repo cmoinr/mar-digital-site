@@ -8,6 +8,8 @@ import { Label } from '@/components/ui/label';
 import { useToast } from '@/components/ui/use-toast';
 import { useTranslation } from 'react-i18next';
 import Modal from '@/components/ui/modal';
+import { submitBrief } from '@/utils/api';
+import { executeRecaptcha } from '@/utils/recaptcha';
 import {
   briefTypes,
   commonClientFields,
@@ -21,6 +23,7 @@ const BriefFormModal = ({ isOpen, onClose, briefType }) => {
   const [currentStep, setCurrentStep] = useState(0);
   const [formData, setFormData] = useState({});
   const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Get sections for this brief type
   const sections = sectionsByBriefType[briefType] || [];
@@ -111,25 +114,36 @@ const BriefFormModal = ({ isOpen, onClose, briefType }) => {
       return;
     }
 
+    setIsSubmitting(true);
+
     try {
-      // TODO: Implement API call to submit brief
-      console.log('Brief Form Data:', { briefType, ...formData });
-      
-      toast({
-        title: t('form.success.title'),
-        description: t('form.success.description'),
+      // Enviar brief al backend (sin reCAPTCHA por ahora)
+      const response = await submitBrief({
+        briefType: briefType,
+        formData: formData,
+        recaptchaToken: 'dev-bypass'
       });
       
-      // Reset form and close modal
-      setFormData({});
-      setCurrentStep(0);
-      onClose();
+      if (response.success) {
+        toast({
+          title: t('form.success.title'),
+          description: t('form.success.description'),
+        });
+        
+        // Reset form and close modal
+        setFormData({});
+        setCurrentStep(0);
+        onClose();
+      }
     } catch (error) {
+      console.error('Error submitting brief:', error);
       toast({
         title: t('form.error.title'),
-        description: t('form.error.description'),
+        description: error.message || t('form.error.description'),
         variant: 'destructive'
       });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -357,10 +371,26 @@ const BriefFormModal = ({ isOpen, onClose, briefType }) => {
           ) : (
             <Button
               type="submit"
-              className="flex-1 bg-gradient-to-r from-green-500 to-emerald-400 hover:opacity-90 text-white py-3 rounded-xl"
+              disabled={isSubmitting}
+              className="flex-1 bg-gradient-to-r from-green-500 to-emerald-400 hover:opacity-90 text-white py-3 rounded-xl disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {t('form.submit')}
-              <Send className="ml-2 w-5 h-5" />
+              {isSubmitting ? (
+                <>
+                  <motion.div
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                    className="mr-2"
+                  >
+                    ⏳
+                  </motion.div>
+                  {t('form.sending') || 'Enviando...'}
+                </>
+              ) : (
+                <>
+                  {t('form.submit')}
+                  <Send className="ml-2 w-5 h-5" />
+                </>
+              )}
             </Button>
           )}
         </div>

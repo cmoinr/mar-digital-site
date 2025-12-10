@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, Calendar, CheckCircle } from 'lucide-react';
@@ -8,17 +8,75 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/components/ui/use-toast';
 import { useTranslation } from 'react-i18next';
+import { submitContactForm } from '@/utils/api';
+import { executeRecaptcha } from '@/utils/recaptcha';
 
 const Contact = () => {
-  const { t } = useTranslation('contact'); // Usar namespace 'contact'
+  const { t } = useTranslation('contact');
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    company: '',
+    service: '',
+    budget: '',
+    message: ''
+  });
 
-  const handleSubmit = (e) => {
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [id]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    toast({
-      title: t('form.toastTitle'),
-      description: t('form.toastDescription')
-    });
+    setIsSubmitting(true);
+
+    try {
+      // Enviar al backend (sin reCAPTCHA por ahora)
+      const response = await submitContactForm({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        company: formData.company,
+        service: formData.service,
+        budget: formData.budget,
+        message: formData.message,
+        recaptchaToken: 'dev-bypass'
+      });
+
+      if (response.success) {
+        toast({
+          title: '✅ Mensaje enviado',
+          description: response.message
+        });
+
+        // Limpiar formulario
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          company: '',
+          service: '',
+          budget: '',
+          message: ''
+        });
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      toast({
+        title: '❌ Error',
+        description: error.message || 'No pudimos enviar tu mensaje. Intenta de nuevo.',
+        variant: 'destructive'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   // Servicios disponibles
@@ -201,6 +259,8 @@ const Contact = () => {
                       id="name" 
                       type="text" 
                       placeholder={t('form.name.placeholder')}
+                      value={formData.name}
+                      onChange={handleInputChange}
                       required
                       className="mt-2 p-3 rounded-xl border-2 border-[#00d4ff]/20 bg-[#0a0a0f] text-white placeholder:text-gray-500 focus:border-[#00d4ff] focus:ring-2 focus:ring-[#00d4ff]/20 transition-all" 
                     />
@@ -211,6 +271,8 @@ const Contact = () => {
                       id="email" 
                       type="email" 
                       placeholder={t('form.email.placeholder')}
+                      value={formData.email}
+                      onChange={handleInputChange}
                       required
                       className="mt-2 p-3 rounded-xl border-2 border-[#00d4ff]/20 bg-[#0a0a0f] text-white placeholder:text-gray-500 focus:border-[#00d4ff] focus:ring-2 focus:ring-[#00d4ff]/20 transition-all" 
                     />
@@ -220,13 +282,15 @@ const Contact = () => {
                 {/* WhatsApp y Empresa */}
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <Label htmlFor="whatsapp" className="text-sm font-semibold text-gray-300">
+                    <Label htmlFor="phone" className="text-sm font-semibold text-gray-300">
                       {t('form.phone.label')}
                     </Label>
                     <Input 
-                      id="whatsapp" 
+                      id="phone" 
                       type="tel" 
                       placeholder={t('form.phone.placeholder')}
+                      value={formData.phone}
+                      onChange={handleInputChange}
                       className="mt-2 p-3 rounded-xl border-2 border-[#00d4ff]/20 bg-[#0a0a0f] text-white placeholder:text-gray-500 focus:border-[#00d4ff] focus:ring-2 focus:ring-[#00d4ff]/20 transition-all" 
                     />
                   </div>
@@ -236,6 +300,8 @@ const Contact = () => {
                       id="company" 
                       type="text" 
                       placeholder={t('form.company.placeholder')}
+                      value={formData.company}
+                      onChange={handleInputChange}
                       required
                       className="mt-2 p-3 rounded-xl border-2 border-[#00d4ff]/20 bg-[#0a0a0f] text-white placeholder:text-gray-500 focus:border-[#00d4ff] focus:ring-2 focus:ring-[#00d4ff]/20 transition-all" 
                     />
@@ -247,7 +313,8 @@ const Contact = () => {
                   <Label htmlFor="service" className="text-sm font-semibold text-gray-300">{t('form.service.label')} *</Label>
                   <select 
                     id="service" 
-                    name="service" 
+                    value={formData.service}
+                    onChange={handleInputChange}
                     required
                     className="mt-2 w-full px-4 py-3 rounded-xl border-2 border-[#00d4ff]/20 bg-[#0a0a0f] text-white focus:border-[#00d4ff] focus:ring-2 focus:ring-[#00d4ff]/20 transition-all outline-none"
                   >
@@ -263,7 +330,8 @@ const Contact = () => {
                   <Label htmlFor="budget" className="text-sm font-semibold text-gray-300">{t('form.budget.label')} *</Label>
                   <select 
                     id="budget" 
-                    name="budget" 
+                    value={formData.budget}
+                    onChange={handleInputChange}
                     required
                     className="mt-2 w-full px-4 py-3 rounded-xl border-2 border-[#00d4ff]/20 bg-[#0a0a0f] text-white focus:border-[#00d4ff] focus:ring-2 focus:ring-[#00d4ff]/20 transition-all outline-none"
                   >
@@ -281,6 +349,8 @@ const Contact = () => {
                     id="message" 
                     placeholder={t('form.message.placeholder')}
                     rows="5"
+                    value={formData.message}
+                    onChange={handleInputChange}
                     required
                     className="mt-2 p-3 rounded-xl border-2 border-[#00d4ff]/20 bg-[#0a0a0f] text-white placeholder:text-gray-500 focus:border-[#00d4ff] focus:ring-2 focus:ring-[#00d4ff]/20 resize-none transition-all" 
                   />
@@ -304,10 +374,20 @@ const Contact = () => {
                 <Button 
                   type="submit" 
                   size="lg" 
-                  className="w-full btn-futuristic py-5 text-lg rounded-2xl"
+                  disabled={isSubmitting}
+                  className="w-full btn-futuristic py-5 text-lg rounded-2xl disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
-                  📨 {t('form.submit')}
-                  <Send className="ml-2 h-5 w-5" />
+                  {isSubmitting ? (
+                    <>
+                      <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                      {t('form.submitting')}
+                    </>
+                  ) : (
+                    <>
+                      📨 {t('form.submit')}
+                      <Send className="ml-2 h-5 w-5" />
+                    </>
+                  )}
                 </Button>
 
                 {/* Privacy Note */}
