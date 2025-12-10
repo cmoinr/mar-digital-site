@@ -49,5 +49,438 @@
     "title": "¿No sabes cuál elegir?",
     "description": "No te preocupes, contáctanos y te ayudamos a identificar el mejor servicio para tu proyecto.",
     "button": "Hablar con el equipo"
+  },
+  "modalTitle": {
+    "web-design": "Brief de Diseño Web",
+    "branding": "Brief de Branding & Diseño Gráfico",
+    "social-media": "Brief de Social Media & Copywriting",
+    "marketing": "Brief de Marketing Digital",
+    "consulting": "Brief de Consultoría Business"
+  },
+  "form": {
+    "step": "Paso",
+    "of": "de",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "submit": "Enviar Brief",
+    "selectPlaceholder": "Selecciona una opción...",
+    "validation": {
+      "required": "Este campo es obligatorio",
+      "invalidEmail": "Email inválido"
+    },
+    "success": {
+      "title": "¡Brief enviado exitosamente!",
+      "description": "Recibirás nuestra propuesta en menos de 48 horas."
+    },
+    "error": {
+      "title": "Error al enviar",
+      "description": "Por favor intenta nuevamente o contáctanos directamente."
+    },
+    "sections": {
+      "client": {
+        "title": "Datos del Cliente",
+        "description": "Necesitamos saber quién eres y cómo contactarte."
+      },
+      "projectDetails": {
+        "title": "Detalles del Proyecto",
+        "description": "Cuéntanos qué necesitas y cuál es tu objetivo."
+      },
+      "visualStyle": {
+        "title": "Estilo Visual",
+        "description": "Ayúdanos a entender cómo quieres que se vea tu proyecto."
+      },
+      "features": {
+        "title": "Funciones y Herramientas",
+        "description": "¿Qué funcionalidades necesitas incluir?"
+      },
+      "deliverables": {
+        "title": "Entregables",
+        "description": "¿Qué elementos necesitas recibir?"
+      },
+      "contentNeeds": {
+        "title": "Necesidades de Contenido",
+        "description": "¿Qué tipo de contenido necesitas?"
+      },
+      "setupDetails": {
+        "title": "Detalles de Configuración",
+        "description": "¿Qué herramientas necesitas configurar?"
+      },
+      "objectives": {
+        "title": "Objetivos",
+        "description": "¿Qué quieres lograr con este proyecto?"
+      },
+      "scope": {
+        "title": "Alcance",
+        "description": "Define el alcance y tiempos de tu proyecto."
+      },
+      "resources": {
+        "title": "Recursos",
+        "description": "¿Qué recursos tienes disponibles?"
+      },
+      "attachments": {
+        "title": "Observaciones Finales",
+        "description": "¿Algo más que debamos saber?"
+      }
+    },
+    "fields": {
+      "fullName": {
+        "label": "Nombre Completo",
+        "placeholder": "Tu nombre completo"
+      },
+      "email": {
+        "label": "Correo Electrónico",
+        "placeholder": "tu@email.com"
+      },
+      "whatsapp": {
+        "label": "Número de WhatsApp",
+        "placeholder": "+1 234 567 8900"
+      },
+      "companyName": {
+        "label": "Nombre de la Empresa/Marca",
+        "placeholder": "Nombre de tu empresa"
+      },
+      "location": {
+        "label": "Ubicación",
+        "placeholder": "Ciudad, País"
+      },
+      "websiteType": {
+        "label": "¿Qué tipo de sitio web necesitas?",
+        "options": {
+          "landing": "Landing Page",
+          "corporate": "Sitio Corporativo",
+          "ecommerce": "Tienda Online (E-commerce)",
+          "blog": "Blog",
+          "other": "Otro"
+        }
+      },
+      "websiteGoal": {
+        "label": "¿Qué objetivo tiene el sitio?",
+        "placeholder": "Ej: Capturar leads, vender productos, mostrar portafolio..."
+      },
+      "pagesCount": {
+        "label": "¿Cuántas secciones o páginas esperas?",
+        "placeholder": "Ej: Inicio, Sobre nosotros, Servicios, Contacto"
+      },
+      "contentReady": {
+        "label": "¿Ya tienes contenido preparado?",
+        "options": {
+          "complete": "Sí, tengo textos e imágenes",
+          "logo-only": "Solo tengo el logo",
+          "nothing": "No tengo nada aún"
+        }
+      },
+      "domainHosting": {
+        "label": "¿Tienes dominio o hosting?",
+        "options": {
+          "both": "Sí, tengo ambos",
+          "domain-only": "Solo tengo dominio",
+          "hosting-only": "Solo tengo hosting",
+          "none": "No tengo ninguno"
+        }
+      },
+      "referenceWebsites": {
+        "label": "Referencias de sitios que te gusten",
+        "placeholder": "Pega los links de páginas que te inspiren..."
+      },
+      "designStyle": {
+        "label": "¿Qué estilo deseas para tu sitio?",
+        "placeholder": "Ej: moderno, elegante, minimalista, colorido..."
+      },
+      "brandColors": {
+        "label": "Colores preferidos o de marca",
+        "placeholder": "Ej: Azul, blanco, negro o #0066ff"
+      },
+      "hasLogo": {
+        "label": "¿Tienes logotipo o manual de marca?",
+        "options": {
+          "yes": "Sí",
+          "no": "No",
+          "logo-only": "Solo tengo el logo"
+        }
+      },
+      "requiredFeatures": {
+        "label": "¿Qué funciones adicionales necesitas?",
+        "options": {
+          "contact-form": "Formulario de contacto",
+          "whatsapp-button": "Botón de WhatsApp",
+          "map": "Mapa de ubicación",
+          "gallery": "Galería o portafolio",
+          "social-media": "Integración con redes sociales",
+          "other": "Otro"
+        }
+      },
+      "integrations": {
+        "label": "Integraciones con herramientas externas",
+        "placeholder": "Ej: Google Analytics, CRM, sistemas de reservas, pasarelas de pago..."
+      },
+      "brandingType": {
+        "label": "¿Qué tipo de branding necesitas?",
+        "options": {
+          "complete-identity": "Identidad completa",
+          "logo-only": "Solo logotipo",
+          "rebrand": "Rediseño de marca",
+          "brand-manual": "Manual de marca",
+          "other": "Otro"
+        }
+      },
+      "brandGoal": {
+        "label": "¿Qué objetivo tiene tu marca?",
+        "placeholder": "Describe qué quieres comunicar con tu marca..."
+      },
+      "targetAudience": {
+        "label": "¿Quién es tu público objetivo?",
+        "placeholder": "Describe edad, intereses, ubicación..."
+      },
+      "brandValues": {
+        "label": "Valores de tu marca",
+        "placeholder": "Ej: Innovación, confianza, sostenibilidad..."
+      },
+      "competitors": {
+        "label": "Competidores principales",
+        "placeholder": "Lista marcas similares o competencia directa..."
+      },
+      "referenceLogos": {
+        "label": "Referencias de logos que te gusten",
+        "placeholder": "Describe o pega links de logos que te inspiren..."
+      },
+      "brandPersonality": {
+        "label": "Personalidad de la marca",
+        "placeholder": "Ej: Profesional, juvenil, elegante, divertida..."
+      },
+      "preferredColors": {
+        "label": "Colores preferidos",
+        "placeholder": "Ej: Azul marino, dorado, blanco"
+      },
+      "avoidColors": {
+        "label": "Colores a evitar",
+        "placeholder": "Ej: Rojo, verde oscuro..."
+      },
+      "requiredDeliverables": {
+        "label": "¿Qué entregables necesitas?",
+        "options": {
+          "logo": "Logotipo",
+          "color-palette": "Paleta de colores",
+          "typography": "Tipografías",
+          "business-cards": "Tarjetas de presentación",
+          "letterhead": "Papel membretado",
+          "social-media-templates": "Templates para redes sociales",
+          "brand-manual": "Manual de marca",
+          "other": "Otro"
+        }
+      },
+      "serviceType": {
+        "label": "¿Qué servicio necesitas?",
+        "options": {
+          "content-creation": "Creación de contenido",
+          "community-management": "Community management",
+          "copywriting": "Copywriting",
+          "complete-package": "Paquete completo",
+          "other": "Otro"
+        }
+      },
+      "platforms": {
+        "label": "¿En qué plataformas?",
+        "options": {
+          "instagram": "Instagram",
+          "facebook": "Facebook",
+          "tiktok": "TikTok",
+          "linkedin": "LinkedIn",
+          "twitter": "Twitter / X",
+          "youtube": "YouTube",
+          "other": "Otro"
+        }
+      },
+      "postFrequency": {
+        "label": "Frecuencia de publicación",
+        "options": {
+          "daily": "Diaria",
+          "3-per-week": "3 veces por semana",
+          "weekly": "Semanal",
+          "biweekly": "Quincenal",
+          "other": "Otro"
+        }
+      },
+      "contentGoal": {
+        "label": "Objetivo del contenido",
+        "placeholder": "Ej: Aumentar engagement, generar ventas, educar..."
+      },
+      "referenceAccounts": {
+        "label": "Cuentas de referencia",
+        "placeholder": "Menciona cuentas que te gusten o inspiren..."
+      },
+      "contentStyle": {
+        "label": "Estilo de contenido",
+        "placeholder": "Ej: Profesional, casual, educativo, entretenido..."
+      },
+      "brandGuidelines": {
+        "label": "¿Tienes lineamientos de marca?",
+        "options": {
+          "yes": "Sí, tengo manual",
+          "no": "No tengo",
+          "need-help": "Necesito ayuda con esto"
+        }
+      },
+      "contentTypes": {
+        "label": "¿Qué tipo de contenido necesitas?",
+        "options": {
+          "static-posts": "Posts estáticos",
+          "carousels": "Carruseles",
+          "reels": "Reels / Videos cortos",
+          "stories": "Historias",
+          "covers": "Portadas",
+          "other": "Otro"
+        }
+      },
+      "copywritingNeeds": {
+        "label": "¿Necesitas copywriting?",
+        "options": {
+          "yes-full": "Sí, completo",
+          "yes-partial": "Sí, parcial",
+          "no": "No, yo lo proporciono"
+        }
+      },
+      "campaignType": {
+        "label": "Tipo de campaña",
+        "options": {
+          "google-ads": "Google Ads",
+          "meta-ads": "Meta Ads (Facebook/Instagram)",
+          "linkedin-ads": "LinkedIn Ads",
+          "complete-setup": "Configuración completa",
+          "optimization": "Optimización de campaña existente",
+          "other": "Otro"
+        }
+      },
+      "campaignGoal": {
+        "label": "Objetivo de la campaña",
+        "placeholder": "Ej: Generar 100 leads al mes, aumentar ventas en 30%..."
+      },
+      "monthlyBudget": {
+        "label": "Presupuesto mensual para ads",
+        "options": {
+          "less-500": "Menos de $500",
+          "500-1000": "$500 - $1,000",
+          "1000-3000": "$1,000 - $3,000",
+          "3000-5000": "$3,000 - $5,000",
+          "more-5000": "Más de $5,000"
+        }
+      },
+      "hasExperience": {
+        "label": "¿Has manejado campañas antes?",
+        "options": {
+          "yes": "Sí",
+          "no": "No",
+          "some": "Un poco"
+        }
+      },
+      "platformsToSetup": {
+        "label": "¿Qué plataformas necesitas configurar?",
+        "options": {
+          "google-analytics": "Google Analytics",
+          "google-tag-manager": "Google Tag Manager",
+          "facebook-pixel": "Facebook Pixel",
+          "google-ads": "Google Ads",
+          "meta-business": "Meta Business Suite",
+          "conversion-tracking": "Seguimiento de conversiones",
+          "other": "Otro"
+        }
+      },
+      "hasWebsite": {
+        "label": "¿Tienes sitio web?",
+        "options": {
+          "yes": "Sí",
+          "no": "No",
+          "need-landing": "No, necesito una landing page"
+        }
+      },
+      "websiteUrl": {
+        "label": "URL de tu sitio web",
+        "placeholder": "https://www.tusitio.com"
+      },
+      "kpis": {
+        "label": "¿Qué KPIs quieres medir?",
+        "options": {
+          "leads": "Leads",
+          "sales": "Ventas",
+          "traffic": "Tráfico web",
+          "brand-awareness": "Reconocimiento de marca",
+          "app-installs": "Instalaciones de app",
+          "other": "Otro"
+        }
+      },
+      "consultingType": {
+        "label": "Tipo de consultoría",
+        "options": {
+          "business-strategy": "Estrategia de negocio",
+          "digital-transformation": "Transformación digital",
+          "process-optimization": "Optimización de procesos",
+          "growth-strategy": "Estrategia de crecimiento",
+          "other": "Otro"
+        }
+      },
+      "consultingGoal": {
+        "label": "Objetivo de la consultoría",
+        "placeholder": "¿Qué problema quieres resolver o qué meta alcanzar?"
+      },
+      "currentSituation": {
+        "label": "Situación actual",
+        "placeholder": "Describe brevemente dónde está tu negocio hoy..."
+      },
+      "mainChallenges": {
+        "label": "Principales retos",
+        "placeholder": "¿Qué obstáculos enfrentas actualmente?"
+      },
+      "companySize": {
+        "label": "Tamaño de la empresa",
+        "options": {
+          "solo": "Emprendedor solo",
+          "2-10": "2-10 empleados",
+          "11-50": "11-50 empleados",
+          "51-200": "51-200 empleados",
+          "more-200": "Más de 200 empleados"
+        }
+      },
+      "areasOfInterest": {
+        "label": "Áreas de interés",
+        "options": {
+          "marketing": "Marketing",
+          "sales": "Ventas",
+          "operations": "Operaciones",
+          "technology": "Tecnología",
+          "finance": "Finanzas",
+          "hr": "Recursos Humanos",
+          "other": "Otro"
+        }
+      },
+      "timeframe": {
+        "label": "Marco temporal",
+        "options": {
+          "urgent": "Urgente (menos de 1 mes)",
+          "1-month": "1 mes",
+          "2-3-months": "2-3 meses",
+          "3-6-months": "3-6 meses",
+          "flexible": "Flexible"
+        }
+      },
+      "expectedDeliverables": {
+        "label": "Entregables esperados",
+        "placeholder": "¿Qué esperas recibir al final? Ej: Plan estratégico, roadmap..."
+      },
+      "availableResources": {
+        "label": "Recursos disponibles",
+        "placeholder": "¿Qué recursos tienes? Ej: equipo, presupuesto, herramientas..."
+      },
+      "teamInvolvement": {
+        "label": "Involucramiento del equipo",
+        "options": {
+          "full": "Completo",
+          "partial": "Parcial",
+          "minimal": "Mínimo"
+        }
+      },
+      "additionalComments": {
+        "label": "Comentarios adicionales",
+        "placeholder": "¿Hay algo más que debamos saber sobre tu proyecto?"
+      }
+    }
   }
 }

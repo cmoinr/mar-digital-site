@@ -200,3 +200,29 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 2rem !important;
   }
 }
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: var(--mar-dark);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--mar-blue), var(--mar-cyan));
+  border-radius: 10px;
+  transition: var(--transition-smooth);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--mar-blue-vibrant), var(--mar-cyan-glow));
+  box-shadow: var(--glow-cyan);
+}
+
+/* Firefox scrollbar */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--mar-cyan) var(--mar-dark);
+}

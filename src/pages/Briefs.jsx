@@ -1,20 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, FileText, Palette, Share2, Target, Briefcase } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
 import { useTranslation } from 'react-i18next';
+import BriefFormModal from '@/components/BriefFormModal';
+import { briefTypes } from '@/utils/briefConfig';
 
 const Briefs = () => {
   const { t } = useTranslation('briefs'); // Usar namespace 'briefs'
   const { toast } = useToast();
+  const navigate = useNavigate();
+  const [selectedBrief, setSelectedBrief] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleBriefClick = (briefName) => {
-    toast({
-      title: t('cta.toastTitle'),
-      description: `${briefName} ${t('cta.toastDescription')}`
-    });
+  const handleBriefClick = (briefType) => {
+    setSelectedBrief(briefType);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedBrief(null);
   };
 
   const briefsData = [
@@ -24,7 +33,8 @@ const Briefs = () => {
       icon: FileText,
       description: t('cards.webDesign.description'),
       color: "from-[#0066ff] to-[#0052cc]",
-      iconColor: "text-[#0066ff]"
+      iconColor: "text-[#0066ff]",
+      briefType: briefTypes.WEB_DESIGN
     },
     {
       id: 2,
@@ -32,7 +42,8 @@ const Briefs = () => {
       icon: Palette,
       description: t('cards.branding.description'),
       color: "from-[#00d4ff] to-[#00a8cc]",
-      iconColor: "text-[#00d4ff]"
+      iconColor: "text-[#00d4ff]",
+      briefType: briefTypes.BRANDING
     },
     {
       id: 3,
@@ -40,7 +51,8 @@ const Briefs = () => {
       icon: Share2,
       description: t('cards.socialMedia.description'),
       color: "from-[#6366f1] to-[#4f46e5]",
-      iconColor: "text-[#6366f1]"
+      iconColor: "text-[#6366f1]",
+      briefType: briefTypes.SOCIAL_MEDIA
     },
     {
       id: 4,
@@ -48,7 +60,8 @@ const Briefs = () => {
       icon: Target,
       description: t('cards.marketing.description'),
       color: "from-[#ec4899] to-[#db2777]",
-      iconColor: "text-[#ec4899]"
+      iconColor: "text-[#ec4899]",
+      briefType: briefTypes.MARKETING
     },
     {
       id: 5,
@@ -56,7 +69,8 @@ const Briefs = () => {
       icon: Briefcase,
       description: t('cards.consulting.description'),
       color: "from-[#10b981] to-[#059669]",
-      iconColor: "text-[#10b981]"
+      iconColor: "text-[#10b981]",
+      briefType: briefTypes.CONSULTING
     }
   ];
 
@@ -161,7 +175,7 @@ const Briefs = () => {
 
                     {/* Button */}
                     <Button
-                      onClick={() => handleBriefClick(brief.title)}
+                      onClick={() => handleBriefClick(brief.briefType)}
                       className={`w-full bg-gradient-to-r ${brief.color} hover:opacity-90 text-white font-semibold py-6 rounded-xl transition-all duration-300 group/btn mt-auto`}
                     >
                       <span>{t('cta.button')}</span>
@@ -194,7 +208,7 @@ const Briefs = () => {
               {t('finalCta.description')}
             </p>
             <Button
-              onClick={() => handleBriefClick("Contacto")}
+              onClick={() => navigate('/contacto')}
               className="bg-gradient-to-r from-[#00d4ff] to-[#0066ff] hover:opacity-90 text-white font-semibold px-8 py-6 rounded-xl text-lg transition-all duration-300"
             >
               {t('finalCta.button')}
@@ -202,6 +216,15 @@ const Briefs = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Brief Form Modal */}
+      {selectedBrief && (
+        <BriefFormModal
+          isOpen={isModalOpen}
+          onClose={handleCloseModal}
+          briefType={selectedBrief}
+        />
+      )}
     </>
   );
 };
