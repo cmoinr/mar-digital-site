@@ -363,7 +363,7 @@ const Home = () => {
       <CollageSection />
 
       {/* ¿Quiénes somos? - Minimalista */}
-      <section className="pt-20 pb-4 px-6 lg:px-8 bg-[#12121a] relative overflow-hidden">
+      <section className="pt-20 pb-0 px-6 lg:px-8 bg-[#12121a] relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-[#00d4ff]/20 to-transparent"></div>
 
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">

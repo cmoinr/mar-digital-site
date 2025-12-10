@@ -1,0 +1,114 @@
+-------------------------------
+Sección 1: Datos del cliente
+-----------------------------
+Nombre Completo
+*
+Escribe tu nombre completo o el nombre de quien representará la empresa durante el proceso.
+
+Correo electrónico
+*
+Indica un correo activo donde podamos enviarte la propuesta, contrato y entregables.
+
+Número de WhatsApp
+*
+Nos permite contactarte de forma más directa si necesitamos aclarar algo durante el proceso.
+
+Nombre de la empresa o marca
+*
+¿Cómo se llama tu marca o negocio? Este será el nombre principal que usaremos en el diseño.
+
+Ubicación (ciudad y país)
+*
+Cuéntanos desde dónde nos estás contratando. Esto nos ayuda a adaptar mejor los contenidos o integraciones si aplica.
+-------------------------------------
+Sección 2: Detalles del proyecto web
+Aquí necesitamos conocer el tipo de sitio web que deseas, su objetivo y cuántas secciones tendrá. Esta información nos ayuda a definir el alcance del proyecto.
+--------------------------------------
+¿Qué tipo de sitio web necesitas?
+*
+Selecciona el tipo de página que se ajusta mejor a lo que quieres lograr con tu proyecto.
+Landing page
+Sitio corporativo
+Tienda online (E-commerce)
+Blog
+Otro:
+
+¿Qué objetivo tiene el sitio?
+*
+Cuéntanos para qué quieres el sitio: ¿capturar leads? ¿vender productos? ¿mostrar tu trabajo? Esto nos ayudará a enfocar el diseño.
+
+¿Cuántas secciones o páginas esperas que tenga tu sitio?
+*
+Ejemplos comunes: Inicio, Sobre nosotros, Servicios, Contacto. Puedes estimar o detallar lo que tienes en mente.
+
+¿Ya tienes contenido preparado?
+*
+Indícanos si ya cuentas con textos, imágenes, o si necesitas que te ayudemos con eso también.
+Sí, tengo textos e imágenes
+Solo tengo el logo
+No tengo nada aún
+
+¿Tienes un dominio o hosting actualmente?
+*
+Cuéntanos si ya tienes comprado el dominio (ej. www.tumarca.com) o el servidor donde alojaremos tu página.
+Sí, tengo ambos
+Solo tengo dominio
+Solo tengo hosting
+No tengo ninguno
+
+-------------------------
+Sección 3: Estilo visual y referencias
+Cuéntanos cómo te gustaría que luzca tu sitio. Saber qué colores, estilos y sitios te inspiran nos permitirá diseñar algo que realmente represente tu marca.
+------------------------------------
+
+11. ¿Tienes alguna referencia de sitios que te gusten?
+*
+Puedes pegar los links de páginas que te gusten visualmente o que sean de tu competencia.
+
+12. ¿Qué estilo deseas para tu sitio web?
+*
+Describe en pocas palabras cómo te gustaría que se viera tu página: moderno, elegante, minimalista, colorido, oscuro, etc.
+
+13. ¿Colores preferidos o colores de marca?
+*
+Si tienes colores definidos en tu marca, escríbelos aquí. Si no, dinos qué colores te gustan o representan tu negocio.
+
+14. ¿Tienes logotipo o manual de marca?
+*
+Esto nos ayuda a mantener coherencia visual con tu identidad. Si tienes el archivo, podrás subirlo más adelante.
+Sí
+No
+Solo tengo el logo
+
+--------------------------------
+Sección 4: Funciones y herramientas necesarias
+Marca las funciones que deseas incluir, como formularios, botones, pasarelas de pago, etc. También puedes contarnos si necesitas integraciones con herramientas externas.
+------------------------------------
+
+15. ¿Qué funciones adicionales necesitas?
+*
+Marca todas las funciones que te gustaría tener en tu sitio. Si hay otras que no aparecen, puedes especificarlas.
+Formulario de contacto
+Botón de WhatsApp
+Mapa de ubicación
+Galería o portafolio
+Integración con redes sociales
+Otro:
+
+16. ¿Debemos conectar el sitio con alguna herramienta externa?
+*
+Ejemplo: Google Analytics, CRM, sistemas de reservas, correo masivo, o pasarelas de pago como PayPal o MercadoPago.
+
+
+---------------------
+Sección 5: Archivos adjuntos y observaciones finales
+Si tienes documentos, logos, imágenes o ideas que nos quieras compartir, súbelos aquí. También puedes dejarnos comentarios o aclaraciones adicionales.
+------------------------------------
+
+17. Sube aquí tu logotipo, imágenes o documentos útiles
+Si ya tienes recursos visuales o información estructurada, súbela aquí en PDF, PNG, JPG o Word.
+Sube hasta 5 archivos compatibles. Tamaño máximo por archivo: 10 MB.
+
+18. ¿Hay algo más que debamos tener en cuenta para tu sitio?
+*
+Es tu espacio libre para contarnos lo que no quedó en las preguntas anteriores.
