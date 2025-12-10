@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Instagram, Linkedin, Facebook, Twitter } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import logo from '@/assets/images/logo-bg.png';
 
 const Footer = () => {
   const { t } = useTranslation('footer');
@@ -42,9 +43,9 @@ const Footer = () => {
           >
             <Link to="/" className="inline-block">
               <img 
-                src="https://horizons-cdn.hostinger.com/a6ca65f8-09dc-4ddf-a714-07c8ebf24d62/artboard-14-fbWiw.png" 
+                src={logo} 
                 alt="Mar Digital" 
-                className="h-16 w-auto hover:scale-105 transition-transform duration-300"
+                className="h-14 w-auto hover:scale-105 transition-transform duration-300"
               />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed">

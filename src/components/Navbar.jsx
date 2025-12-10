@@ -6,6 +6,7 @@ import { Menu, X, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
+import logo from '@/assets/images/logo-bg.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,7 +45,8 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <Link to="/" className="flex items-center space-x-2">
-            <img src="https://horizons-cdn.hostinger.com/a6ca65f8-09dc-4ddf-a714-07c8ebf24d62/artboard-14-fbWiw.png" alt="Mar Digital Logo" className="h-14 w-auto" />
+            <img src={logo} alt="Mar Digital Logo" className="h-10 w-auto" />
+            {/* <img src="https://horizons-cdn.hostinger.com/a6ca65f8-09dc-4ddf-a714-07c8ebf24d62/artboard-14-fbWiw.png" alt="Mar Digital Logo" className="h-14 w-auto" /> */}
           </Link>
 
           {/* Desktop Menu */}
